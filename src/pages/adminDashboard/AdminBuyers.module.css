@@ -1,0 +1,450 @@
+/* ================= CONTAINER ================= */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* ================= HEADING ================= */
+.heading h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.heading p {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* ================= CONTROLS ================= */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.searchInput {
+    flex: 1;
+    min-width: 260px;
+    padding: 10px 14px;
+    border: 1px solid #d0d7e2;
+    border-radius: 10px;
+    background: #f7f9fc;
+    font-size: 14px;
+}
+
+/* ================= TABLE ================= */
+.tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 14px;
+}
+
+.table th {
+    background: #f1f5f9;
+    padding: 12px;
+    text-align: left;
+    color: #475569;
+}
+
+.table td {
+    padding: 12px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* ================= STATUS BADGES ================= */
+.badge {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.pending {
+    background: #fef9c3;
+    color: #92400e;
+}
+
+.rejected {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* ================= VIEW BUTTON ================= */
+.viewBtn {
+    background: #2563eb;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.viewBtn:hover {
+    background: #1d4ed8;
+}
+
+/* ================= NO DATA ================= */
+.noData {
+    padding: 20px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* ================= MODAL ================= */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.modal {
+    background: #ffffff;
+    padding: 26px;
+    width: 480px;
+    max-width: 92%;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    animation: popup 0.25s ease;
+} 
+
+/* ================= Pagination Button Prev Next ================= */
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.BtnPrev, .BtnNext {
+    background: #635e5e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.BtnPrev:hover:not(:disabled), .BtnNext:hover:not(:disabled) {
+    background: #111;
+    color: #fff;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(0.93);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal h3 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+    color: #111827;
+}
+
+.modalContent p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #374151;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.approveBtn,
+.rejectBtn,
+.closeBtn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.approveBtn {
+    background: #16a34a;
+}
+
+.rejectBtn {
+    background: #dc2626;
+}
+
+.closeBtn {
+    background: #6b7280;
+}
+
+.approveBtn:hover {
+    background: #15803d;
+}
+
+.rejectBtn:hover {
+    background: #b91c1c;
+}
+
+.closeBtn:hover {
+    background: #4b5563;
+}
+
+/* Heading Section */
+.heading {
+    margin-bottom: 25px;
+    padding: 10px 5px;
+}
+
+.heading h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+}
+
+.heading p {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 0;
+    font-weight: 400;
+}
+
+/* Summary Section Wrapper */
+.summarySection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+/* Titles (Pending / Approved / Rejected) */
+.summaryTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.summarySubtitle {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.summaryValue {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-top: 4px;
+}
+
+/* Improve spacing inside the summary area */
+.summaryWrapper {
+    display: flex;
+    gap: 40px;
+    padding-left: 4px;
+}
+
+/* Table adjustments for cleaner Apple-like UI */
+.tableWrapper {
+    margin-top: 10px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table th {
+    background: #f1f5f9;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    padding: 12px;
+}
+
+.table td {
+    font-size: 14px;
+    color: #334155;
+    padding: 14px 12px;
+}
+
+/* Status Colors */
+.approved {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.rejected {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.pending {
+    color: #ca8a04;
+    font-weight: 600;
+}
+
+/* ================= GRADIENT SUMMARY CARDS ================= */
+
+.summaryWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 20px 0 25px 0;
+}
+
+/* Base Card */
+.summaryCard {
+    padding: 20px 22px;
+    border-radius: 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+    transition: 0.2s ease-in-out;
+}
+
+.summaryCard:hover {
+    transform: translateY(-4px);
+}
+
+/* Title */
+.summaryTitle {
+    font-size: 18px !important;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+/* Subtitle */
+.summarySubtitle {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 4px;
+}
+
+/* Value Number */
+.summaryValue {
+    font-size: 26px !important;
+    font-weight: 700;
+    margin-top: auto;
+    align-self: flex-end;
+    opacity: 0.95;
+}
+
+/* ===== Gradient Colors (Same as your screenshot) ===== */
+.pendingCard {
+    background: linear-gradient(135deg, #facc15, #fbbf24);
+}
+
+.approvedCard {
+    background: linear-gradient(135deg, #4ade80, #16a34a);
+}
+
+.rejectedCard {
+    background: linear-gradient(135deg, #f87171, #dc2626);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .summaryCard {
+        height: 120px;
+        padding: 16px;
+    }
+
+    .summaryTitle {
+        font-size: 16px !important;
+    }
+
+    .summaryValue {
+        font-size: 22px !important;
+    }
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.BtnPrev, .BtnNext {
+    background: #635e5e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.BtnPrev:hover:not(:disabled), .BtnNext:hover:not(:disabled) {
+    background: #111;
+    color: #fff;
+}
+
+.pageInfo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: #f1f1f1;
+    min-width: 120px;
+    text-align: center;
+    user-select: none;
+}
+
+.activePage {
+    background: #2563eb !important;
+    color: white !important;
+    border-color: #2563eb !important;
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+
+    .table th,
+    .table td {
+        padding: 9px;
+        font-size: 12px;
+    }
+}

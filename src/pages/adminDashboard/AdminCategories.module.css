@@ -1,0 +1,271 @@
+/* ================= ROOT ================= */
+.container {
+    padding: 2rem;
+    background: #f9fafb;
+    min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.headerActions {
+    display: flex;
+    gap: 0.6rem;
+}
+
+/* ================= BUTTONS ================= */
+.addBtn {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 1.4rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.addBtn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.bulkBtn {
+    background: #059669;
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 1.4rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.bulkBtn:hover {
+    background: #047857;
+    transform: translateY(-1px);
+}
+
+/* ================= GRID ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 0.9rem;
+}
+
+.card h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.4rem;
+}
+
+/* ================= STATUS ================= */
+.active,
+.disabled {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.disabled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ================= ACTIONS ================= */
+.actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.actions button {
+    border: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* EDIT */
+.actions button:first-child {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.actions button:first-child:hover {
+    background: #d1d5db;
+}
+
+/* ENABLE */
+.enable {
+    background: #16a34a;
+    color: #ffffff;
+}
+
+.enable:hover {
+    background: #15803d;
+}
+
+/* DISABLE */
+.disable {
+    background: #f59e0b;
+    color: #ffffff;
+}
+
+.disable:hover {
+    background: #d97706;
+}
+
+/* DELETE */
+.delete {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.delete:hover {
+    background: #dc2626;
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    background: #f3f4f6;
+    border-radius: 12px;
+}
+
+.imageBtn {
+    margin-top: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #eef2ff;
+    color: #3730a3;
+}
+
+.imageBtn:hover {
+    background: #e0e7ff;
+}
+
+.active {
+    color: #065f46;
+    background: #d1fae5;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.disabled {
+    color: #991b1b;
+    background: #fee2e2;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding-bottom: 16px;
+}
+
+.pagination button {
+    padding: 6px 14px;
+    border: 1px solid #4F46E5;
+    background: white;
+    color: #4F46E5;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: #4F46E5;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .addBtn,
+    .bulkBtn {
+        width: 100%;
+    }
+
+    .card img {
+        height: 130px;
+    }
+}

@@ -1,0 +1,47 @@
+.wrapper {
+    width: 100%;
+    padding: 1.4rem 2%;
+    background: #f2f2f2;
+    display: flex;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 0.7rem;
+    border-radius: 6px;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: #999;
+}
+
+.image {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    background: #eee;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.brand {
+    font-size: 12px;
+}
+
+.price {
+    font-size: 15px;
+    font-weight: bold;
+    color: #e63946;
+}

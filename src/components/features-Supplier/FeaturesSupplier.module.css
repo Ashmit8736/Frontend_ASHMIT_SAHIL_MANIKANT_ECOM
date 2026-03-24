@@ -1,0 +1,221 @@
+:root {
+  --bg-light: #f8fafb;
+  --text-dark: #0f172a;
+  --text-muted: #6b7280;
+  --border-color: #e6e9ee;
+  --accent: #2563eb;
+  --card-shadow: rgba(16, 24, 40, 0.06);
+}
+
+/* ================= CONTAINER ================= */
+.FeaturesSupplier {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: var(--bg-light);
+}
+
+/* ================= HEADER ROW ================= */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding: 0 3rem;
+}
+
+.leftInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ================= TOP RIGHT BUTTON ================= */
+.viewAllBtn {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  padding: 0.55rem 1.4rem;
+  border-radius: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.viewAllBtn:hover {
+  background: #f3f4f6;
+  transform: translateY(-2px);
+}
+
+/* ================= GRID ================= */
+.supplierProfile {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+  padding: 0 3rem;
+}
+
+/* ================= CARD ================= */
+.profileCard {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.profileCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.12);
+}
+
+/* ================= BADGE ================= */
+.badges {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.verified {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: #def7ec;
+  color: #065f46;
+  font-weight: 600;
+}
+
+/* ================= TEXT ================= */
+.bussinessName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.city {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ================= MODAL ================= */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modalContent {
+  position: relative;
+  background: #fff;
+  width: 90%;
+  max-width: 420px;
+  padding: 2rem 1.75rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f3f4f6;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #374151;
+}
+
+.closeBtn:hover {
+  background: #e5e7eb;
+  transform: rotate(90deg);
+}
+
+.modalTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.modalRole {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.modalText {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .headerRow {
+    padding: 0 1.5rem;
+  }
+
+  .supplierProfile {
+    padding: 0 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  .FeaturesSupplier {
+    padding: 2.5rem 1rem;
+  }
+
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+
+  .viewAllBtn {
+    align-self: flex-end;
+  }
+
+  .supplierProfile {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .supplierProfile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .profileCard {
+    min-width: 80%;
+    scroll-snap-align: center;
+  }
+}

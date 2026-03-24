@@ -1,0 +1,210 @@
+/* ===============================
+   PAGE WRAPPER
+================================ */
+.RegisterMainContainer {
+  width: 100%;
+  min-height: 100dvh;
+  padding: clamp(1rem, 4vw, 3rem);
+  /* ⬅️ thoda kam */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* ⬅️ TOP aligned (important) */
+  background-color: #f5f6fa;
+  box-sizing: border-box;
+  border-top: 1px solid #d1d1d1;
+}
+
+/* ===============================
+   MAIN CARD
+================================ */
+.RegisterInnerConatiner {
+  width: 100%;
+  max-width: 880px;
+  /* ⬅️ 960 → 880 (better UX) */
+  background-color: #ffffff;
+  padding: clamp(1.2rem, 3vw, 2.5rem);
+  border-radius: 14px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   HEADING
+================================ */
+.heading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.heading h2 {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: #222;
+}
+
+.RegisterInnerConatiner p {
+  font-size: clamp(0.9rem, 2.4vw, 1rem);
+  color: #555;
+  opacity: 0.75;
+  max-width: 520px;
+  /* ⬅️ tighter */
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ===============================
+   STEPPER SPACING FIX
+================================ */
+.RegisterInnerConatiner> :nth-child(2) {
+  margin: 0.5rem 0 1.5rem;
+}
+
+/* ===============================
+   FORM GRID (used in next steps)
+================================ */
+.formContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inputGroup label {
+  font-weight: 500;
+  color: #333;
+}
+
+.inputGroup input,
+.inputGroup select {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+/* ===============================
+   PAGINATION / SUBMIT BUTTON
+================================ */
+.submitBtn {
+  align-self: center;
+  /* ⬅️ center instead of right */
+  min-width: 220px;
+  padding: 0.9rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(90deg, #0e1c26, #294861);
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: linear-gradient(90deg, #122738, #2f5773);
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   DIVIDER
+================================ */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e6e6e6;
+  margin: 1rem 0;
+}
+
+/* ===============================
+   TABLET
+================================ */
+@media (max-width: 1024px) {
+  .RegisterMainContainer {
+    padding: 2.5rem;
+  }
+
+  .RegisterInnerConatiner {
+    padding: 2rem;
+  }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+  .RegisterMainContainer {
+    padding: 1.5rem;
+  }
+
+  .RegisterInnerConatiner {
+    padding: 1.4rem;
+    border-radius: 12px;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE
+================================ */
+@media (max-width: 480px) {
+  .RegisterMainContainer {
+    padding: 1rem;
+  }
+
+  .RegisterInnerConatiner {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .heading h2 {
+    font-size: 1.25rem;
+  }
+
+  .RegisterInnerConatiner p {
+    font-size: 0.88rem;
+  }
+}
+
+/* ===============================
+   VERY SMALL DEVICES
+================================ */
+@media (max-width: 360px) {
+  .heading h2 {
+    font-size: 1.1rem;
+  }
+
+  .RegisterInnerConatiner p {
+    font-size: 0.82rem;
+  }
+}
+
+/* ===============================
+   ERROR MESSAGES
+================================ */
+.error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+}

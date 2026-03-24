@@ -1,0 +1,76 @@
+.BusinessContainer{
+    margin-top: 1.4rem;
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #F0F8FF;
+    border-radius: 0.6rem;
+}
+
+.BusinessContainer .heading{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.BusinessContainer .heading h3{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(92, 91, 91);
+}
+
+.BusinessContainer .BusinessDetails{
+    margin-top: 0.9rem;
+}
+
+
+.BusinessContainer .gridInfo{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem 2rem;
+  margin-bottom: 1.6rem;
+}
+
+
+
+.BusinessContainer .BusinessDetails h2{
+    font-weight: 400;
+     font-size: 1.2rem;
+  color: #2d2d2dea;
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.BusinessContainer .gridInfo h4{
+    font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.BusinessContainer .gridInfo p{
+    font-size: 1rem;
+  color: #111;
+  font-weight: 500;
+}
+
+.BusinessContainer .documents{
+    background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+
+.BusinessContainer .documents .docsTags{
+    display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.docsTags span {
+  background-color: #d1fae5;
+  color: #065f46;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+}

@@ -1,0 +1,326 @@
+.ordersContainer {
+    padding: 20px;
+    background: #f5f7fb;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Controls (Search + Sort) */
+.controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.searchInput {
+    padding: 10px 14px;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+.searchInput:focus {
+    border-color: #6366f1;
+}
+
+.sortSelect {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Table */
+.tableWrapper {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.ordersTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.ordersTable th {
+    background: #eef1f6;
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.ordersTable td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Status Badges */
+.statusBadge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.statusPending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.statusPacked {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.statusShipped {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.statusDelivered {
+    background: #d4edda;
+    color: #155724;
+}
+
+/* Buttons */
+.viewBtn,
+.updateBtn {
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.viewBtn {
+    background: #e8e9ff;
+    color: #3f48cc;
+    margin-right: 6px;
+}
+
+.updateBtn {
+    background: #ffe5e5;
+    color: #d64545;
+}
+
+.viewBtn:hover {
+    background: #d9dbff;
+}
+
+.updateBtn:hover {
+    background: #ffd6d6;
+}
+
+/* MODALS */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    width: 380px;
+    border-radius: 12px;
+    animation: popIn 0.3s ease-in-out;
+}
+
+.closeBtn {
+    margin-top: 15px;
+    background: black;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.saveBtn {
+    background: #4caf50;
+    padding: 8px 14px;
+    color: white;
+    border-radius: 8px;
+}
+
+.updateSelect {
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.statusFilter {
+    padding: 9px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #374151;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.statusFilter:focus {
+    border-color: #6366f1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .heading {
+        font-size: 26px;
+    }
+
+    .searchInput {
+        width: 220px;
+    }
+
+    .ordersTable th,
+    .ordersTable td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .heading {
+        font-size: 26px;
+    }
+
+    .searchInput {
+        width: 220px;
+    }
+
+    .ordersTable th,
+    .ordersTable td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ordersContainer {
+        padding: 15px;
+    }
+
+    .heading {
+        font-size: 22px;
+    }
+
+    /* CONTROLS STACK */
+    /* .controls {
+        flex-direction: column;
+        align-items: stretch;
+    } */
+
+    .controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+    .searchInput,
+    .sortSelect {
+        width: 100%;
+    }
+
+    /* TABLE SCROLL */
+    .tableWrapper {
+        padding: 14px;
+    }
+
+    .ordersTable {
+        min-width: 720px;
+    }
+
+    /* MODAL */
+    .modal {
+        width: 92%;
+        padding: 16px;
+    }
+
+    .modalActions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .saveBtn,
+    .closeBtn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 20px;
+    }
+
+    .statusBadge {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
+
+    .viewBtn,
+    .updateBtn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .ordersTable th,
+    .ordersTable td {
+        font-size: 13px;
+    }
+}

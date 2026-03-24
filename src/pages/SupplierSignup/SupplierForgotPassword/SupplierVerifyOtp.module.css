@@ -1,0 +1,66 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.bgImage {
+    position: absolute;
+    inset: 0;
+    background-image: url("../../../assets/Loginbg1.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+.card {
+    background: white;
+    width: 28%;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.card h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.otpInput {
+    margin-top: 1.2rem;
+    letter-spacing: 6px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.9rem;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+}
+
+.otpInput:focus {
+    border-color: #294861;
+}
+
+.button {
+    width: 100%;
+    margin-top: 1.4rem;
+    padding: 0.85rem;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #0e1c26, #294861);
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 85%;
+    }
+}

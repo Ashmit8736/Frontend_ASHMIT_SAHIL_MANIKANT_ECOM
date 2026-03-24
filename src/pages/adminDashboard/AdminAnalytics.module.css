@@ -1,0 +1,253 @@
+/* --- Container --- */
+.analyticsContainer {
+  padding: 2rem;
+  background: #f9fafb;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* ✅ Added for small screens */
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.header p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.dropdown {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown:hover {
+  background: #f3f4f6;
+}
+
+/* --- Metric Cards --- */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.metricCard {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.metricCard h4 {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.value {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0.3rem 0;
+  color: #111827;
+}
+
+.positive {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+.negative {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+/* --- Accent Borders --- */
+.green {
+  border-left: 4px solid #16a34a;
+}
+
+.blue {
+  border-left: 4px solid #3b82f6;
+}
+
+.purple {
+  border-left: 4px solid #8b5cf6;
+}
+
+.orange {
+  border-left: 4px solid #f97316;
+}
+
+/* --- Chart Card --- */
+.chartCard {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+
+.chartCard:hover {
+  transform: translateY(-3px);
+}
+
+/* --- Split Grid --- */
+.splitRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* --- Category, Seller, Funnel Sections --- */
+.categoryRow,
+.sellerRow,
+.funnelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.7rem 0;
+}
+
+/* --- Bars --- */
+.barWrapper,
+.funnelBar {
+  background: #e5e7eb;
+  border-radius: 10px;
+  flex: 1;
+  height: 8px;
+  margin: 0 0.8rem;
+  overflow: hidden;
+}
+
+.barFill,
+.funnelFill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
+  transition: width 0.5s ease;
+}
+
+/* --- Seller Cards --- */
+.sellerCard,
+.categoryCard {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.sellerCard:hover,
+.categoryCard:hover {
+  transform: translateY(-3px);
+}
+
+.sellerRow {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 0.7rem;
+  transition: 0.2s;
+}
+
+.sellerRow:hover {
+  background: #eef2ff;
+  transform: translateY(-2px);
+}
+
+.rank {
+  font-weight: 600;
+  color: #3b82f6;
+}
+
+.sellerName {
+  font-weight: 500;
+  color: #111827;
+}
+
+.rating {
+  color: #facc15;
+}
+
+/* --- ✨ Added for better mobile spacing --- */
+@media (max-width: 992px) {
+  .splitRow {
+    grid-template-columns: 1fr;
+  }
+
+  .header h2 {
+    font-size: 1.4rem;
+  }
+
+  .chartCard {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .analyticsContainer {
+    padding: 1.2rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricCard {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .value {
+    font-size: 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .splitRow {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 1.2rem;
+  }
+
+  .metricCard {
+    padding: 0.9rem;
+  }
+
+  .chartCard {
+    padding: 1rem;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+}

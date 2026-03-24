@@ -1,0 +1,324 @@
+/* ===========================================
+   MAIN CONTAINER
+=========================================== */
+.sellerLogInContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 0;
+  z-index: 1;
+}
+
+.forgotPassword {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #2563eb;
+  cursor: pointer;
+  text-align: right;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+/* ===========================================
+   REGISTER BUTTON (NEW)
+=========================================== */
+
+.registerBtn {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  background: transparent;
+  border: 2px solid #294861;
+  color: #294861;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.registerBtn:hover {
+  background: linear-gradient(90deg, #0e1c26, #294861);
+  color: white;
+  transform: scale(1.03);
+}
+
+
+/* ===========================================
+   BACKGROUND BLUR IMAGE
+=========================================== */
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/Loginbg1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  transform: scale(1.05);
+  z-index: -1;
+}
+
+/* ===========================================
+   LOGIN CARD
+=========================================== */
+.SellerLOgInInnerConatainer {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 28%;
+  padding: 2rem;
+  z-index: 999;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* TITLE */
+.SellerLOgInInnerConatainer h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+/* ===========================================
+   FORM STYLE
+=========================================== */
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+/* INPUT GROUP */
+.inputGroup {
+  width: 100%;
+  position: relative;
+
+}
+
+/* INPUT FIELDS (black text + black placeholder) */
+.inputGroup input {
+  width: 100%;
+  padding: 0.85rem 3.5rem 0.85rem 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-weight: 500;
+  outline: none;
+  color: black;
+  background: white;
+
+}
+
+/* placeholder black */
+.inputGroup input::placeholder {
+  color: black;
+  opacity: 0.9;
+}
+
+/* focus style */
+.inputGroup input:focus {
+  border-color: #294861;
+  box-shadow: 0 0 0 2px rgba(41, 72, 97, 0.2);
+}
+
+/* ===========================================
+   PASSWORD TOGGLE ICON
+=========================================== */
+.eyeButton {
+  position: absolute;
+  right: 14px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  font-size: 18px;
+  /* color: #475569; */
+
+  /* background: #f1f5f9; */
+  /* border-radius: 50%; */
+  width: 23px;
+  height: 34px;
+
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+
+  transition: all 0.2s ease;
+}
+
+.eyeButton:hover {
+  background: #e2e8f0;
+}
+
+
+
+
+/* ===========================================
+   FORGET PASSWORD TEXT
+=========================================== */
+.forgotText {
+  font-size: 0.85rem;
+  color: #3d73e0;
+  cursor: pointer;
+  width: 100%;
+  text-align: right;
+  margin-top: -8px;
+  margin-bottom: -2px;
+}
+
+.forgotText:hover {
+  color: #2b54b8;
+}
+
+/* ===========================================
+   LOGIN BUTTON
+=========================================== */
+.SellerLOgInInnerConatainer button {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #0e1c26, #294861);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.3s ease;
+}
+
+.SellerLOgInInnerConatainer button:hover {
+  background: linear-gradient(90deg, #122738, #375c7d);
+  transform: scale(1.03);
+}
+
+/* ERROR TEXT */
+.errorText {
+  width: 100%;
+  color: red;
+  font-size: 0.9rem;
+  text-align: left;
+  margin-top: -5px;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+=========================================== */
+@media (max-width: 1024px) {
+  .SellerLOgInInnerConatainer {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .SellerLOgInInnerConatainer {
+    width: 65%;
+  }
+}
+
+@media (max-width: 480px) {
+  .SellerLOgInInnerConatainer {
+    width: 88%;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .SellerLOgInInnerConatainer {
+    width: 26%;
+  }
+}
+
+@media (max-width: 1399px) {
+  .SellerLOgInInnerConatainer {
+    width: 32%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .SellerLOgInInnerConatainer {
+    width: 48%;
+  }
+
+  .SellerLOgInInnerConatainer h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .SellerLOgInInnerConatainer {
+    width: 60%;
+  }
+
+  .SellerLOgInInnerConatainer h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .SellerLOgInInnerConatainer {
+    width: 60%;
+  }
+
+  .SellerLOgInInnerConatainer h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sellerLogInContainer {
+    padding: 0 1rem;
+  }
+
+  .SellerLOgInInnerConatainer {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .inputGroup input {
+    font-size: 0.95rem;
+    padding: 0.8rem 3.2rem 0.8rem 1rem;
+  }
+
+  .SellerLOgInInnerConatainer button,
+  .registerBtn {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .SellerLOgInInnerConatainer {
+    padding: 1.3rem;
+    border-radius: 10px;
+  }
+
+  .SellerLOgInInnerConatainer h1 {
+    font-size: 1.4rem;
+  }
+
+  .forgotPassword,
+  .forgotText {
+    font-size: 0.8rem;
+  }
+
+  .eyeButton {
+    right: 10px;
+    font-size: 16px;
+  }
+}

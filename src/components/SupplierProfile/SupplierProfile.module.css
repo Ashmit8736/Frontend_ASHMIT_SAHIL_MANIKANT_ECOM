@@ -1,0 +1,231 @@
+.profileContainer {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: "Inter", sans-serif;
+  color: #111;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.profilePic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  font-size: 70px;
+  color: #ccc;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 3px;
+}
+
+.verified {
+  display: inline-block;
+  background-color: #e6f9ed;
+  color: #0f9d58;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-top: 6px;
+}
+
+.detailsCard {
+  background-color: #fafafa;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #eee;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+}
+
+.infoGrid p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.icon {
+  color: #555;
+}
+
+a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.editBtn,
+.logoutBtn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.editBtn {
+  background-color: #111;
+  color: white;
+}
+
+.editBtn:hover {
+  background-color: #333;
+}
+
+.logoutBtn {
+  background-color: #eee;
+  color: #333;
+}
+
+.logoutBtn:hover {
+  background-color: #ddd;
+}
+
+@media (min-width: 1200px) {
+  .profileContainer {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .profileContainer {
+    width: 85%;
+  }
+}
+
+@media (max-width: 991px) {
+  .profileContainer {
+    width: 92%;
+    padding: 24px;
+  }
+
+  .header {
+    gap: 16px;
+  }
+
+  .name {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profileContainer {
+    width: 95%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .profilePic {
+    width: 70px;
+    height: 70px;
+  }
+
+  .avatar {
+    font-size: 60px;
+  }
+
+  .name {
+    font-size: 1.25rem;
+  }
+
+  .detailsCard {
+    padding: 16px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .btnGroup {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .editBtn,
+  .logoutBtn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileContainer {
+    padding: 16px;
+  }
+
+  .name {
+    font-size: 1.15rem;
+  }
+
+  .role {
+    font-size: 0.85rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .infoGrid p {
+    font-size: 0.9rem;
+  }
+
+  .verified {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+}

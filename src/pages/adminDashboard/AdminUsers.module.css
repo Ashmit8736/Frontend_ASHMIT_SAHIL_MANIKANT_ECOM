@@ -1,0 +1,430 @@
+/* ===== Base Container ===== */
+.container {
+    padding: 2rem;
+    background: #f9fafb;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ===== Header ===== */
+.header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.header p {
+    color: #6b7280;
+    margin-top: 0.3rem;
+}
+
+/* ===== Stats Cards ===== */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-3px);
+}
+
+.statCard p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 0.3rem;
+}
+
+.statCard h3 {
+    font-size: 1.5rem;
+    color: #111827;
+    font-weight: 600;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.blue .icon {
+    color: #2563eb;
+}
+
+.green .icon {
+    color: #22c55e;
+}
+
+.orange .icon {
+    color: #f59e0b;
+}
+
+.red .icon {
+    color: #ef4444;
+}
+
+/* ===== Filter Tabs ===== */
+.filterTabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    background: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    width: fit-content;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.filterTabs::-webkit-scrollbar {
+    display: none;
+}
+
+.filterTab {
+    background: transparent;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: #374151;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.filterTab:hover {
+    background: #e5e7eb;
+}
+
+.activeTab {
+    background: #fff;
+    color: #111827;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Search ===== */
+.searchBox {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+
+.searchBox input {
+    width: 100%;
+    padding: 0.6rem 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+/* ===== Table ===== */
+.tableWrapper {
+    background: white;
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.table th {
+    text-align: left;
+    background: #f3f4f6;
+    padding: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.95rem;
+}
+
+.table td {
+    padding: 1rem 0.9rem;
+    color: #111827;
+    border-top: none;
+    font-size: 0.93rem;
+}
+
+.statusBadge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.inactive {
+    background: #fef9c3;
+    color: #92400e;
+}
+
+.suspended {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.viewBtn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+
+.viewBtn:hover {
+    background: #1d4ed8;
+}
+
+.noData {
+    text-align: center;
+    padding: 1rem;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* ===== Modal ===== */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modalContent {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.8rem 2rem;
+    width: 370px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    animation: popIn 0.25s ease;
+}
+
+.modalContent h3 {
+    font-size: 1.3rem;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.modalContent p {
+    color: #374151;
+    margin: 0.4rem 0;
+    font-size: 0.95rem;
+}
+
+.closeBtn {
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-top: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+}
+
+.closeBtn:hover {
+    background: #dc2626;
+}
+
+/* ===== Animation ===== */
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.BtnPrev, .BtnNext {
+    background: #635e5e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.BtnPrev:hover:not(:disabled), .BtnNext:hover:not(:disabled) {
+    background: #111;
+    color: #fff;
+}
+
+.pageInfo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: #f1f1f1;
+    min-width: 120px;
+    text-align: center;
+    user-select: none;
+}
+
+.activePage {
+    background: #2563eb !important;
+    color: white !important;
+    border-color: #2563eb !important;
+}
+
+/* ===== Responsive Styles ===== */
+
+/* 🟢 Medium Screens (Tablets) */
+@media (max-width: 992px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .header h2 {
+        font-size: 1.6rem;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .statCard {
+        padding: 1.2rem;
+    }
+
+    .table {
+        min-width: 600px;
+    }
+
+    .viewBtn {
+        padding: 0.35rem 0.8rem;
+    }
+}
+
+/* 🟡 Small Screens (Mobile) */
+@media (max-width: 768px) {
+    .header h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .header p {
+        text-align: center;
+    }
+
+    .filterTabs {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .searchBox {
+        max-width: 100%;
+    }
+
+    .statCard {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    .tableWrapper {
+        padding: 0.8rem;
+    }
+
+    .table th,
+    .table td {
+        font-size: 0.85rem;
+        padding: 0.7rem;
+    }
+
+    .modalContent {
+        width: 90%;
+        padding: 1.2rem;
+    }
+}
+
+/* 🔴 Extra Small (Very Small Phones) */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .header h2 {
+        font-size: 1.3rem;
+    }
+
+    .statCard h3 {
+        font-size: 1.2rem;
+    }
+
+    .filterTabs {
+        gap: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    .filterTab {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .table {
+        min-width: 550px;
+    }
+
+    .viewBtn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .modalContent h3 {
+        font-size: 1.1rem;
+    }
+}

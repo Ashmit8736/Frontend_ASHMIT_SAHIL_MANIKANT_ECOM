@@ -1,0 +1,339 @@
+/* =====================================================
+   DESIGN TOKENS (SCALABLE + FUTURE DARK MODE READY)
+===================================================== */
+:root {
+    --primary: #2563eb;
+    --primary-soft: #e0e7ff;
+
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --danger: #dc2626;
+    --info: #0ea5e9;
+
+    --bg-page: #f9fafb;
+    --bg-card: #ffffff;
+
+    --text-main: #111827;
+    --text-muted: #6b7280;
+
+    --border: #e5e7eb;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+}
+
+/* =====================================================
+   PAGE WRAPPER
+===================================================== */
+.wrapper {
+    min-height: 100vh;
+    padding: 2rem;
+    background: var(--bg-page);
+    font-family: "Inter", "Poppins", system-ui, sans-serif;
+    color: var(--text-main);
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+.header {
+    margin-bottom: 1.75rem;
+}
+
+.header h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* =====================================================
+   STATS CARDS
+===================================================== */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.statCard h4 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.statCard p {
+    margin-top: 0.25rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.icon {
+    background: var(--primary-soft);
+    color: var(--primary);
+    padding: 12px;
+    border-radius: var(--radius-sm);
+}
+
+/* =====================================================
+   CHART CARD
+===================================================== */
+.chartCard {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.chartCard h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+.tableCard {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 620px;
+}
+
+thead {
+    background: #f8fafc;
+}
+
+th {
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* =====================================================
+   STATUS BADGES
+===================================================== */
+.badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.paid {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.failed {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.default {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* =====================================================
+   DOWNLOAD BUTTON
+===================================================== */
+.downloadBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.downloadBtn:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+}
+
+/* =====================================================
+   LOADER
+===================================================== */
+.loader {
+    padding: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* =====================================================
+   WITHDRAW
+===================================================== */
+.withdrawBar {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1.5rem 0;
+}
+
+.withdrawBtn {
+    background: var(--primary);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.withdrawBtn:hover {
+    background: #1e40af;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modalBox {
+    background: var(--bg-card);
+    padding: 1.5rem;
+    width: 320px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.modalBox h3 {
+    margin-bottom: 1rem;
+}
+
+.modalBox input,
+.modalBox select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 1.25rem;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    table {
+        min-width: 520px;
+    }
+}
+
+@media (max-width: 520px) {
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h2 {
+        font-size: 1.4rem;
+    }
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.default {
+    background: #e2e3e5;
+    color: #383d41;
+}

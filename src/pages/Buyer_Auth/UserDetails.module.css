@@ -1,0 +1,127 @@
+.cont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/Loginbg1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+  transform: scale(1.05);
+  /* scale to hide blur edges */
+  z-index: 0;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 28rem;
+  padding: 2rem 3rem;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 2rem;
+  border-radius: 10px;
+}
+
+.form img {
+  padding: 3rem 0rem 0rem 1rem;
+  display: block;
+  /* default inline nature hatao */
+  margin: 0 auto;
+  /* horizontally center */
+  width: 12rem;
+}
+
+.heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.phoneInput {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.6rem;
+}
+
+.phoneInput input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 1rem;
+  display: inline;
+}
+
+.prefix {
+  font-weight: bold;
+  color: #333;
+  margin-right: 0.3rem;
+}
+
+.btn {
+  padding: 0.8rem;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: inline;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.otpSec {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.bgcol {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 10px;
+  border-radius: 10px;
+  /* background-color: #fff; */
+  padding-bottom: 1rem;
+}
+
+.optForm {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.loginOtp {
+  width: 8rem;
+  outline: none;
+  padding: .6rem 1.1rem;
+  border-radius: .3rem;
+  border: 1px solid #ccc;
+  margin-right: 2rem;
+}
+
+.loginOtp::placeholder {
+  color: rgb(149, 148, 148);
+}
+
+.otp {
+  width: 7rem;
+}

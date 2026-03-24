@@ -1,0 +1,30 @@
+.starContainer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.star {
+    cursor: pointer;
+    color: #d1d5db;
+    /* gray */
+    transition: transform 0.15s ease, color 0.15s ease;
+    user-select: none;
+}
+
+.star:hover {
+    transform: scale(1.15);
+}
+
+.filled {
+    color: #f59e0b;
+    /* amber */
+}
+
+.readOnly {
+    cursor: default;
+}
+
+.readOnly:hover {
+    transform: none;
+}

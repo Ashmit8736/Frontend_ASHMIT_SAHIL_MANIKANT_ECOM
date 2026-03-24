@@ -1,0 +1,212 @@
+.WareHouseDetailsContainer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+/* ---------- Icons ---------- */
+.WareHouseDetailsContainer .icons {
+  scale: 1.2;
+  color: rgba(153, 153, 247, 0.622);
+}
+
+/* ---------- Heading ---------- */
+.WareHouseDetailsContainer .heading {
+  padding-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.WareHouseDetailsContainer .heading h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.WareHouseDetailsContainer .heading p {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  font-weight: 200;
+}
+
+/* ---------- Username Section ---------- */
+.WareHouseDetailsContainer .UsernameSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.WareHouseDetailsContainer .UsernameSection p {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  font-weight: 200;
+  margin-bottom: 0.7rem;
+}
+
+/* ---------- Username Form ---------- */
+.WareHouseDetailsContainer .UsernameForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.UsernameSection .UsernameForm .UernameInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.UsernameSection .UsernameForm .UernameInput label {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.UsernameForm .UsernamePassword {
+  display: flex;
+  gap: 5rem;
+}
+
+.UsernameForm .UsernamePassword .Password {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.UsernameForm input {
+  background-color: rgba(222, 221, 221, 0.308);
+  border: 1px solid transparent;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.UsernameForm input:focus {
+  outline: none;
+  border: 1px solid #a9a9a9;
+  box-shadow: 0 0 5px rgba(53, 53, 53, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.UsernameForm span {
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+/* ========================================================= */
+/* 📱 RESPONSIVE DESIGN */
+/* ========================================================= */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .WareHouseDetailsContainer {
+    padding: 1rem 2rem;
+  }
+
+  .WareHouseDetailsContainer .heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .UsernameForm .UsernamePassword {
+    gap: 3rem;
+  }
+
+  .UsernameForm .UsernamePassword .Password {
+    width: 60%;
+  }
+}
+
+/* Mobile Landscape (≤768px) */
+@media (max-width: 768px) {
+  .WareHouseDetailsContainer {
+    padding: 1rem;
+  }
+
+  .WareHouseDetailsContainer .heading h2 {
+    font-size: 1.4rem;
+  }
+
+  .WareHouseDetailsContainer .heading p {
+    font-size: 0.85rem;
+  }
+
+  .UsernameForm .UsernamePassword {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .UsernameForm .UsernamePassword .Password {
+    width: 100%;
+  }
+
+  .UsernameForm input {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .UsernameSection p {
+    font-size: 1rem;
+  }
+}
+
+/* Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .WareHouseDetailsContainer {
+    padding: 0.8rem;
+  }
+
+  .WareHouseDetailsContainer .heading h2 {
+    font-size: 1.2rem;
+  }
+
+  .WareHouseDetailsContainer .heading p {
+    font-size: 0.8rem;
+  }
+
+  .UsernameForm input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .UsernameForm span {
+    font-size: 0.8rem;
+  }
+
+  .UsernameForm .UsernamePassword {
+    gap: 1rem;
+  }
+
+  .UsernameForm .UsernamePassword .Password {
+    width: 100%;
+  }
+}
+
+/* Very Small Devices (≤360px) */
+@media (max-width: 360px) {
+  .WareHouseDetailsContainer {
+    padding: 0.6rem;
+  }
+
+  .WareHouseDetailsContainer .heading h2 {
+    font-size: 1.1rem;
+  }
+
+  .WareHouseDetailsContainer .heading p {
+    font-size: 0.75rem;
+  }
+
+  .UsernameForm input {
+    font-size: 0.85rem;
+    padding: 0.45rem;
+  }
+
+  .UsernameSection p {
+    font-size: 0.95rem;
+  }
+}

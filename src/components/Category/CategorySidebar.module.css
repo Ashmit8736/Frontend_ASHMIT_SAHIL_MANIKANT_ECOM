@@ -1,0 +1,88 @@
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 260px;
+    background: #ffffff;
+    border-right: 1px solid #eee;
+    padding: 20px;
+    height: 100%;
+}
+
+/* Heading */
+.sidebar h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: #222;
+}
+
+/* Item wrapper */
+.item {
+    margin-bottom: 6px;
+}
+
+/* Category name */
+.name {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    color: #333;
+}
+
+.name:hover {
+    background: #f5f7fa;
+}
+
+/* Active category */
+.active {
+    background: #2874f0;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Child categories */
+.children {
+    padding-left: 14px;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+        padding: 16px;
+    }
+
+    .name {
+        font-size: 13.5px;
+        padding: 7px 9px;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 14px;
+    }
+
+    .sidebar h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .children {
+        padding-left: 10px;
+    }
+}

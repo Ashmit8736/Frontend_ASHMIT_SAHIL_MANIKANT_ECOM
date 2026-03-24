@@ -1,0 +1,510 @@
+/* ================= BASE ================= */
+.headerContainer {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 6000;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4.5rem;
+    width: 100%;
+}
+
+.logo {
+    width: 13rem;
+    cursor: pointer;
+}
+
+/* ================= SEARCH ================= */
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchBar {
+    width: 25rem;
+    padding: 0.9rem 1rem;
+    background: #f3f3f5;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #111;
+    outline: none;
+}
+
+.search {
+    width: 2.9rem;
+    height: 2.9rem;
+    background: #111;
+    border-radius: 0 8px 8px 0;
+    padding: 0.6rem;
+    cursor: pointer;
+}
+
+/* ================= SUGGESTIONS ================= */
+.suggestionBox {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    z-index: 7000;
+    overflow: hidden;
+}
+
+.suggestionItem {
+    padding: 12px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.suggestionItem:hover {
+    background: #f9fafb;
+}
+
+.suggestionItem strong {
+    font-size: 14px;
+    color: #111827;
+}
+
+.suggestionItem small {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* loader */
+.loadingSuggest {
+    padding: 18px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+    letter-spacing: 0.3px;
+}
+
+/* ================= CART ================= */
+.cartWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 40px;
+}
+
+.cartWrapper:hover {
+    background: #f5f6f8;
+}
+
+.cartIcon {
+    position: relative;
+    width: 34px;
+    /* thoda compact */
+    height: 34px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartIcon svg {
+    color: #fff;
+    font-size: 17px;
+}
+
+
+/* BADGE */
+
+
+/* Mobile text hide already handled */
+
+/* empty */
+.noSuggestion {
+    padding: 18px;
+    text-align: center;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.searchBtn:hover {
+    background: #000;
+}
+
+.searchBtn:active {
+    transform: scale(0.95);
+}
+
+
+/* ================= RIGHT ================= */
+.UserContainer {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.iconNames {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.cartBadge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ff4d4f;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.iconNamesLoginWrapper {
+    position: relative;
+}
+
+.UserHover {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 40px;
+    /* 🔥 SAME AS CART */
+}
+
+.avatarFallback {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #111;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    min-width: 190px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    z-index: 5000;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdownItem {
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    text-decoration: none;
+    cursor: pointer;
+
+    white-space: nowrap;
+    /* 🔥 SINGLE LINE FIX */
+    display: flex;
+    align-items: center;
+}
+
+
+
+.dropdown a,
+.dropdown div {
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #111;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.UserHover:hover {
+    background: #f5f6f8;
+}
+
+
+.dropdown a:hover,
+.dropdown div:hover {
+    background: #f1f2f4;
+}
+
+/* ================= SEARCH BUTTON ================= */
+.searchBtn {
+    width: 2.9rem;
+    height: 2.9rem;
+    background: #111;
+    border-radius: 0 8px 8px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.searchBtn img {
+    width: 18px;
+    height: 18px;
+}
+
+/* ================= SEARCH LOADER ================= */
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================= FINAL SUGGESTION POLISH ================= */
+.suggestionBox {
+    animation: suggestDrop 0.18s ease-out;
+}
+
+@keyframes suggestDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* smoother hover */
+.suggestionItem {
+    transition: background 0.15s ease, padding-left 0.15s ease;
+}
+
+.suggestionItem:hover {
+    background: #f5f8ff;
+    padding-left: 18px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+    .mainContainer {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+
+    .logo {
+        width: 10rem;
+    }
+
+    .searchBar {
+        width: 18rem;
+    }
+
+    .UserContainer {
+        gap: 1rem;
+    }
+}
+
+/* TEXT LOGO (Navbar) */
+.brandLogo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.brandMain {
+    color: #261919;
+    /* dark text */
+}
+
+.brandAs {
+    color: orange;
+    /* Moji + ja style */
+    margin-left: 2px;
+}
+
+.brandDot {
+    color: #2f6fb2;
+    /* same blue as screenshot */
+    margin-left: 6px;
+    font-weight: 700;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 767px) {
+    .mainContainer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 0.8rem 0.9rem 0.9rem;
+    }
+
+    .logo {
+        width: 9rem;
+        margin: auto;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
+
+    .searchBar {
+        width: 100%;
+        font-size: 0.85rem;
+    }
+
+    .search {
+        height: 2.6rem;
+        width: 2.6rem;
+    }
+
+    .UserContainer {
+        position: absolute;
+        right: 0.8rem;
+        top: 0.6rem;
+        gap: 1rem;
+    }
+
+    .UserContainer p {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .searchBar {
+        width: 16rem;
+    }
+
+    .UserContainer {
+        gap: 0.8rem;
+    }
+
+    .cartWrapper,
+    .UserHover {
+        padding: 0.45rem 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContainer {
+        padding: 0.9rem 1rem;
+        gap: 0.8rem;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
+
+    .searchBar {
+        width: 100%;
+        padding: 0.8rem 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .searchBtn {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+
+    .cartIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .cartIcon svg {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainContainer {
+        padding: 0.7rem 0.8rem;
+    }
+
+    .logo {
+        width: 8rem;
+    }
+
+    .searchBar {
+        font-size: 0.8rem;
+        padding: 0.7rem 0.8rem;
+    }
+
+    .searchBtn {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .UserContainer {
+        top: 0.7rem;
+        right: 0.7rem;
+        gap: 0.7rem;
+    }
+
+    .cartBadge {
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+
+    .dropdown {
+        right: -10px;
+        min-width: 170px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo {
+        width: 7rem;
+    }
+
+    .searchBar {
+        font-size: 0.75rem;
+    }
+
+    .UserContainer {
+        gap: 0.5rem;
+    }
+}

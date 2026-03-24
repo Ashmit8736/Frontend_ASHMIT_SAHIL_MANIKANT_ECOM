@@ -1,0 +1,220 @@
+:root {
+  --primary: #007bff;
+  --text-dark: #111827;
+  --text-light: #4b5563;
+  --bg-light: #f8f9fa;
+  --white: #ffffff;
+  --border: #e5e7eb;
+}
+
+/* ================= PAGE ================= */
+.contentArea {
+  padding: 1.5rem 2rem;
+  min-height: 100vh;
+  background: var(--bg-light);
+}
+
+/* ================= CARD ================= */
+.card {
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header h2 {
+  font-size: 1.6rem;
+  color: var(--text-dark);
+}
+
+.header p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+/* ================= BUTTON ================= */
+.composeBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 550;
+}
+
+.composeBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ================= SEARCH ================= */
+.searchBox {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.searchBox input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* ================= MESSAGE LIST ================= */
+.messagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.messageCard {
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: var(--white);
+  transition: 0.2s;
+}
+
+.messageCard:hover {
+  background: #f9fafb;
+}
+
+.unread {
+  border-left: 4px solid var(--primary);
+  background: rgba(0, 123, 255, 0.05);
+}
+
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.readIcon {
+  color: var(--primary);
+  font-size: 0.7rem;
+}
+
+.messageSubject {
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.messageBody {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* ================= MODAL ================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 41, 55, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--white);
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.closeIcon {
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+/* ================= THREAD ================= */
+.msgBubble {
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  background: #f3f4f6;
+  font-size: 0.95rem;
+}
+
+/* ================= REPLY ================= */
+.replyBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.8rem;
+}
+
+.sendBtn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-weight: 550;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .contentArea {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .composeBtn {
+    width: 100%;
+  }
+}

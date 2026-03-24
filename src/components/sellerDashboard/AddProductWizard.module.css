@@ -1,0 +1,337 @@
+/* ===============================
+   OVERLAY BACKDROP
+================================*/
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    overflow: hidden;
+    /* 🔥 important */
+}
+
+/* ===============================
+   SELECT + ADD BUTTON ROW
+================================*/
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.row select {
+    flex: 1;
+}
+
+/* ===============================
+   ADD CATEGORY BUTTON
+================================*/
+.addCatBtn {
+    margin-left: 10px;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.addCatBtn:hover {
+    opacity: 0.85;
+}
+
+/* ===============================
+   CATEGORY LABEL (TEXT + +ADD)
+================================*/
+.catLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+/* ===============================
+   MODAL
+================================*/
+.modal {
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+    animation: pop 0.2s ease-out;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===============================
+   HEADER
+================================*/
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.close {
+    font-size: 25px;
+    cursor: pointer;
+    color: #374151;
+}
+
+.close:hover {
+    color: #111827;
+}
+
+/* ===============================
+   FORM BODY
+================================*/
+.body {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 80px;
+}
+
+.body label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.body input,
+.body textarea,
+.body select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    background: #fff;
+}
+
+.body textarea {
+    min-height: 95px;
+    resize: vertical;
+}
+
+/* ===============================
+   ERROR MESSAGE
+================================*/
+.error {
+    color: #dc2626;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===============================
+   IMAGE GRID (MATCHES JSX)
+================================*/
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+}
+
+.imageGrid>div {
+    border: 1px dashed #9ca3af;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f9fafb;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.imageGrid img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.imageGrid button {
+    padding: 8px 12px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.imageGrid button:hover {
+    background: #1e40af;
+}
+
+/* maine cut button laggyi hun  */
+
+/* cat button laga gyi hun */
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.imageSlot {
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.imageSlot:hover {
+    border-color: #6366f1;
+    background: #f5f7ff;
+}
+
+/* 🔹 Image Preview Wrapper */
+.previewWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 🔹 Image */
+.imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* 🔴 CUT BUTTON */
+.cutBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(239, 68, 68, 0.9);
+    color: #fff;
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.cutBtn:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+/* 🔹 Upload Button */
+.imageSlot button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.imageSlot button:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+}
+
+/* ===============================
+   FOOTER
+================================*/
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 12px 0;
+    border-top: 1px solid #e5e7eb;
+    z-index: 11;
+}
+
+.footer button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.footer button[type="submit"] {
+    background: #2563eb;
+    color: white;
+    border: none;
+}
+
+.footer button[type="submit"]:hover {
+    background: #1e40af;
+}
+
+/* ===============================
+   RESPONSIVE
+================================*/
+@media (max-width: 600px) {
+    .modal {
+        padding: 16px;
+    }
+
+    .imageGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .imageGrid {
+        grid-template-columns: 1fr;
+    }
+}

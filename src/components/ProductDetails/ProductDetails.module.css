@@ -1,0 +1,628 @@
+/* ================= PAGE ================= */
+.productContainer {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  background-color: #f1f3f6;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= ZOOM ================= */
+.zoomOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
+/* ================= IMAGE SECTION ================= */
+.imageSection {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1.2;
+  align-items: flex-start;
+}
+
+/* Thumbnails */
+.thumbnailList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 3px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.thumbnail:hover {
+  border-color: #2874f0;
+}
+
+.activeThumb {
+  border-color: #2874f0;
+  background-color: #e3f2fd;
+}
+
+/* Main Image */
+.mainImage {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 420px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible; /* ✅ FIX: hidden → visible (zoom preview clip ho raha tha) */
+}
+
+/* Image */
+.mainProductImage,
+.mainImage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Skeleton */
+.imageSkeleton {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg,
+      #f0f0f0 25%,
+      #e6e6e6 37%,
+      #f0f0f0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+
+/* ================= DETAILS ================= */
+.detailsSection {
+  flex: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.productTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.productBrand {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.ratingBox {
+  color: #388e3c;
+  font-weight: 600;
+}
+
+.priceBox {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #212121;
+}
+
+.taxText {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ================= BUTTONS ================= */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.addToCart,
+.buyNow {
+  flex: 1;
+  padding: 0.9rem 2.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.addToCart {
+  background: #ff9f00;
+  color: #fff;
+}
+
+.addToCart:hover {
+  background: #e69100;
+}
+
+.buyNow {
+  background: #fb641b;
+  color: #fff;
+}
+
+.buyNow:hover {
+  background: #e4580b;
+}
+
+/* ================= SELLER CARD ================= */
+.sellerCard {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 24px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.sellerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.sellerHeader h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.verifiedBadge {
+  background: #e6f4ea;
+  color: #137333;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.sellerRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.label {
+  font-weight: 600;
+  color: #555;
+}
+
+.value {
+  font-weight: 500;
+  color: #111;
+}
+
+/* ================= DESCRIPTION ================= */
+.productDescription {
+  margin-top: 24px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #eaeaea;
+}
+
+.productDescription h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.productDescription p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes shimmer {
+  from {
+    background-position: -400px 0;
+  }
+
+  to {
+    background-position: 400px 0;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .productContainer {
+    padding: 1.5rem;
+  }
+
+  .mainImage {
+    width: 360px;
+    height: 360px;
+  }
+
+  .detailsSection {
+    padding: 1.5rem;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .productContainer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .imageSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .thumbnailList {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .mainImage {
+    width: 320px;
+    height: 320px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .mainImage {
+    width: 260px;
+    height: 260px;
+  }
+
+  .thumbnail {
+    width: 48px;
+    height: 48px;
+  }
+
+  .productTitle {
+    font-size: 1.2rem;
+  }
+
+  .priceBox {
+    font-size: 1.4rem;
+  }
+}
+
+/* Q & A section CSS */
+
+/* ================= Q & A SECTION ================= */
+
+.qaSection {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.qaTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.askQuestionBox {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.askQuestionBox input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.askQuestionBox button {
+  background: #2874f0;
+  color: #fff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 6px;
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+.qaItem {
+  margin-bottom: 20px;
+}
+
+.questionText {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.answerBox {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.answerHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.answerBy {
+  font-size: 13px;
+  color: #555;
+}
+
+.sellerBadge {
+  background: #2874f0;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.answerText {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.helpfulText {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ================= DESKTOP VIEW ================= */
+@media (min-width: 769px) {
+  .productContainer {
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    max-width: 1400px;
+    margin: auto;
+    padding: 16px;
+  }
+
+  .imageSection {
+    width: 40%;
+    height: 100%;
+    position: sticky;
+    top: 0;
+    overflow: visible; /* ✅ FIX: hidden → visible warna zoom preview clip hoga */
+  }
+
+  .mainImage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible; /* ✅ FIX: zoom preview bahar dikhega */
+  }
+
+  .mainProductImage {
+    max-height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .detailsSection {
+    width: 60%;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 12px;
+  }
+}
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+  .productContainer {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+
+  .imageSection {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: visible;
+  }
+
+  .detailsSection {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .mainImage {
+    height: auto;
+    overflow: visible;
+  }
+
+  .mainProductImage {
+    max-height: none;
+    width: 100%;
+  }
+
+  /* Mobile pe zoom hide karo */
+  .zoomOverlay {
+    display: none;
+  }
+}
+
+/* ================= RELATED PRODUCTS ================= */
+
+.relatedSection {
+  width: 100%;
+  margin-top: 60px;
+  padding: 40px 60px;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+}
+
+.relatedTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.relatedGrid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.relatedGrid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.relatedGrid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.relatedGrid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.relatedCard {
+  min-width: 220px;
+  max-width: 220px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.relatedCard:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.relatedImage {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.relatedCard h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  height: 38px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.relatedCard p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin: 4px 0;
+}
+
+/* ================= RATING ================= */
+.moqText {
+  font-size: 15px;
+  color: #444;
+}
+
+.productRatingBox {
+  margin-top: 24px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.ratingTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ratingInfo {
+  font-size: 13px;
+  color: #777;
+  margin-top: 6px;
+}
+
+.reviewInput {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+
+.submitRatingBtn {
+  margin-top: 10px;
+  background: #2874f0;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submitRatingBtn:hover {
+  background: #1a5dc8;
+}
+
+.goToCart {
+  flex: 1;
+  padding: 0.9rem 2.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #2874f0;
+  background: #fff;
+  color: #2874f0;
+  transition: all 0.25s ease;
+}
+
+.goToCart:hover {
+  background: #2874f0;
+  color: #fff;
+}
+
+.sellerDesc {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #444;
+}

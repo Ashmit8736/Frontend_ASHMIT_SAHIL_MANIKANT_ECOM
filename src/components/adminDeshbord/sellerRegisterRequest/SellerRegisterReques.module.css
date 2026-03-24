@@ -1,0 +1,173 @@
+.SellerRegisterRequestContainer {
+  width: 100%;
+  background-color: #ffffff; /* crisp white card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  border: 1px solid #e5e7eb; /* light gray border */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+
+
+/* Header Section */
+.SellerRegisterRequestContainer .RegisterRequesHeader {
+    padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.SellerRegisterRequestContainer .RegisterRequesHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1f2937; /* dark gray text */
+  letter-spacing: 0.3px;
+}
+
+/* Dropdown (select) */
+.SellerRegisterRequestContainer .RegisterRequesHeader .Status {
+  padding: 0.6rem 1.6rem;
+  border-radius: 8px;
+  background-color: #f9fafb; /* soft gray background */
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  color: #374151; /* dark gray text */
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover & Focus Effects (neutral, no blue) */
+.SellerRegisterRequestContainer .RegisterRequesHeader .Status:hover,
+.SellerRegisterRequestContainer .RegisterRequesHeader .Status:focus {
+  background-color: #f3f4f6; /* very light gray */
+  border-color: #d1d5db; /* keep border subtle */
+}
+
+.SellerRegisterRequestContainer .RegisterRequesHeader .Status{
+    border: none;
+}
+
+/* Dropdown options */
+.SellerRegisterRequestContainer .RegisterRequesHeader .Status option {
+  background-color: #ffffff;
+  color: #1f2937; /* dark gray text */
+  padding: 0.6rem;
+  border: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Professional hover effect for dropdown options */
+.SellerRegisterRequestContainer .RegisterRequesHeader .Status option:hover,
+.SellerRegisterRequestContainer .RegisterRequesHeader .Status option:focus {
+  background-color: #f3f4f6; /* light gray background on hover */
+  color: #111827; /* darker gray text on hover */
+}
+
+
+/* SELLER LIST SECTION */
+.SellerRegisterRequestContainer .sellerList{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.SellerRegisterRequestContainer .sellerList .table{
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: rgba(219, 217, 217, 0.199);
+  padding: 1rem;
+  text-align: start;
+  border-collapse: collapse;
+}
+
+.SellerRegisterRequestContainer .sellerList .table th{
+  text-align: left;
+  background-color: rgba(194, 192, 192, 0.199);
+  padding: 0.9rem;
+  cursor: pointer;
+}
+
+.table td{
+  padding: 0.9rem;
+  background-color: hsl(0, 100%, 100%);
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;  
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.table tr:hover {
+  background-color: #f9fafc;
+}
+.company_name{
+  font-size: 1rem;
+}
+
+.owner_name{
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.link {
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.pending {
+  background: #fff7e6;
+  color: #b45309;
+}
+
+.approved {
+  background: #e7f9ef;
+  color: #047857;
+}
+
+.rejected {
+  background: #fde2e2;
+  color: #b91c1c;
+}
+
+.viewButton {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid #2563eb; /* vibrant blue */
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.4rem;
+  color: #2563eb;
+  background-color: #f0f7ff; /* soft blue background */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewButton:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+}
+
+.viewButton:active {
+  background-color: #1d4ed8; /* darker blue when clicked */
+  transform: translateY(0);
+}

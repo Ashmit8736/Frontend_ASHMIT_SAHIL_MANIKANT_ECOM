@@ -1,0 +1,197 @@
+/* ================= OVERLAY ================= */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 1rem;
+}
+
+/* ================= MODAL ================= */
+.modal {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 22px;
+    padding: 1.8rem 1.6rem;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+    animation: scaleFade 0.25s ease;
+}
+
+/* ================= TITLE ================= */
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.4rem;
+}
+
+/* ================= LEVEL TAG ================= */
+.levelTag {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* ================= SECTION ================= */
+.section {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    background: #f9fafb;
+}
+
+.section h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.8rem;
+}
+
+/* ================= FORM ================= */
+.section label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.3rem;
+}
+
+.section input,
+.section textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 0.6rem 0.7rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section input:focus,
+.section textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.section textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.section input[disabled] {
+    background: #f1f5f9;
+    cursor: not-allowed;
+}
+
+/* ================= IMAGE PREVIEW ================= */
+.preview {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    background: #ffffff;
+    border: 1px dashed #cbd5f5;
+    border-radius: 12px;
+    padding: 0.7rem;
+    margin: 0.5rem 0 0.9rem;
+}
+
+/* ================= BUTTONS ================= */
+.primary {
+    width: 100%;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
+}
+
+.primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.secondary {
+    width: 100%;
+    background: #16a34a;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(22, 163, 74, 0.35);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.4rem;
+}
+
+.cancel {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    padding: 0.55rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.cancel:hover {
+    background: #d1d5db;
+}
+
+/* ================= SCROLLBAR ================= */
+.modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: #cbd5f5;
+    border-radius: 999px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes scaleFade {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

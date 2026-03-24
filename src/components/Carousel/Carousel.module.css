@@ -1,0 +1,424 @@
+.Carousel {
+    width: 100%;
+    height: 83.75vh;
+    overflow: hidden;
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+    cursor: default;
+
+}
+
+.CarouselImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    /* 🔥 YAHI FIX HAI */
+}
+
+.indicators {
+    position: absolute;
+    bottom: 1rem;
+    /* image ke niche thoda space */
+    left: 50%;
+    /* center horizontally */
+    transform: translateX(-50%);
+    /* proper center align */
+    display: flex;
+    gap: .5rem;
+}
+
+
+.dot {
+    position: relative;
+    height: .4rem;
+    width: 4rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: .4rem;
+    overflow: hidden;
+}
+
+.fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(28, 154, 251);
+    animation: fillAnim 4s linear forwards;
+    /* 4s = interval duration */
+}
+
+@keyframes fillAnim {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.active {
+    background-color: #000000;
+    /* base background for active dot */
+}
+
+
+.carouselData {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* exact middle */
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #000000;
+    /* text-align: center;  */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* black with 50% opacity */
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.fixedData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+    position: relative;
+    padding: 2rem;
+}
+
+.leftData {
+    color: rgb(9, 7, 7);
+    font-weight: 400;
+    /* background-color: rgb(0, 0, 0); */
+    margin-top: 2rem;
+
+}
+
+.leftData h2 {
+    line-height: 3.5rem;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.leftData span {
+    color: rgb(247, 218, 35);
+    font-weight: 100;
+}
+
+.leftData p {
+    padding-top: 2rem;
+    line-height: 1.5rem;
+    font-weight: 200;
+    font-size: 1.1rem;
+
+}
+
+.info {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sher p {
+    color: white;
+}
+
+.info span {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.info strong {
+    color: white;
+    font-weight: 200;
+    font-size: .9rem;
+
+}
+
+.infoCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* vertically center inside parent */
+    align-items: center;
+    /* horizontally center */
+    gap: 0.3rem;
+}
+
+.rightData {
+    background: transparent;
+    margin-top: 2rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    /* margin-left: rem; */
+
+}
+
+.icon1 {
+    color: rgb(3, 3, 3);
+    font-size: 2.5rem;
+    background-color: rgb(247, 218, 35);
+    border-radius: .5rem;
+    padding: .3rem;
+
+}
+
+.icon2 {
+    color: rgb(3, 3, 3);
+    font-size: 2.5rem;
+    background-color: rgb(86, 232, 69);
+    border-radius: .5rem;
+    padding: .5rem;
+    font-weight: 100;
+
+}
+
+.icon3 {
+    color: rgb(3, 3, 3);
+    font-size: 2.5rem;
+    background-color: rgb(28, 154, 251);
+    border-radius: .5rem;
+    padding: .5rem;
+
+}
+
+.rightInfo p {
+    color: white;
+}
+
+.rightInfo div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+
+}
+
+/* .rightInfo{
+    padding: 1.5rem 2rem;
+    border: 1px solid rgb(255, 252, 252);
+    border-radius: 1rem;
+    background-color: rgba(58, 45, 45, 0.741);
+    gap: 0.3rem;
+    
+} */
+.rightInfo {
+    padding: 1.5rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* soft border */
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    /* semi-transparent white */
+    backdrop-filter: blur(.8rem);
+    /* glass blur effect */
+    /* -webkit-backdrop-filter: blur(10px); Safari support */
+    gap: 0.3rem;
+    color: white;
+    /* text ko visible banane ke liye */
+    transition: transform 0.2s ease-in-out;
+}
+
+.rightInfo:hover {
+    transform: scale(1.02);
+}
+
+.rightInfo span {
+    font-weight: 200;
+}
+
+.rightInfo p {
+    padding-top: .5rem;
+    font-size: .9rem;
+}
+
+@media (max-width:1024px) {
+    .Carousel {
+        width: 100%;
+        height: 65vh;
+        overflow: hidden;
+        position: relative;
+        font-family: Helvetica, Arial, sans-serif;
+        cursor: default;
+
+    }
+
+    .fixedData {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8rem;
+        position: relative;
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width:767px) {
+    .Carousel {
+        margin-top: -1rem;
+        height: 45vh;
+    }
+
+    .carouselData {
+        /* width: 10rem;
+        height: 10rem; */
+    }
+
+    .leftData h2 {
+        font-size: 1.5rem;
+        color: aqua;
+    }
+
+    .leftData p {
+        font-size: .9rem;
+
+    }
+
+    .rightData {
+        display: none;
+    }
+
+    .info {
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .info span {
+        font-size: .9rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .Carousel {
+        height: 60vh;
+    }
+
+    .fixedData {
+        gap: 6rem;
+        padding: 1.5rem;
+    }
+
+    .leftData h2 {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+    }
+
+    .leftData p {
+        font-size: 1rem;
+    }
+
+    .dot {
+        width: 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .Carousel {
+        height: 55vh;
+    }
+
+    .fixedData {
+        gap: 4rem;
+    }
+
+    .leftData h2 {
+        font-size: 2rem;
+    }
+
+    .info span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .Carousel {
+        height: 42vh;
+    }
+
+    .carouselData {
+        padding: 0 1rem;
+    }
+
+    .fixedData {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .leftData {
+        margin-top: 0;
+    }
+
+    .leftData h2 {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+    }
+
+    .leftData p {
+        font-size: 0.85rem;
+        padding-top: 1rem;
+    }
+
+    .info {
+        margin-top: 0.8rem;
+        gap: 1.2rem;
+    }
+
+    .info span {
+        font-size: 0.85rem;
+    }
+
+    .dot {
+        width: 2.2rem;
+        height: 0.35rem;
+    }
+
+    .indicators {
+        bottom: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .Carousel {
+        height: 38vh;
+    }
+
+    .leftData h2 {
+        font-size: 1.2rem;
+    }
+
+    .leftData p {
+        font-size: 0.8rem;
+    }
+
+    .info span {
+        font-size: 0.75rem;
+    }
+
+    .dot {
+        width: 1.8rem;
+    }
+}

@@ -1,0 +1,267 @@
+/* ========= MAIN WRAPPER ========= */
+.sellerDashboardHome {
+    padding: 25px;
+    font-family: 'Inter', sans-serif;
+    background: #f7f8fc;
+}
+
+/* ========= STAT CARDS ========= */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.statCard {
+    padding: 20px;
+    border-radius: 16px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.18s ease;
+}
+
+.statCard:hover {
+    transform: translateY(-4px);
+}
+
+.statIcon {
+    font-size: 40px;
+    opacity: 0.9;
+}
+
+.statContent h3 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.statContent p {
+    margin: 4px 0 0 0;
+    opacity: 0.85;
+    font-size: 14px;
+}
+
+/* ========= RECENT ACTIVITY SECTION ========= */
+.recentActivity {
+    margin-top: 45px;
+}
+
+.recentActivity h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* 3-COLUMN LAYOUT */
+.activityColumns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 25px;
+}
+
+/* BOX */
+.activityBox {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.activityBox h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+/* ========= ACTIVITY ITEMS ========= */
+.activityItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fdfdfd;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+    transition: background 0.2s ease;
+}
+
+.activityItem:hover {
+    background: #f5f7ff;
+}
+
+.activityIcon {
+    font-size: 30px;
+    flex-shrink: 0;
+}
+
+.activityItem p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.activityItem small {
+    color: #777;
+}
+
+.graphSection {
+    margin-top: 40px;
+}
+
+.graphGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.graphBox {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.graphBox h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .sellerDashboardHome {
+        padding: 20px;
+    }
+
+    .statsGrid {
+        gap: 20px;
+    }
+
+    .graphGrid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .statContent h3 {
+        font-size: 22px;
+    }
+
+    .recentActivity h2 {
+        font-size: 22px;
+    }
+
+    .activityBox h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sellerDashboardHome {
+        padding: 16px;
+    }
+
+    /* STAT CARDS */
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .statCard {
+        padding: 16px;
+    }
+
+    .statIcon {
+        font-size: 34px;
+    }
+
+    .statContent h3 {
+        font-size: 20px;
+    }
+
+    /* RECENT ACTIVITY */
+    .recentActivity {
+        margin-top: 30px;
+    }
+
+    .activityColumns {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .activityItem {
+        padding: 12px;
+    }
+
+    .activityIcon {
+        font-size: 26px;
+    }
+
+    .activityItem p {
+        font-size: 14px;
+    }
+
+    /* GRAPHS */
+    .graphGrid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sellerDashboardHome {
+        padding: 16px;
+    }
+
+    /* STAT CARDS */
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .statCard {
+        padding: 16px;
+    }
+
+    .statIcon {
+        font-size: 34px;
+    }
+
+    .statContent h3 {
+        font-size: 20px;
+    }
+
+    /* RECENT ACTIVITY */
+    .recentActivity {
+        margin-top: 30px;
+    }
+
+    .activityColumns {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .activityItem {
+        padding: 12px;
+    }
+
+    .activityIcon {
+        font-size: 26px;
+    }
+
+    .activityItem p {
+        font-size: 14px;
+    }
+
+    /* GRAPHS */
+    .graphGrid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+}

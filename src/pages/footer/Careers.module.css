@@ -1,0 +1,137 @@
+.careerPage {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 5rem 7rem;
+    color: #ffffff;
+}
+
+.heroContent {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    color: #cbd5e1;
+    line-height: 1.8rem;
+}
+
+/* SECTION */
+.section {
+    padding: 4rem 7rem;
+}
+
+.section h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    margin-bottom: 1rem;
+}
+
+.section p {
+    max-width: 900px;
+    font-size: 1.05rem;
+    line-height: 1.8rem;
+    color: #475569;
+}
+
+.list {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+.list li {
+    margin-bottom: 0.6rem;
+    color: #475569;
+    font-size: 1.05rem;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 7rem 4rem;
+}
+
+.card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.8rem;
+    padding: 2rem;
+}
+
+.card h3 {
+    margin-bottom: 0.6rem;
+}
+
+/* JOBS */
+.jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.jobCard {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    background: #ffffff;
+}
+
+.jobCard h4 {
+    margin-bottom: 0.3rem;
+}
+
+.jobCard span {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.jobCard p {
+    margin-top: 0.6rem;
+    color: #475569;
+    line-height: 1.5rem;
+}
+
+/* CTA */
+.cta {
+    background: #f1f5f9;
+    padding: 4rem 7rem;
+    text-align: center;
+}
+
+.cta h2 {
+    margin-bottom: 0.6rem;
+}
+
+.cta a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .hero,
+    .section,
+    .cta {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem 3rem;
+    }
+}

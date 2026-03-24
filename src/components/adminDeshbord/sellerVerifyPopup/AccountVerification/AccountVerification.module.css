@@ -1,0 +1,80 @@
+.AccountVerificationContainer{
+    margin-top: 1.6rem;
+    background-color: #F0F8FF;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding:1rem;
+    border-radius: 0.9rem;
+}
+
+
+.AccountVerificationContainer .AccountVerificationHeading{
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.AccountVerificationContainer .AccountVerificationHeading .icon{
+    color: rgba(0, 0, 255, 0.495);
+      transform: scale(1.6);
+}
+
+.AccountVerificationContainer .AccountVerificationHeading h3{
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.AccountVerificationContainer .AccountContainer{
+    margin-top: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.AccountVerificationContainer .AccountContainer .right{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+.AccountVerificationContainer .AccountContainer .left{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.AccountVerificationContainer .AccountContainer .Content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.AccountVerificationContainer .AccountContainer .Content h4{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(82, 81, 81);
+
+}
+
+.AccountContainer .Content p{
+    font-size: 0.9rem;
+}
+
+.AccountVerificationContainer .AccountContainer .bottomContent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.AccountContainer .bottomContent p{
+    font-size: 0.9rem;
+}
+
+.AccountVerificationContainer .AccountContainer .bottomContent h4{
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    font-size: 1rem;
+    font-weight:400;
+    color: rgb(82, 81, 81);
+}

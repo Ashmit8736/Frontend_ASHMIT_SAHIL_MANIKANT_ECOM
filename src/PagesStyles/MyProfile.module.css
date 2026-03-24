@@ -1,0 +1,289 @@
+/* ================= PAGE ================= */
+.pageWrapper {
+  min-height: 100vh;
+  background: #f1f3f6;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.loading {
+  font-size: 20px;
+  color: #777;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= CARD ================= */
+.profileCard {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px 40px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* ================= AVATAR ================= */
+.avatarSection {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.avatarCircle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #2874f0;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ================= STATUS ================= */
+.status {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.approved {
+  background: #e6f7ee;
+  color: #0f9d58;
+}
+
+.pending {
+  background: #fff4e5;
+  color: #ff9800;
+}
+
+.rejected {
+  background: #fdecea;
+  color: #d93025;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  margin-bottom: 34px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.section h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ================= FORM ROW ================= */
+.row {
+  margin-bottom: 20px;
+}
+
+.row label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.row input {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  background: #f7f7f7;
+  font-size: 14px;
+}
+
+.row input[readonly] {
+  background: #f1f3f6;
+  cursor: not-allowed;
+}
+
+/* ================= INLINE ================= */
+.inline {
+  display: flex;
+  gap: 14px;
+}
+
+/* ================= GENDER ================= */
+.staticText {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.genderChips {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.genderChip {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+  transition: 0.25s;
+}
+
+.genderChip:hover {
+  border-color: #2874f0;
+}
+
+.active {
+  background: #2874f0;
+  color: #ffffff;
+  border-color: #2874f0;
+}
+
+/* ================= ERRORS ================= */
+.error {
+  font-size: 12px;
+  color: #d93025;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ================= BUTTONS ================= */
+.editBtn,
+.cancelBtn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.editBtn {
+  color: #2874f0;
+}
+
+.cancelBtn {
+  color: #d93025;
+}
+
+.primaryBtn {
+  background: #2874f0;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.saveArea {
+  margin-top: 18px;
+}
+
+/* ================= EMAIL ================= */
+.linkEdit {
+  font-size: 13px;
+  color: #2874f0;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.smallSave {
+  margin-top: 8px;
+  background: #2874f0;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= LOCKED ================= */
+.lockedText {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
+
+/* ================= LOGOUT ================= */
+.logoutArea {
+  text-align: center;
+}
+
+.logoutBtn {
+  background: #fff0f0;
+  border: 1px solid #ffbebe;
+  padding: 10px 26px;
+  border-radius: 8px;
+  color: #d60000;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 992px) {
+  .profileCard {
+    padding: 30px 26px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .profileCard {
+    padding: 26px 20px;
+  }
+
+  .inline {
+    flex-direction: column;
+  }
+
+  .row input {
+    max-width: 100%;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .avatarCircle {
+    width: 72px;
+    height: 72px;
+    font-size: 24px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .primaryBtn,
+  .logoutBtn {
+    width: 100%;
+  }
+}

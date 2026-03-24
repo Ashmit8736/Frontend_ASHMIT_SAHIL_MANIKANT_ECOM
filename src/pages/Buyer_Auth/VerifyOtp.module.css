@@ -1,0 +1,154 @@
+.mainSignInContainer {
+    margin-top: 0.3rem;
+    position: relative;
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 🔹 Background Layer */
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/Loginbg1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: 0;
+}
+
+.resendBtn {
+    background: none;
+    border: none;
+    color: #6a3fe0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.resendBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* 🔹 Foreground Card */
+.verifyContainer {
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 25vw;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 4px;
+    box-sizing: border-box;
+    padding: 3rem 2.5rem;
+}
+
+.verifyContainer h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.verifyContainer p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* 🔹 OTP Input */
+.verifyContainer input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    outline: none;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.verifyContainer input:focus {
+    border-color: #000;
+}
+
+/* 🔹 Button */
+.verifyContainer button {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.verifyContainer button:hover {
+    transform: scale(1.04);
+    background-color: #222;
+}
+
+/* 🔹 Helper Text */
+.helperText {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #444;
+    text-align: center;
+}
+
+.helperText button {
+    background: none;
+    border: none;
+    color: #0078ff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.helperText button:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 Mobile Responsive */
+@media (max-width: 600px) {
+    .verifyContainer {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .verifyContainer h1 {
+        font-size: 1.2rem;
+    }
+
+    .verifyContainer input,
+    .verifyContainer button {
+        font-size: 0.9rem;
+    }
+}
+
+/* 🔹 Tablet Responsive */
+@media (min-width: 600px) and (max-width: 900px) {
+    .verifyContainer {
+        width: 60%;
+        padding: 2rem;
+    }
+
+    .verifyContainer h1 {
+        font-size: 1.3rem;
+    }
+}

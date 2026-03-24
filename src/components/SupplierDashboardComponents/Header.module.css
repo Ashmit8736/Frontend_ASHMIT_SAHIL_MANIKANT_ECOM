@@ -1,0 +1,177 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: 70px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 5000;
+  /* 🔥 FIX */
+  transition: left 0.3s ease;
+}
+
+/* ================= LEFT ================= */
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menuToggle {
+  font-size: 1.5rem;
+  color: #1f2937;
+  cursor: pointer;
+  display: none;
+}
+
+.logoText {
+  font-size: 1.3rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #1e293b;
+}
+
+/* ================= USER ================= */
+.userSection {
+  position: relative;
+  z-index: 6000;
+  /* 🔥 FIX */
+}
+
+/* profile click area */
+.profileWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.profileWrapper:hover {
+  background: #f1f5f9;
+}
+
+/* 🔥 AVATAR (INITIALS) */
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+/* NAME */
+.username {
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* ================= DROPDOWN ================= */
+.profileDropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  /* 🔥 spacing fix */
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  list-style: none;
+  padding: 6px 0;
+  min-width: 200px;
+  z-index: 7000;
+  /* 🔥 FIX */
+  overflow: hidden;
+
+  animation: dropdownFade 0.18s ease-out;
+}
+
+/* smooth animation */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profileDropdown li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  color: #1f2937;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  width: 100%;
+}
+
+.profileDropdown li:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* 🔥 dropdown arrow (optional but pro) */
+.profileDropdown::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  transform: rotate(45deg);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablets & Mobile */
+@media (max-width: 992px) {
+  .header {
+    left: 0;
+    padding: 0 14px;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .username {
+    display: none;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 576px) {
+  .logoText {
+    font-size: 1.1rem;
+  }
+
+  .avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .profileDropdown {
+    right: 10px;
+    /* 🔥 mobile cut fix */
+  }
+}

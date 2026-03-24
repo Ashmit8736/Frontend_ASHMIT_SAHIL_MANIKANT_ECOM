@@ -1,0 +1,64 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+}
+
+.card {
+    background: #ffffff;
+    padding: 2.8rem;
+    width: 440px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+    font-size: 4.5rem;
+    color: #ff9800;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+}
+
+.note {
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.subNote {
+    margin-top: 0.3rem;
+    color: #666;
+}
+
+.actions {
+    margin-top: 1.8rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+button {
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+
+.secondary {
+    background: #e0e0e0;
+    color: #333;
+}

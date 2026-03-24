@@ -1,0 +1,263 @@
+/* ================= OVERLAY ================= */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+/* ================= MODAL ================= */
+.modal {
+    background: #ffffff;
+    width: 100%;
+    max-width: 460px;
+    max-height: 85vh;
+    /* 👈 IMPORTANT */
+    overflow-y: auto;
+    /* 👈 SCROLL */
+    border-radius: 20px;
+    padding: 1.8rem 1.6rem;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    animation: scaleFade 0.25s ease;
+}
+
+.modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ================= TITLE ================= */
+.title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+/* ================= LEVEL BOX ================= */
+.levelBox {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+/* ================= IMAGE ================= */
+.image {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ================= STATUS ================= */
+.active {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.disabled {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* ================= SUB SECTION ================= */
+.subSection {
+    margin-top: 1.4rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.subSection h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.6rem;
+}
+
+/* ================= SUB ITEM ================= */
+.subItem {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0.7rem 0.9rem;
+    margin-bottom: 0.6rem;
+}
+
+/* ================= NAME ROW ================= */
+.name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* ================= LEVEL TAG ================= */
+.levelTag {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* ================= DESCRIPTION ================= */
+.desc {
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: #475569;
+}
+
+/* ================= NESTED (LEVEL 3) ================= */
+.nested {
+    margin-top: 0.5rem;
+    padding-left: 0.8rem;
+    border-left: 2px dashed #cbd5f5;
+}
+
+.nestedItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #334155;
+    padding: 0.25rem 0;
+}
+
+.nestedItem small {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+/* ================= FOOTER ================= */
+.actions {
+    margin-top: 1.6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.closeBtn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.closeBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editBtn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.editBtn:hover {
+    background: #1d4ed8;
+}
+
+.nested {
+    margin-left: 12px;
+    margin-top: 6px;
+    border-left: 2px dashed #e5e7eb;
+    padding-left: 8px;
+}
+
+/* ================= ROW ACTIONS ================= */
+.rowActions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+/* ================= BUTTONS ================= */
+.disable {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.disable:hover {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.delete {
+    background: #dc2626;
+    color: #ffffff;
+    border: none;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.delete:hover {
+    background: #b91c1c;
+}
+
+/* ================= LEVEL 3 ROW FIX ================= */
+.nestedItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #334155;
+    padding: 0.3rem 0;
+}
+
+
+/* ================= ANIMATION ================= */
+@keyframes scaleFade {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

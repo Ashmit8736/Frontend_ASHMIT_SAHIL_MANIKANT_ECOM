@@ -1,0 +1,150 @@
+.StatusButtonContainer {
+  margin-top: 1.3rem;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.StatusButtonContainer .buttons{
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.StatusButtonContainer .confirmAproved{
+  padding: 2rem;
+  border-radius: 0.9rem;
+  background-color: #82f2b149;
+}
+
+.StatusButtonContainer .confirmAproved .confirmBtns{
+  display: flex;
+  justify-content: space-between;
+}
+
+.StatusButtonContainer .confirmAproved .confirmBtns .yes{
+  border: 1px solid #2ecc71;
+  background-color: #2ecc71;
+  color: white;
+}
+
+.StatusButtonContainer .confirmAproved .confirmBtns .yes:hover {
+  background-color: #fff;
+  color: #2ecc71;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+}
+
+.StatusButtonContainer .confirmAproved .confirmBtns .No{
+  border: 1px solid #ff4d4f;
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.StatusButtonContainer .confirmAproved .confirmBtns .No:hover {
+  background-color: #fff;
+  color: #ff4d4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 77, 79, 0.4);
+}
+
+.StatusButtonContainer .confirmAproved h3{
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  color: green;
+}
+
+.StatusButtonContainer .confirmReject{
+  padding: 2rem;
+  border-radius: 0.9rem;
+  background-color: #f665675b;
+}
+
+.StatusButtonContainer .confirmReject .confirmBtns{
+  display: flex;
+  justify-content: space-between;
+}
+
+.StatusButtonContainer .confirmReject .confirmBtns .yes{
+  border: 1px solid #2ecc71;
+  background-color: #2ecc71;
+  color: white;
+}
+
+.StatusButtonContainer .confirmReject .confirmBtns .yes:hover {
+  background-color: #fff;
+  color: #2ecc71;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+}
+
+.StatusButtonContainer .confirmReject .confirmBtns .No{
+  border: 1px solid #ff4d4f;
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.StatusButtonContainer .confirmReject .confirmBtns .No:hover {
+  background-color: #fff;
+  color: #ff4d4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 77, 79, 0.4);
+}
+
+.StatusButtonContainer .confirmReject h3{
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  color: red;
+}
+
+/* Base button style */
+.StatusButtonContainer button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Reject button */
+.StatusButtonContainer .Reject button {
+  border: 1px solid #ff4d4f;
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.StatusButtonContainer .Reject button:hover {
+  background-color: #fff;
+  color: #ff4d4f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 77, 79, 0.4);
+}
+
+/* Approve button */
+.StatusButtonContainer .approved button {
+  border: 1px solid #2ecc71;
+  background-color: #2ecc71;
+  color: white;
+}
+
+.StatusButtonContainer .approved button:hover {
+  background-color: #fff;
+  color: #2ecc71;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+}
+
+/* Optional icon styling */
+.rejectIcon,
+.approvedIcon {
+  font-size: 1.2rem;
+}

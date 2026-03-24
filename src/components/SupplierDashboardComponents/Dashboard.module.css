@@ -1,0 +1,373 @@
+.dashboard {
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fb;
+  min-height: 100vh;
+  color: #333;
+  transition: padding 0.3s ease;
+}
+
+/* ===== Recent Orders Header ===== */
+.recentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.recentHint {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* ===== Empty State ===== */
+.emptyState {
+  padding: 1.2rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* ===== Order Row ===== */
+.orderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.orderRow:last-child {
+  border-bottom: none;
+}
+
+/* LEFT */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.orderId {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.customer {
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+.phone {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* RIGHT */
+.amount {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: right;
+  margin-bottom: 4px;
+}
+
+.status {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* === TITLE === */
+.dashboard h2 {
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* === GRID CONTAINERS === */
+.firstCont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* === STAT CARDS === */
+/* .card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+} */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.firstblock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconWrap {
+  background: #eef2ff;
+  border-radius: 50%;
+  padding: 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.lowerblock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.digit {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.percent {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: 0.3rem;
+  color: #2563eb;
+}
+
+/* === CHART SECTION === */
+.chart {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.chart h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e293b;
+  border-left: 4px solid #3b82f6;
+  padding-left: 0.6rem;
+  white-space: nowrap;
+}
+
+/* === RECENT ORDERS === */
+.Lowercard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.Lowercard h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  border-left: 4px solid #3b82f6;
+  padding-left: 0.6rem;
+}
+
+.orderWrap {
+  border-bottom: 1px solid #eee;
+  padding: 0.8rem 0;
+  transition: background 0.2s ease;
+}
+
+.orderWrap:hover {
+  background: #f9fafb;
+}
+
+.orderWrap:last-child {
+  border-bottom: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.orderInfo p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.customer {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.orderInfo2 {
+  text-align: right;
+}
+
+.orderInfo2 p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border: 1px solid #4F46E5;
+  background: white;
+  color: #4F46E5;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #4F46E5;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+/* === RESPONSIVE === */
+
+/* 🔹 Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .dashboard {
+    padding: 1.5rem;
+  }
+
+  .firstCont {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .digit {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1.3rem;
+  }
+}
+
+/* 🔹 Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard h2 {
+    font-size: 1.5rem;
+  }
+
+  .firstCont {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .chart {
+    padding: 1rem;
+  }
+
+  .Lowercard {
+    padding: 1rem;
+  }
+
+  .flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .orderInfo2 {
+    text-align: left;
+  }
+}
+
+/* 🔹 Small Phones (max-width: 576px) */
+@media (max-width: 576px) {
+  .firstCont {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .digit {
+    font-size: 1.3rem;
+  }
+
+  .percent {
+    font-size: 0.8rem;
+  }
+
+  .Lowercard {
+    padding: 0.9rem;
+  }
+
+  .orderInfo p {
+    font-size: 0.9rem;
+  }
+
+  .customer {
+    font-size: 0.8rem;
+  }
+}

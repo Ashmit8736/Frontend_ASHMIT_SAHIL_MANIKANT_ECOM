@@ -1,0 +1,290 @@
+/* ============ PAGE LAYOUT ============ */
+.productsPage {
+  display: flex;
+  gap: 16px;
+  padding: 8px 6px;
+  background: #f1f3f6;
+
+  /* 🔒 VERY IMPORTANT */
+  height: 100vh;
+  overflow: hidden; /* parent never scrolls */
+}
+
+/* ============ SIDEBAR ============ */
+.sidebar {
+  width: 290px;
+  min-width: 290px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+
+  /* same height as main */
+  height: calc(100vh - 16px);
+  overflow-y: auto;
+
+  position: sticky;
+  top: 8px;
+}
+
+/* sidebar header */
+.sidebarHeader {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebarHeader h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.clearBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 800;
+  color: #2874f0;
+}
+
+/* quick filters */
+.quickFilters {
+  padding: 12px 14px;
+  display: grid;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 900;
+  color: #666;
+}
+
+.select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* ============ FILTER SECTION ============ */
+.filterSection {
+  border-bottom: 1px solid #eee;
+}
+
+.sectionHeader {
+  width: 100%;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 1000;
+}
+
+.sectionSub {
+  font-size: 12px;
+  font-weight: 800;
+  color: #777;
+}
+
+.sectionBody {
+  padding: 0 14px 14px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.brandList {
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* ============ MAIN CONTENT ============ */
+.main {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  padding: 14px;
+
+  /* independent scroll */
+  height: calc(100vh - 16px);
+  overflow-y: auto;
+}
+
+/* top bar */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 1000;
+}
+
+.count {
+  font-weight: 900;
+  color: #666;
+}
+
+/* ============ GRID ============ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+/* ============ CHECKBOX ALIGNMENT FIX ============ */
+.checkboxItem {
+  display:block; 
+  align-items: center;          /* checkbox + text same line */
+  padding: 6px 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* remove browser default spacing */
+.checkboxItem input[type="checkbox"] {
+  margin: 10px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;               /* checkbox compress na ho */
+}
+
+/* text alignment */
+.checkboxItem span {
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+/* rating text little bold */
+.checkboxItem span {
+  display: inline-block;
+}
+
+.chev {
+  font-size: 12px;          /* icon visible ho */
+  font-weight: 900;
+  color: #111;              /* white bg pe visible */
+  line-height: 1;
+  display: inline-block;
+  min-width: 18px;
+  text-align: center;
+}
+
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+    .productsPage {
+    display: block;        /* ❗ flex hatao */
+    height: auto;          /* ❗ 100vh hatao */
+    overflow: visible;     /* ❗ hidden hatao */
+    padding: 8px 6px;
+  }
+
+ /* SIDEBAR RESET */
+  .sidebar {
+    position: static;      /* ❗ sticky hatao */
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    overflow: visible;
+    margin-bottom: 12px;
+  }
+
+  
+  .sidebarScroll {
+    height: auto;
+    overflow: visible;
+  } 
+
+   /* MAIN RESET */
+  .main {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    border: none;
+  }
+
+   .productsScroll {
+    height: auto;
+    overflow: visible;
+  }
+
+  /* GRID */
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============ CARD ============ */
+.card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+
+.imageWrap {
+  height: 190px;
+  background: #fafafa;
+}
+
+.imageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 12px;
+}
+
+.productName {
+  font-size: 14px;
+  font-weight: 1000;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 1000;
+}

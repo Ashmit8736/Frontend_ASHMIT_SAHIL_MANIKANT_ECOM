@@ -1,0 +1,57 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #0e1c26, #294861);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: #ffffff;
+    width: 420px;
+    padding: 2.5rem 2rem;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.message {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.actions button {
+    padding: 0.7rem 1.2rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(90deg, #0e1c26, #294861);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.actions button:hover {
+    transform: scale(1.05);
+}
+
+.secondary {
+    background: transparent;
+    color: #294861;
+    border: 2px solid #294861;
+}

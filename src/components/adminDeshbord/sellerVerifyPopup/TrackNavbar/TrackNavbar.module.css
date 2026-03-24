@@ -1,0 +1,32 @@
+.trackMainContainer{
+    margin-top: 1.4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    background-color: rgba(150, 150, 150, 0.167);
+    gap: 0.7rem;
+}
+
+.singleStepContainer{
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    background-color: white;
+    padding: 0.3rem 2rem;
+    border-radius: 0.8rem;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.active {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+}
+
+.completed {
+  color: #1976d2;
+}

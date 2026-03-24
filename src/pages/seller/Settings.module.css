@@ -1,0 +1,234 @@
+/* MAIN CONTAINER */
+.settingsContainer {
+    padding: 20px;
+    background: #f5f7fb;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* SECTION CARD */
+.section {
+    background: #fff;
+    padding: 22px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+/* TITLE */
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    padding-right: 70px;
+}
+
+/* EDIT BUTTON (top-right) */
+.editBtn {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    padding: 7px 16px;
+    border-radius: 8px;
+    background: #6c63ff;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.editBtn:hover {
+    background: #574ee6;
+}
+
+/* FORM AREA */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* INPUT GROUP */
+.group {
+    display: flex;
+    flex-direction: column;
+}
+
+.group label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* INPUT FIELDS */
+.group input,
+.group textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+/* DISABLED STATE */
+.group input:disabled,
+.group textarea:disabled {
+    background: #ebebeb;
+    border: 1px solid #ccc;
+    color: #777;
+}
+
+/* ENABLED STATE */
+.group input:not(:disabled),
+.group textarea:not(:disabled) {
+    background: #fff;
+    border: 1px solid #4facfe;
+}
+
+/* TEXTAREA */
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+/* SAVE (UPDATE) BUTTON */
+.updateBtn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    width: fit-content;
+    transition: 0.2s ease-in-out;
+}
+
+.updateBtn:hover {
+    opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .section {
+        padding: 15px;
+    }
+
+    .heading {
+        font-size: 22px;
+    }
+
+    .editBtn {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .heading {
+        font-size: 26px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .group input,
+    .group textarea {
+        font-size: 13.5px;
+    }
+}
+
+@media (max-width: 900px) {
+    .settingsContainer {
+        padding: 18px;
+    }
+
+    .section {
+        padding: 18px;
+    }
+
+    .editBtn {
+        top: 14px;
+        right: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .settingsContainer {
+        padding: 14px;
+    }
+
+    .heading {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .section {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .title {
+        font-size: 17px;
+        padding-right: 0;
+        margin-bottom: 14px;
+    }
+
+    /* EDIT BUTTON NORMAL FLOW */
+    .editBtn {
+        position: static;
+        margin-bottom: 12px;
+        align-self: flex-start;
+    }
+
+    .form {
+        gap: 14px;
+    }
+
+    .updateBtn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 20px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .group label {
+        font-size: 13px;
+    }
+
+    .group input,
+    .group textarea {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    textarea {
+        height: 80px;
+    }
+
+    .updateBtn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

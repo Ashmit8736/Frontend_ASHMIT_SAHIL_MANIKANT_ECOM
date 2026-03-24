@@ -1,0 +1,376 @@
+/* /* ===============================
+   🌟 ROOT CONTAINER
+=============================== */
+.adminContainer {
+  padding: 2rem;
+  background: #f4f6f8;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   🌟 HEADER
+=============================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.dashboardTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ===============================
+   🌟 STATS GRID
+=============================== */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.6rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconCircle {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+/* Icon backgrounds */
+.statGreen .iconCircle {
+  background: #dcfce7;
+}
+
+.statBlue .iconCircle {
+  background: #e0f2fe;
+}
+
+.statPurple .iconCircle {
+  background: #ede9fe;
+}
+
+.statOrange .iconCircle {
+  background: #fff7ed;
+}
+
+.statBody {
+  margin-top: 1rem;
+}
+
+.value {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.statCard h4 {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.4rem;
+}
+
+/* ===============================
+   🌟 RECENT ORDERS (FULL WIDTH)
+=============================== */
+.bottomContentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.recentOrdersCard {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.6rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.recentOrdersCard h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.orderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-top: 1px solid #f3f4f6;
+  transition: background 0.2s ease;
+}
+
+.orderRow:first-child {
+  border-top: none;
+}
+
+.orderRow:hover {
+  background: #f9fafb;
+}
+
+.orderIdName {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderId {
+  font-weight: 600;
+  color: #111827;
+}
+
+.customerName {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.orderDate {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.orderTotalStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.orderTotal {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+
+.categoryCard {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  margin-bottom: 34px;
+
+  /* 🔥 Revenue card ke equal feel */
+}
+
+.categoryCard h3 {
+  width: 100%;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.categoryCard .recharts-wrapper {
+  margin: 0 auto;
+}
+
+.categoryCard svg {
+  overflow: visible;
+}
+
+
+.categoryNote {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.4;
+}
+
+/* ===============================
+   🌟 STATUS BADGES
+=============================== */
+.statusBadge {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.revenueChartCard {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.6rem 1.8rem;
+  /* 🔥 left-right thoda zyada */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+/* Revenue heading */
+.revenueChartCard h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+  /* 🔥 chart se clear gap */
+}
+
+.revenueChartCard .recharts-yAxis .recharts-text {
+  font-size: 0.75rem;
+  fill: #6b7280;
+}
+
+.revenueChartCard .recharts-xAxis .recharts-text {
+  font-size: 0.75rem;
+  fill: #6b7280;
+}
+
+.revenueChartCard svg {
+  overflow: visible;
+}
+
+.revenueChartCard * {
+  outline: none !important;
+}
+
+.PLACED {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.DELIVERED {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.SHIPPED {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.CANCELLED {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ===============================
+   🌟 LOADING / EMPTY
+=============================== */
+.loading,
+.noData {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+  padding: 1.5rem 0;
+}
+
+.categoryNote {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border: 1px solid #4F46E5;
+  background: white;
+  color: #4F46E5;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #4F46E5;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* ===============================
+   🌟 RESPONSIVE
+=============================== */
+@media (max-width: 1024px) {
+  .adminContainer {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardTitle {
+    font-size: 1.5rem;
+  }
+
+  .value {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminContainer {
+    padding: 1rem;
+  }
+
+  .dashboardTitle {
+    font-size: 1.3rem;
+  }
+
+  .value {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .categoryCard {
+    min-height: auto;
+    padding: 1.2rem;
+  }
+}
