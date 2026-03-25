@@ -286,9 +286,10 @@ const AllProducts = () => {
           const source = p.product_source;
 
           // 🔥 STOCK LOGIC — sirf seller pe check
-          const stock = p.remaining_stock;
-          const isOutOfStock = source === "seller" && stock !== null && Number(stock) === 0;
-          const isComingSoon = source === "seller" && (stock === null || stock === undefined);
+
+const stock = p.remaining_stock ?? p.stock ?? undefined;
+const isOutOfStock = stock !== null && stock !== undefined && Number(stock) === 0;
+const isComingSoon = stock === null || stock === undefined;
           const isUnavailable = isOutOfStock || isComingSoon;
 
           return (
@@ -332,11 +333,10 @@ const AllProducts = () => {
                 ₹ {p.product_price || p.price}
               </div>
 
-              {source === "seller" && (
-                <div className={styles.rating}>
-                  Rating: {p.rating_avg || p.product_rating || p.rating || p.avg_rating || 0}
-                </div>
-              )}
+
+<div className={styles.rating}>
+  Rating : ⭐ {p.rating_avg || p.product_rating || p.rating || p.avg_rating || 0}
+</div>
             </div>
           );
         })}
