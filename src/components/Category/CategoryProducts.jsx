@@ -422,11 +422,7 @@ const getRating = (p) => {
           ) : (
             <div className={styles.grid}>
               {products.map((p) => {
-                // 🔥 STOCK LOGIC — both seller and supplier
-// const stock = p.remaining_stock ?? p.stock ?? undefined;
-// const isOutOfStock = stock !== null && stock !== undefined && Number(stock) === 0;
-//const isComingSoon = stock === null || stock === undefined;
-//           const isUnavailable = isOutOfStock || isComingSoon;
+
 
 const stock = p.remaining_stock;
 
@@ -445,9 +441,7 @@ const isUnavailable = isOutOfStock || isComingSoon;
                     }}
                     onClick={() => {
                       if (isUnavailable) return;
-                      // 🔥 CHANGE 2 — ?type=p.product_source URL mein add kiya
-                      // PEHLE: navigate(`/app/product/${p.product_id}`, { state: { pdt: p } })
-                      // AB: ?type=seller ya ?type=supplier bhi URL mein jaata hai
+                    
                       navigate(`/app/product/${p.product_id}?type=${p.product_source}`);
                     }}
                   >

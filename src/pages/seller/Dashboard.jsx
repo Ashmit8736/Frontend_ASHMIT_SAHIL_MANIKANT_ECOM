@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./Dashboard.module.css";
@@ -25,33 +26,23 @@ const Dashboard = () => {
     const token = localStorage.getItem("sellerToken");
     const config = { headers: { Authorization: `Bearer ${token}` }, withCredentials: true };
 
-    function timeAgo(dateString) {
-        if (!dateString) return "Unknown";
+function formatDateTime(dateString) {
+  if (!dateString) return "—";
 
-        const safeDate = new Date(dateString); 
+  // ✅ Already IST string aa rahi hai backend se
+  // Koi Z mat lagao, koi timeZone mat do
+  const d = new Date(dateString);
+  if (isNaN(d.getTime())) return "Invalid date";
 
-        if (isNaN(safeDate.getTime())) return "Invalid date";
-
-        const seconds = Math.floor((Date.now() - safeDate.getTime()) / 1000);
-
-        if (seconds < 0) return "Just now";
-        if (seconds < 60) return "Just now";
-
-        const intervals = [
-            { label: "year",   seconds: 31536000 },
-            { label: "month",  seconds: 2592000  },
-            { label: "day",    seconds: 86400    },
-            { label: "hour",   seconds: 3600     },
-            { label: "minute", seconds: 60       },
-        ];
-
-        for (const i of intervals) {
-            const count = Math.floor(seconds / i.seconds);
-            if (count >= 1) return `${count} ${i.label}${count > 1 ? "s" : ""} ago`;
-        }
-
-        return "Just now";
-    }
+  return d.toLocaleString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
+}
 
     const fetchDashboard = async () => {
         try {
@@ -72,7 +63,6 @@ const Dashboard = () => {
 
             const walletRes = await axios.get("http://localhost:3000/api/seller/payments/wallet", config);
 
-            // ✅ Products fetch with debug logs
             const prodRes = await axios.get("http://localhost:3000/api/seller/products", config);
             console.log("PRODUCTS RES:", prodRes.data);
             const products = prodRes.data.products || prodRes.data.data || prodRes.data || [];
@@ -172,7 +162,8 @@ const Dashboard = () => {
                                     <span className={styles.activityIcon}>📦</span>
                                     <div>
                                         <p>Order {o.order_number} – {o.status}</p>
-                                        <small>{timeAgo(o.created_at)}</small>
+                                        {/* ✅ CHANGED — timeAgo → formatDateTime */}
+                                        <small>{formatDateTime(o.created_at)}</small>
                                     </div>
                                 </div>
                             ))
@@ -188,8 +179,9 @@ const Dashboard = () => {
                                     <span className={styles.activityIcon}>📈</span>
                                     <div>
                                         <p>{p.product_name} – ₹{p.product_price}</p>
+                                        {/* ✅ CHANGED — timeAgo → formatDateTime */}
                                         <small>
-                                            {timeAgo(p.created_at || p.createdAt || p.added_at || p.date)}
+                                            {formatDateTime(p.created_at || p.createdAt || p.added_at || p.date)}
                                         </small>
                                     </div>
                                 </div>
