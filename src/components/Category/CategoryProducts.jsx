@@ -10,6 +10,7 @@ const MAX_PRICE = 100000;
 const CategoryProducts = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const JEWELLERY_CATEGORY_IDS = ["99"];
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -50,9 +51,11 @@ const CategoryProducts = () => {
   // };
 
   // AB — rating_avg sabse pehle add karo
-const getRating = (p) => {
-  return Number(p.rating_avg || p.product_rating || p.rating || p.avg_rating || 0);
-};
+  const getRating = (p) => {
+    return Number(
+      p.rating_avg || p.product_rating || p.rating || p.avg_rating || 0,
+    );
+  };
 
   const toggleSection = (key) => {
     setOpenSections((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -76,7 +79,7 @@ const getRating = (p) => {
         setLoading(true);
 
         const res = await api.get(
-          `/public/buyer/products/by-category/${id}?sort=${sort}`
+          `/public/buyer/products/by-category/${id}?sort=${sort}`,
         );
 
         let list = (res.data.products || []).map((p) => ({
@@ -97,13 +100,13 @@ const getRating = (p) => {
         list = list.filter(
           (p) =>
             Number(p.product_price) >= priceRange[0] &&
-            Number(p.product_price) <= priceRange[1]
+            Number(p.product_price) <= priceRange[1],
         );
 
         // METAL FILTER
         if (selectedMetal !== "all") {
           list = list.filter(
-            (p) => (p.metal_type || "").toLowerCase().trim() === selectedMetal
+            (p) => (p.metal_type || "").toLowerCase().trim() === selectedMetal,
           );
         }
 
@@ -121,8 +124,10 @@ const getRating = (p) => {
         }
 
         // SORT fallback
-        if (sort === "price_asc") list.sort((a, b) => a.product_price - b.product_price);
-        if (sort === "price_desc") list.sort((a, b) => b.product_price - a.product_price);
+        if (sort === "price_asc")
+          list.sort((a, b) => a.product_price - b.product_price);
+        if (sort === "price_desc")
+          list.sort((a, b) => b.product_price - a.product_price);
 
         setProducts(list);
       } catch (err) {
@@ -148,7 +153,7 @@ const getRating = (p) => {
   const filteredBrandList = useMemo(() => {
     if (!brandSearch.trim()) return brandList;
     return brandList.filter((b) =>
-      b.toLowerCase().includes(brandSearch.toLowerCase())
+      b.toLowerCase().includes(brandSearch.toLowerCase()),
     );
   }, [brandList, brandSearch]);
 
@@ -210,17 +215,21 @@ const getRating = (p) => {
               <option value="price_desc">Price: High → Low</option>
             </select>
 
-            <div className={styles.fieldLabel}>Metal</div>
-            <select
-              className={styles.select}
-              value={selectedMetal}
-              onChange={(e) => setSelectedMetal(e.target.value)}
-            >
-              <option value="all">All</option>
-              <option value="gold">Gold</option>
-              <option value="silver">Silver</option>
-              <option value="diamond">Diamond</option>
-            </select>
+            {JEWELLERY_CATEGORY_IDS.includes(id) && (
+              <div>
+                <div className={styles.fieldLabel}>Metal</div>
+                <select
+                  className={styles.select}
+                  value={selectedMetal}
+                  onChange={(e) => setSelectedMetal(e.target.value)}
+                >
+                  <option value="all">All</option>
+                  <option value="gold">Gold</option>
+                  <option value="silver">Silver</option>
+                  <option value="diamond">Diamond</option>
+                </select>
+              </div>
+            )}
           </div>
 
           {/* BRAND */}
@@ -234,7 +243,9 @@ const getRating = (p) => {
                 <div className={styles.sectionSub}>{brandSummary}</div>
               </div>
               <div className={styles.sectionRight}>
-                <span className={styles.chev}>{openSections.brand ? "˄" : "˅"}</span>
+                <span className={styles.chev}>
+                  {openSections.brand ? "˄" : "˅"}
+                </span>
               </div>
             </button>
 
@@ -278,14 +289,17 @@ const getRating = (p) => {
                 <div className={styles.sectionSub}>{discountSummary}</div>
               </div>
               <div className={styles.sectionRight}>
-                <span className={styles.chev}>{openSections.discount ? "˄" : "˅"}</span>
+                <span className={styles.chev}>
+                  {openSections.discount ? "˄" : "˅"}
+                </span>
               </div>
             </button>
 
             {openSections.discount && (
               <div className={styles.sectionBody}>
                 <p className={styles.muted}>
-                  Discount filter ka backend available nahi hai abhi. UI ready hai.
+                  Discount filter ka backend available nahi hai abhi. UI ready
+                  hai.
                 </p>
               </div>
             )}
@@ -302,7 +316,9 @@ const getRating = (p) => {
                 <div className={styles.sectionSub}>{priceSummary}</div>
               </div>
               <div className={styles.sectionRight}>
-                <span className={styles.chev}>{openSections.price ? "˄" : "˅"}</span>
+                <span className={styles.chev}>
+                  {openSections.price ? "˄" : "˅"}
+                </span>
               </div>
             </button>
 
@@ -315,7 +331,9 @@ const getRating = (p) => {
                     min="0"
                     max={MAX_PRICE}
                     value={tempPrice[0]}
-                    onChange={(e) => setTempPrice([+e.target.value, tempPrice[1]])}
+                    onChange={(e) =>
+                      setTempPrice([+e.target.value, tempPrice[1]])
+                    }
                   />
                   <input
                     className={styles.range}
@@ -323,7 +341,9 @@ const getRating = (p) => {
                     min="0"
                     max={MAX_PRICE}
                     value={tempPrice[1]}
-                    onChange={(e) => setTempPrice([tempPrice[0], +e.target.value])}
+                    onChange={(e) =>
+                      setTempPrice([tempPrice[0], +e.target.value])
+                    }
                   />
                 </div>
 
@@ -331,10 +351,14 @@ const getRating = (p) => {
                   <select
                     className={styles.select}
                     value={tempPrice[0]}
-                    onChange={(e) => setTempPrice([+e.target.value, tempPrice[1]])}
+                    onChange={(e) =>
+                      setTempPrice([+e.target.value, tempPrice[1]])
+                    }
                   >
                     {priceSteps.map((v) => (
-                      <option key={v} value={v}>{v === 0 ? "Min" : `₹${v}`}</option>
+                      <option key={v} value={v}>
+                        {v === 0 ? "Min" : `₹${v}`}
+                      </option>
                     ))}
                   </select>
 
@@ -343,10 +367,14 @@ const getRating = (p) => {
                   <select
                     className={styles.select}
                     value={tempPrice[1]}
-                    onChange={(e) => setTempPrice([tempPrice[0], +e.target.value])}
+                    onChange={(e) =>
+                      setTempPrice([tempPrice[0], +e.target.value])
+                    }
                   >
                     {priceSteps.map((v) => (
-                      <option key={v} value={v}>{v === MAX_PRICE ? `₹${v}+` : `₹${v}`}</option>
+                      <option key={v} value={v}>
+                        {v === MAX_PRICE ? `₹${v}+` : `₹${v}`}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -372,7 +400,9 @@ const getRating = (p) => {
                 <div className={styles.sectionSub}>{ratingSummary}</div>
               </div>
               <div className={styles.sectionRight}>
-                <span className={styles.chev}>{openSections.ratings ? "˄" : "˅"}</span>
+                <span className={styles.chev}>
+                  {openSections.ratings ? "˄" : "˅"}
+                </span>
               </div>
             </button>
 
@@ -383,7 +413,9 @@ const getRating = (p) => {
                     <input
                       type="checkbox"
                       checked={minRating === r}
-                      onChange={() => setMinRating((prev) => (prev === r ? 0 : r))}
+                      onChange={() =>
+                        setMinRating((prev) => (prev === r ? 0 : r))
+                      }
                     />
                     <span>{r}★ & above</span>
                   </label>
@@ -408,10 +440,11 @@ const getRating = (p) => {
             <div className={styles.grid}>
               {products.map((p) => {
                 // 🔥 STOCK LOGIC — both seller and supplier
-const stock = p.remaining_stock ?? p.stock ?? undefined;
-const isOutOfStock = stock !== null && stock !== undefined && Number(stock) === 0;
-const isComingSoon = stock === null || stock === undefined;
-          const isUnavailable = isOutOfStock || isComingSoon;
+                const stock = p.remaining_stock ?? p.stock ?? undefined;
+                const isOutOfStock =
+                  stock !== null && stock !== undefined && Number(stock) === 0;
+                const isComingSoon = stock === null || stock === undefined;
+                const isUnavailable = isOutOfStock || isComingSoon;
 
                 return (
                   <div
@@ -426,18 +459,26 @@ const isComingSoon = stock === null || stock === undefined;
                       // 🔥 CHANGE 2 — ?type=p.product_source URL mein add kiya
                       // PEHLE: navigate(`/app/product/${p.product_id}`, { state: { pdt: p } })
                       // AB: ?type=seller ya ?type=supplier bhi URL mein jaata hai
-                      navigate(`/app/product/${p.product_id}?type=${p.product_source}`);
+                      navigate(
+                        `/app/product/${p.product_id}?type=${p.product_source}`,
+                      );
                     }}
                   >
                     {/* 🔴 OUT OF STOCK BADGE */}
                     {isOutOfStock && (
                       <div
                         style={{
-                          position: "absolute", top: 10, left: 10,
-                          background: "#e53935", color: "white",
-                          fontSize: 11, fontWeight: 700,
-                          padding: "4px 10px", borderRadius: 20,
-                          zIndex: 10, textTransform: "uppercase",
+                          position: "absolute",
+                          top: 10,
+                          left: 10,
+                          background: "#e53935",
+                          color: "white",
+                          fontSize: 11,
+                          fontWeight: 700,
+                          padding: "4px 10px",
+                          borderRadius: 20,
+                          zIndex: 10,
+                          textTransform: "uppercase",
                         }}
                       >
                         Out of Stock
@@ -448,11 +489,17 @@ const isComingSoon = stock === null || stock === undefined;
                     {isComingSoon && (
                       <div
                         style={{
-                          position: "absolute", top: 10, left: 10,
-                          background: "#f57c00", color: "white",
-                          fontSize: 11, fontWeight: 700,
-                          padding: "4px 10px", borderRadius: 20,
-                          zIndex: 10, textTransform: "uppercase",
+                          position: "absolute",
+                          top: 10,
+                          left: 10,
+                          background: "#f57c00",
+                          color: "white",
+                          fontSize: 11,
+                          fontWeight: 700,
+                          padding: "4px 10px",
+                          borderRadius: 20,
+                          zIndex: 10,
+                          textTransform: "uppercase",
                         }}
                       >
                         Coming Soon
@@ -463,7 +510,10 @@ const isComingSoon = stock === null || stock === undefined;
                       <img
                         src={p.images?.[0] || placeholder}
                         alt={p.product_name}
-                        style={{ opacity: isUnavailable ? 0.45 : 1, filter: isUnavailable ? "grayscale(60%)" : "none" }}
+                        style={{
+                          opacity: isUnavailable ? 0.45 : 1,
+                          filter: isUnavailable ? "grayscale(60%)" : "none",
+                        }}
                       />
                     </div>
 
@@ -479,7 +529,9 @@ const isComingSoon = stock === null || stock === undefined;
                               : styles.sellerTag
                           }
                         >
-                          {p.product_source === "supplier" ? "Supplier" : "Seller"}
+                          {p.product_source === "supplier"
+                            ? "Supplier"
+                            : "Seller"}
                         </span>
 
                         <span className={styles.ratingPill}>
