@@ -46,9 +46,6 @@ const CategoryProducts = () => {
     }
   };
 
-  // const getRating = (p) => {
-  //   return Number(p.product_rating || p.rating || p.avg_rating || 0);
-  // };
 
   // AB — rating_avg sabse pehle add karo
   const getRating = (p) => {
@@ -84,9 +81,6 @@ const CategoryProducts = () => {
 
         let list = (res.data.products || []).map((p) => ({
           ...p,
-          // 🔥 CHANGE 1 — p.product_source directly use karo, koi fallback nahi
-          // PEHLE: source: p.product_source (same tha lekin navigate me nahi jaata tha)
-          // AB: same, par navigate me bhi sahi bhejenge
           product_source: p.product_source,
           images: normalizeImages(p.images),
         }));
