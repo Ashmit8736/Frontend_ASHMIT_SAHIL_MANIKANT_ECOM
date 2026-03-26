@@ -1,0 +1,188 @@
+.wrapper {
+    padding: 25px;
+    background: #f5f6fa;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.pageTitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1d1d1d;
+}
+
+.profileLayout {
+    display: flex;
+    gap: 25px;
+}
+
+/* LEFT CARD */
+.leftCard {
+    width: 28%;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 18px #e8e8e8;
+    transition: 0.2s ease;
+}
+
+.leftCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 22px #dcdcdc;
+}
+
+.avatar {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    border: 4px solid #eef0f4;
+    margin-bottom: 12px;
+}
+
+.quickInfo {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.quickInfo p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* RIGHT CARD */
+.rightCard {
+    flex: 1;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 18px #e8e8e8;
+    transition: 0.2s ease;
+}
+
+.rightCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 22px #dcdcdc;
+}
+
+/* SECTION */
+.section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+/* FORM ROW */
+.row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.inputBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox label {
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.inputBox input,
+.inputBox textarea {
+    padding: 11px 12px;
+    border-radius: 8px;
+    border: 1px solid #d3d6df;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.inputBox input:focus,
+.inputBox textarea:focus {
+    border-color: #4a6cf7;
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgba(74, 108, 247, 0.2);
+}
+
+textarea {
+    min-height: 90px;
+    resize: none;
+}
+
+/* DISABLED FIELDS (when editing = false) */
+input:disabled,
+textarea:disabled {
+    background: #f2f2f2;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* BUTTONS */
+.buttonRow {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.editBtn,
+.saveBtn {
+    padding: 12px 28px;
+    border: none;
+    font-size: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.editBtn {
+    background: #4a6cf7;
+    color: #fff;
+}
+
+.editBtn:hover {
+    background: #3d56d2;
+}
+
+.saveBtn {
+    background: #28a745;
+    color: white;
+}
+
+.saveBtn:hover {
+    background: #218838;
+}
+
+input:disabled,
+textarea:disabled {
+    background: #f2f2f2;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+input,
+textarea {
+    background: #ffffff;
+    cursor: text;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .profileLayout {
+        flex-direction: column;
+    }
+
+    .leftCard {
+        width: 100%;
+    }
+}

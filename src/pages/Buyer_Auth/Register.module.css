@@ -1,0 +1,194 @@
+.mainSignInContainer {
+    margin-top: 0.3rem;
+    position: relative;
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Layer */
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/Loginbg1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: 0;
+}
+
+.passwordWrap {
+    position: relative;
+    width: 100%;
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.eyeIcon:hover {
+    opacity: 1;
+}
+
+/* FIX GENDER SELECT */
+.selectInput {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.selectInput:focus {
+    border-color: #000;
+}
+
+
+.errorText {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+.errorInput {
+    border: 1px solid red;
+}
+
+/* Foreground Content */
+.SignInContainer {
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 25vw;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 1px 1px 4px;
+    box-sizing: border-box;
+}
+
+.form {
+    z-index: 10;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.form h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Phone input with icon */
+.phoneInput {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 0.6rem;
+    border-radius: 5px;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.prefix {
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+}
+
+.phoneInput input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 1rem;
+}
+
+/* Inputs */
+.form input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.6rem;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.form input:focus {
+    border-color: #000;
+}
+
+/* Buttons */
+.form button {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.form button:hover {
+    transform: scale(1.04);
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+    .SignInContainer {
+        width: 90%;
+    }
+
+    .form {
+        padding: 1.5rem;
+        gap: 0.8rem;
+    }
+
+    .form h1 {
+        font-size: 1.2rem;
+    }
+
+    .form input,
+    .form button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 900px) {
+    .SignInContainer {
+        width: 60%;
+    }
+
+    .form {
+        padding: 2rem;
+    }
+
+    .form h1 {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,103 @@
+:root {
+  --sidebar-width: 250px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background-color: #1f2937;
+  color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  transition: transform 0.3s ease;
+  z-index: 1001;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.closeBtn {
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #d1d5db;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebarItem:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.active {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* ✅ Overlay (for mobile) */
+.overlay {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .closeBtn {
+    display: block;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

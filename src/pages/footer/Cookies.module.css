@@ -1,0 +1,90 @@
+.cookiesPage {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 5rem 7rem;
+    color: #ffffff;
+}
+
+.heroContent {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.8rem;
+    color: #cbd5e1;
+}
+
+/* SECTION */
+.section {
+    padding: 4rem 7rem;
+}
+
+.section h2 {
+    font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+    margin-bottom: 0.8rem;
+}
+
+.section p {
+    max-width: 900px;
+    font-size: 1.05rem;
+    line-height: 1.8rem;
+    color: #475569;
+}
+
+/* LIST */
+.list {
+    padding-left: 1.2rem;
+}
+
+.list li {
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+    color: #475569;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.8rem;
+    padding: 1.8rem;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.card p {
+    color: #475569;
+    line-height: 1.6rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .hero,
+    .section {
+        padding: 2.5rem 1.5rem;
+    }
+}

@@ -1,0 +1,409 @@
+.sellerProducts {
+    padding: 20px;
+    min-height: 100vh;
+    background: #f5f7fb;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===== Header ===== */
+.productsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.productsHeader h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+.addProductBtn {
+    background: linear-gradient(135deg, #6c63ff, #7f57ff);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.addProductBtn:hover {
+    opacity: 0.85;
+}
+
+/* ===== Filters ===== */
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.searchInput,
+.categorySelect {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background: white;
+    width: 220px;
+}
+
+.searchInput:focus,
+.categorySelect:focus {
+    border-color: #7a5cf1;
+    outline: none;
+}
+
+/* ===== Products Table ===== */
+.productsTableContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0px 4px 15px #e5e5e5;
+}
+
+.productsTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.productsTable th {
+    padding: 14px 10px;
+    background: #eef1f6;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+
+.productsTable td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+/* ===== Action Buttons ===== */
+.viewBtn,
+.editBtn,
+.deleteBtn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.viewBtn {
+    background: #e5f1ff;
+    color: #1b6fdc;
+    margin-right: 6px;
+}
+
+.viewBtn:hover {
+    background: #cfe3ff;
+}
+
+.editBtn {
+    background: #ebefff;
+    color: #3f47b8;
+    margin-right: 6px;
+}
+
+.editBtn:hover {
+    background: #d9e1ff;
+}
+
+.deleteBtn {
+    background: #ffe6e6;
+    color: #d64545;
+}
+
+.deleteBtn:hover {
+    background: #ffcccc;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.pageBtn {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.pageBtn:hover {
+    opacity: 0.85;
+}
+
+.pageBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+}
+
+/* ===== Modal for PRODUCT DETAILS ===== */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    backdrop-filter: blur(3px);
+}
+
+.modalContent {
+    width: 520px;
+    max-height: 90vh;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 18px 20px 20px;
+    position: relative;
+    overflow-y: auto;
+    animation: fadeIn 0.25s ease;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalCloseBtn {
+    border: none;
+    background: #ff4d4d;
+    color: #fff;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modalBody {
+    font-size: 14px;
+}
+
+/* Image Strip */
+.imageStrip {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.imageStrip img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+/* Details Grid */
+.detailsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.detailRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.detailLabel {
+    font-weight: 600;
+    color: #555;
+}
+
+.detailValue {
+    text-align: right;
+    color: #222;
+}
+
+/* Description Boxes */
+.descriptionBox {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: #f7f7fb;
+    border-radius: 10px;
+}
+
+.descriptionBox h3 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.descriptionBox p {
+    margin: 0;
+    font-size: 13px;
+    color: #444;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .productsHeader h1 {
+        font-size: 24px;
+    }
+
+    .filters {
+        gap: 12px;
+    }
+
+    .searchInput,
+    .categorySelect {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .productsHeader h1 {
+        font-size: 24px;
+    }
+
+    .filters {
+        gap: 12px;
+    }
+
+    .searchInput,
+    .categorySelect {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sellerProducts {
+        padding: 15px;
+    }
+
+    /* HEADER */
+    .productsHeader h1 {
+        font-size: 22px;
+    }
+
+    .addProductBtn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* FILTERS */
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .searchInput,
+    .categorySelect {
+        width: 100%;
+    }
+
+    /* TABLE SCROLL */
+    .productsTableContainer {
+        padding: 14px;
+        overflow-x: auto;
+    }
+
+    .productsTable {
+        min-width: 680px;
+    }
+
+    /* PAGINATION */
+    .pagination {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* MODAL */
+    .modalContent {
+        width: 92%;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sellerProducts {
+        padding: 15px;
+    }
+
+    /* HEADER */
+    .productsHeader h1 {
+        font-size: 22px;
+    }
+
+    .addProductBtn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* FILTERS */
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .searchInput,
+    .categorySelect {
+        width: 100%;
+    }
+
+    /* TABLE SCROLL */
+    .productsTableContainer {
+        padding: 14px;
+        overflow-x: auto;
+    }
+
+    .productsTable {
+        min-width: 680px;
+    }
+
+    /* PAGINATION */
+    .pagination {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    /* MODAL */
+    .modalContent {
+        width: 92%;
+        padding: 16px;
+    }
+}

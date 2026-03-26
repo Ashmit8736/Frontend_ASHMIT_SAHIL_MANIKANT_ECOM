@@ -1,0 +1,274 @@
+/* ===============================
+   PAGE WRAPPER
+=============================== */
+.container {
+    width: 100%;
+    max-width: 520px;
+    margin: 24px auto;
+    padding: 28px 24px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+/* ===============================
+   HEADING
+=============================== */
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+/* ===============================
+   INPUT GROUP
+=============================== */
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.input-box label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.input-box input {
+    height: 44px;
+    padding: 0 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-box input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ===============================
+   OTP ROW
+=============================== */
+.otpBox {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.otpBox input {
+    flex: 1;
+    height: 44px;
+    padding: 0 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+}
+
+.otpBox button {
+    min-width: 110px;
+}
+
+/* ===============================
+   PASSWORD
+=============================== */
+.passwordWrapper {
+    position: relative;
+    margin-top: 12px;
+}
+
+.passwordWrapper input {
+    width: 100%;
+    padding-right: 44px;
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.eyeIcon:hover {
+    color: #2563eb;
+}
+
+/* ===============================
+   BUTTONS
+=============================== */
+.btn {
+    margin-top: 10px;
+    height: 44px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.verifyBtn {
+    height: 44px;
+    border-radius: 8px;
+    padding: 0 16px;
+    background: #16a34a;
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.verifyBtn:disabled {
+    background: #9ca3af;
+}
+
+/* ===============================
+   CONTINUE BUTTON
+=============================== */
+.submitBtn {
+    margin-top: 22px;
+    height: 48px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    background: #16a34a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.disabledBtn {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+=============================== */
+@media (max-width: 480px) {
+    .container {
+        margin: 16px;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .otpBox {
+        flex-direction: column;
+    }
+
+    .otpBox button {
+        width: 100%;
+    }
+}
+
+/* ===============================
+   TABLET
+=============================== */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        max-width: 560px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 560px;
+        padding: 32px 30px;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .container {
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        max-width: 480px;
+        padding: 24px 22px;
+    }
+
+    .title {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        margin: 16px;
+        padding: 20px 18px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .btn,
+    .verifyBtn,
+    .submitBtn {
+        height: 46px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 12px;
+        padding: 18px 16px;
+        border-radius: 12px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .input-box label {
+        font-size: 12px;
+    }
+
+    .input-box input {
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .otpBox {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .otpBox input,
+    .otpBox button {
+        width: 100%;
+    }
+
+    .submitBtn {
+        height: 46px;
+        font-size: 14px;
+    }
+}

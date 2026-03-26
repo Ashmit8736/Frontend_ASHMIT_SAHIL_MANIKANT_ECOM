@@ -1,0 +1,27 @@
+/* ================= FOOTER ================= */
+.footer {
+    padding: 15px;
+    text-align: center;
+    color: #666;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+    font-size: 14px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 768px) {
+    .footer {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+    .footer {
+        padding: 10px 8px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}

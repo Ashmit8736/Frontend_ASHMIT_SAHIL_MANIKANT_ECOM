@@ -1,0 +1,180 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 250px; /* Sidebar width */
+  right: 0;
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+/* 🔍 Search Bar */
+.searchBar {
+  flex: 1;
+  max-width: 500px;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchBar input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* 🔹 Icons Container */
+.headerIcons {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Individual Icons */
+.icons {
+  color: #374151;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.icons span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.icons:hover {
+  color: #2563eb;
+}
+
+/* 👤 User Profile */
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.userProfile:hover {
+  color: #2563eb;
+}
+
+/* Profile Image */
+.userImage {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5e7eb;
+  transition: transform 0.2s ease;
+}
+
+.userImage:hover {
+  transform: scale(1.05);
+}
+
+/* =============== RESPONSIVE DESIGN =============== */
+
+/* ✅ Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .header {
+    left: 220px; /* Slightly smaller sidebar offset */
+    padding: 0 15px;
+  }
+
+  .searchBar {
+    max-width: 400px;
+  }
+
+  .headerIcons {
+    gap: 2rem;
+  }
+
+  .icons {
+    font-size: 1.6rem;
+  }
+}
+
+/* ✅ Mobile Landscape (≤768px) */
+@media (max-width: 768px) {
+  .header {
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  .searchBar {
+    display: none; /* Hide search bar for mobile */
+  }
+
+  .headerIcons {
+    gap: 1.5rem;
+  }
+
+  .icons {
+    font-size: 1.6rem;
+  }
+
+  .userProfile span {
+    display: none; /* Hide username on mobile */
+  }
+}
+
+/* ✅ Mobile Portrait (≤480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 0 12px;
+    height: 56px;
+  }
+
+  .headerIcons {
+    gap: 1rem;
+  }
+
+  .icons {
+    font-size: 1.4rem;
+  }
+
+  .userImage {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ✅ Extra Small Devices (≤380px) */
+@media (max-width: 380px) {
+  .header {
+    height: 54px;
+    padding: 0 10px;
+  }
+
+  .icons {
+    font-size: 1.3rem;
+  }
+
+  .userImage {
+    width: 30px;
+    height: 30px;
+  }
+}

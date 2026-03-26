@@ -1,0 +1,355 @@
+/* ============================= */
+/* MAIN CONTAINER */
+/* ============================= */
+.container {
+    padding: 2rem;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.header h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* ============================= */
+/* STATUS COLORS */
+/* ============================= */
+.instock {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.lowstock {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.outofstock {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.stockValue {
+    font-weight: 600;
+    color: #111827;
+    text-align: center;
+}
+
+.typeBadge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #e5e7eb;
+    color: #374151;
+    text-transform: capitalize;
+}
+
+/* ============================= */
+/* STATS SECTION */
+/* ============================= */
+.topStats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.statsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.statCard {
+    flex: 1 1 200px;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.statCard h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.4rem;
+}
+
+.statCard p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* ============================= */
+/* SEARCH + FILTERS + SORT */
+/* ============================= */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.search {
+    flex: 1;
+    min-width: 260px;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.filterTabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    background: #b8bdcc;
+    padding: 0.5rem;
+    border-radius: 9999px;
+}
+
+.filterTab {
+    padding: 0.5rem 1.2rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.activeTab {
+    background: #050505;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sortSelect {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+}
+
+/* ============================= */
+/* TABLE */
+/* ============================= */
+.tableWrapper {
+    background: #fff;
+    border-radius: 10px;
+    overflow-x: auto;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+.table th {
+    background: #f9fafb;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+    border-top: none;
+}
+
+.table td {
+    font-size: 0.9rem;
+    color: #111827;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background: #f9fafb;
+}
+
+
+/* PRODUCT INFO */
+.productInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.productInfo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* STATUS BADGE */
+/* STATUS BADGE */
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    min-width: 78px;
+}
+
+
+/* ============================= */
+/* PAGINATION */
+/* ============================= */
+.pagination {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+.ownerName {
+    font-weight: 600;
+    color: #111827;
+}
+
+.BtnPrev, .BtnNext {
+    background: #635e5e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+.BtnPrev:hover:not(:disabled), .BtnNext:hover:not(:disabled) {
+    background: #111;
+    color: #fff;
+}
+
+.pageInfo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    padding: 7px 5px;
+    border-radius: 8px;
+    background: transparent;
+    min-width: 120px;
+    text-align: center;
+    user-select: none;
+}
+
+/* ============================= */
+/* RESPONSIVE — TABLETS */
+/* ============================= */
+@media (max-width: 992px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .header h2 {
+        font-size: 1.5rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filterTabs {
+        justify-content: center;
+    }
+}
+
+/* ============================= */
+/* RESPONSIVE — MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+
+    .topStats {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .statsGrid {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filterTabs {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .sortSelect {
+        width: 100%;
+    }
+
+    .table {
+        min-width: 100%;
+    }
+
+    .pagination {
+        flex-direction: column;
+    }
+}
+
+/* ============================= */
+/* RESPONSIVE — SMALL PHONES */
+/* ============================= */
+@media (max-width: 480px) {
+    .header h2 {
+        font-size: 1.3rem;
+    }
+
+    .statCard p {
+        font-size: 1.1rem;
+    }
+
+    .filterTabs {
+        gap: 0.4rem;
+    }
+
+    .filterTab {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.55rem;
+        font-size: 0.82rem;
+    }
+
+    .productInfo img {
+        width: 36px;
+        height: 36px;
+    }
+}

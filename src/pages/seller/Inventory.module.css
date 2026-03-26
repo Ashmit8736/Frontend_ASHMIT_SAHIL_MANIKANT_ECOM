@@ -1,0 +1,209 @@
+.sellerInventory {
+    padding: 20px;
+    background: #f5f7fb;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.sellerInventory h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2d2d2d;
+}
+
+/* ===== Filter Select ===== */
+.inventoryControls {
+    margin-bottom: 20px;
+}
+
+.filterSelect {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #d6d6d6;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filterSelect:hover {
+    border-color: #7a5cf1;
+}
+
+/* ===== Table Container ===== */
+.inventoryTableContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0px 4px 15px #e6e6e6;
+}
+
+/* ===== Table ===== */
+.inventoryTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventoryTable th {
+    padding: 15px 10px;
+    background: #f2f4f7;
+    text-align: left;
+    font-weight: 600;
+    color: #4a4a4a;
+    font-size: 14px;
+}
+
+.inventoryTable td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+/* ===== Status Badges ===== */
+
+.stockStatus {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.inStock {
+    background: #e6ffee;
+    color: #1d8f38;
+}
+
+.lowStock {
+    background: #fff3cd;
+    color: #b88b00;
+}
+
+.outOfStock {
+    background: #ffe5e5;
+    color: #c62828;
+}
+
+/* ===== Stock Input ===== */
+.stockInput {
+    width: 80px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.stockInput:focus {
+    border-color: #7a5cf1;
+    outline: none;
+    background: #faf8ff;
+}
+
+.BtnPrev, .BtnNext {
+    background: #635e5e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.BtnPrev:hover:not(:disabled), .BtnNext:hover:not(:disabled) {
+    background: #111;
+    color: #fff;
+}
+/* ===== Row highlight for low stock ===== */
+.rowLowStock {
+    background: #fff9e6;
+}
+
+@media (max-width: 1024px) {
+    .sellerInventory h1 {
+        font-size: 24px;
+    }
+
+    .inventoryTable th,
+    .inventoryTable td {
+        font-size: 13.5px;
+        padding: 13px 8px;
+    }
+
+    .stockInput {
+        width: 70px;
+    }
+}
+
+@media (max-width: 900px) {
+    .inventoryControls {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .filterSelect {
+        width: 200px;
+    }
+
+    .inventoryTable th,
+    .inventoryTable td {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sellerInventory {
+        padding: 15px;
+    }
+
+    .sellerInventory h1 {
+        font-size: 22px;
+    }
+
+    /* FILTER FULL WIDTH */
+    .filterSelect {
+        width: 100%;
+    }
+
+    /* TABLE SCROLL (IMPORTANT) */
+    .inventoryTableContainer {
+        padding: 14px;
+        overflow-x: auto;
+    }
+
+    .inventoryTable {
+        min-width: 700px;
+    }
+
+    .stockInput {
+        width: 65px;
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    .stockStatus {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sellerInventory h1 {
+        font-size: 20px;
+    }
+
+    .inventoryTable th,
+    .inventoryTable td {
+        font-size: 12.5px;
+        padding: 10px 6px;
+    }
+
+    .stockInput {
+        width: 60px;
+        font-size: 12px;
+    }
+
+    .stockStatus {
+        font-size: 10.5px;
+    }
+}

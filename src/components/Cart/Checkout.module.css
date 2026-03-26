@@ -1,0 +1,551 @@
+.checkoutPage {
+    background: #f1f3f6;
+    min-height: 100vh;
+    padding: 24px 0;
+    font-family: Inter, system-ui;
+}
+
+.checkoutContainer {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 24px;
+}
+
+/* LEFT */
+.leftSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* STEP BOX */
+.stepBox {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.stepHeaderActive {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #2874f0;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.stepNumber {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status {
+    margin-left: auto;
+}
+
+.userInfo {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* ADDRESS */
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addAddressBtn {
+    background: #2874f0;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.addressCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s;
+}
+
+.addressCard:hover {
+    border-color: #2874f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.activeCard {
+    background: #f0f7ff;
+    border-color: #2874f0;
+}
+
+.addrTitle {
+    font-weight: 600;
+}
+
+.addrText {
+    font-size: 13px;
+    color: #555;
+}
+
+.addrPhone {
+    font-size: 12px;
+    color: #777;
+}
+
+.deleteBtn {
+    border: 1px solid #d32f2f;
+    color: #d32f2f;
+    background: transparent;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* PAYMENT */
+.paymentOption {
+    display: flex;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.deliverBtn {
+    background: #fb641b;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* RIGHT */
+.rightSection {
+    position: sticky;
+    top: 90px;
+}
+
+.summaryBox {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.itemRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.totalBox {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 14px;
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    /* 🔥 navbar se upar */
+}
+
+.addrTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addrActions {
+    display: flex;
+    gap: 10px;
+}
+
+.backBtn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #2874f0;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 12px;
+    padding: 0;
+}
+
+.backBtn:hover {
+    text-decoration: underline;
+}
+
+
+.codOption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid #2874f0;
+    border-radius: 8px;
+    background: #f0f7ff;
+    cursor: pointer;
+}
+
+.codOption input {
+    accent-color: #2874f0;
+    width: 18px;
+    height: 18px;
+}
+
+.codOption span {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.codOption small {
+    font-size: 12px;
+    color: #555;
+}
+
+.errorText {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+.editBtn {
+    background: transparent;
+    border: none;
+    color: #0b5ed7;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.deleteBtn {
+    background: transparent;
+    border: none;
+    color: #d32f2f;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.editBtn:hover,
+.deleteBtn:hover {
+    text-decoration: underline;
+}
+
+.buyerPhone {
+    font-size: 13px;
+    color: #555;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    z-index: 10000;
+}
+
+
+.modal h3 {
+    margin-bottom: 16px;
+}
+
+.modal input,
+.modal textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.modal textarea {
+    resize: none;
+    height: 70px;
+}
+
+.modalRow {
+    display: flex;
+    gap: 10px;
+}
+
+.addrActions {
+    display: flex;
+    align-items: center;
+    spacing: 8px;
+    /* ❌ invalid */
+    gap: 10px;
+    /* ✅ THIS */
+}
+
+.editBtn,
+.deleteBtn {
+    min-width: 70px;
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.saveBtn {
+    background: #2874f0;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .checkoutPage {
+        padding: 12px 0;
+    }
+
+    .checkoutContainer {
+        grid-template-columns: 1fr;
+        padding: 0 12px;
+    }
+
+    .rightSection {
+        position: static;
+        order: -1;
+        margin-bottom: 16px;
+    }
+
+    .summaryBox {
+        padding: 16px;
+    }
+
+    .stepBox {
+        padding: 16px;
+    }
+
+    .stepHeaderActive {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .addAddressBtn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .deliverBtn {
+        padding: 14px;
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .checkoutContainer {
+        grid-template-columns: 1fr 320px;
+        gap: 18px;
+        padding: 0 16px;
+    }
+
+    .rightSection {
+        top: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stepHeaderActive {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .stepNumber {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
+
+    .userInfo {
+        font-size: 13px;
+    }
+
+    .addressCard {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .addrText {
+        font-size: 12px;
+    }
+
+    .itemRow {
+        font-size: 13px;
+    }
+
+    .totalBox {
+        font-size: 16px;
+    }
+
+    .modal {
+        margin: 0 12px;
+        padding: 18px;
+    }
+
+    .modalRow {
+        flex-direction: column;
+    }
+
+    .modalActions {
+        flex-direction: column;
+    }
+
+    .saveBtn {
+        width: 100%;
+    }
+}
+
+/* ================= EXTRA RESPONSIVE POLISH ================= */
+
+/* VERY SMALL PHONES (≤360px) */
+@media (max-width: 360px) {
+    .checkoutContainer {
+        padding: 0 8px;
+    }
+
+    .stepHeaderActive {
+        font-size: 13px;
+    }
+
+    .deliverBtn {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .addrTitle {
+        font-size: 13px;
+    }
+
+    .addrPhone {
+        font-size: 11px;
+    }
+}
+
+/* TABLET PORTRAIT (768–900px) */
+@media (max-width: 900px) {
+    .checkoutContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .rightSection {
+        position: static;
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+
+/* LARGE DESKTOP (≥1440px) */
+@media (min-width: 1440px) {
+    .checkoutContainer {
+        max-width: 1320px;
+    }
+
+    .stepBox {
+        padding: 24px;
+    }
+
+    .summaryBox {
+        padding: 24px;
+    }
+}
+
+/* TOUCH DEVICES – BETTER TAP TARGETS */
+@media (hover: none) {
+
+    .addAddressBtn,
+    .deliverBtn,
+    .editBtn,
+    .deleteBtn {
+        min-height: 44px;
+    }
+}
+
+
+
+
+.couponBox{
+  margin-top:15px;
+  border-top:1px dashed #ddd;
+  padding-top:15px;
+}
+
+.couponRow{
+  display:flex;
+  gap:10px;
+}
+
+.couponRow input{
+  flex:1;
+  padding:10px;
+  border:1px solid #ddd;
+  border-radius:6px;
+}
+
+.couponRow button{
+  padding:10px 18px;
+  background:#0d6efd;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.couponSuccess{
+  background:#e7f9ed;
+  color:#1a7f37;
+  padding:10px;
+  border-radius:6px;
+  font-weight:600;
+}
+
+.discountRow{
+  display:flex;
+  justify-content:space-between;
+  margin-top:10px;
+  color:#1a7f37;
+}

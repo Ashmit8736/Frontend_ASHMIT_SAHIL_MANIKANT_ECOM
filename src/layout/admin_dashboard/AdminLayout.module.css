@@ -1,0 +1,115 @@
+/*
+  Sidebar width: 250px
+  Navbar height: 70px
+*/
+
+/* --- 1. Main Layout Container --- */
+.adminLayout {
+  display: flex;
+  flex-direction: row;
+}
+
+/* --- 2. Main Content Area (Everything to the right of the Sidebar) --- */
+.mainContent {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  background: #f4f6f8;
+  min-height: 100vh;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* --- 3. Page Content Area (Below the Navbar) --- */
+.pageContent {
+  margin-top: 10px;
+}
+
+/* --- ⚡ Responsive Design --- */
+
+/* For Tablets (width ≤ 1024px) */
+@media (max-width: 1024px) {
+  .mainContent {
+    margin-left: 220px;
+    /* Sidebar thoda narrow */
+    width: calc(100% - 220px);
+  }
+}
+
+/* For Mobile Devices (width ≤ 768px) */
+@media (max-width: 768px) {
+  .adminLayout {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    margin-left: 0;
+    /* Sidebar ke liye jagah nahi mobile me */
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .pageContent {
+    margin-top: 70px;
+    /* Navbar ka same height */
+    padding: 1rem;
+  }
+}
+
+/* For Small Phones (width ≤ 480px) */
+@media (max-width: 480px) {
+  .mainContent {
+    margin-left: 0;
+    width: 100%;
+    background: #f9fafb;
+    /* Thoda lighter background mobile ke liye */
+  }
+
+  .pageContent {
+    margin-top: 65px;
+    /* Navbar thoda chhota ho sakta hai */
+    padding: 0.8rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.adminLayout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f9fafb;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+.pageContent {
+  flex: 1;
+  padding: 90px 20px 20px 20px;
+  overflow-y: auto;
+}
+
+/* When Sidebar closed (for mobile) */
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+  }
+
+  .pageContent {
+    padding: 80px 12px 16px 12px;
+  }
+}

@@ -1,0 +1,186 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.inputBox label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.inputBox input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+.inputBox input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.error {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #dc2626;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.navBtns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+.backBtn {
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    /* background: #fff; */
+    cursor: pointer;
+}
+
+.continueBtn {
+    padding: 12px 26px;
+    border-radius: 10px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.continueBtn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .card {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .container {
+        max-width: 880px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 0 14px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .navBtns {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .backBtn,
+    .continueBtn {
+        width: 100%;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .inputBox label {
+        font-size: 13px;
+    }
+
+    .inputBox input {
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    .error {
+        font-size: 11px;
+    }
+}

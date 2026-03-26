@@ -1,0 +1,117 @@
+.successPage {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 5rem 7rem;
+    color: #ffffff;
+}
+
+.heroContent {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    color: #cbd5e1;
+    line-height: 1.8rem;
+}
+
+/* SECTION */
+.section {
+    padding: 4rem 7rem;
+}
+
+.section h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    margin-bottom: 0.8rem;
+}
+
+.section p {
+    max-width: 900px;
+    font-size: 1.05rem;
+    line-height: 1.8rem;
+    color: #475569;
+}
+
+/* STORIES */
+.storiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.storyCard {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.8rem;
+    padding: 2rem;
+}
+
+.storyCard h3 {
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+}
+
+.quote {
+    font-style: italic;
+    color: #475569;
+    margin-bottom: 0.6rem;
+}
+
+.storyCard span {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* CTA */
+.cta {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 4rem 7rem;
+    text-align: center;
+}
+
+.cta h2 {
+    margin-bottom: 0.6rem;
+}
+
+.cta p {
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+}
+
+.cta button {
+    background: #2563eb;
+    border: none;
+    color: white;
+    padding: 0.9rem 1.8rem;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cta button:hover {
+    background: #1d4ed8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .hero,
+    .section,
+    .cta {
+        padding: 2.5rem 1.5rem;
+    }
+}

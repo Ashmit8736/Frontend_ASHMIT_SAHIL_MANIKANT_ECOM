@@ -1,0 +1,33 @@
+.layoutMainContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+}
+
+/* 🔥 SCROLL CONTAINER */
+.pageContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  /* ✅ MOST IMPORTANT */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .layoutMainContainer {
+    padding: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .layoutMainContainer {
+    padding: 0;
+  }
+}

@@ -1,0 +1,268 @@
+/* ================================
+   NAVBAR WRAPPER
+================================ */
+.navbarWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  font-family: "Inter", sans-serif;
+  position: relative;
+  z-index: 1000;
+}
+
+/* ================================
+   ALL CATEGORIES BUTTON
+================================ */
+.allBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #dee0e2;
+  color: #160808;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.allBtn:hover {
+  background: #1f5fd1;
+  transform: translateY(-1px);
+}
+
+/* ================================
+   NAVBAR CONTAINER
+================================ */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ================================
+   NAV ITEM (L1 WRAPPER)
+================================ */
+.navItem {
+  position: relative;
+}
+
+/* ================================
+   LEVEL 1 (IMAGE + NAME)
+================================ */
+.l1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 6px 8px;
+  transition: background 0.2s ease;
+}
+
+.l1:hover {
+  background: #f5f7fa;
+  border-radius: 6px;
+}
+
+.l1 img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.l1 span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  text-transform: capitalize;
+}
+
+/* ================================
+   DROPDOWN / MEGA MENU
+================================ */
+.dropdown {
+  top: 100%;
+  /* instead of calc(100% + 6px) */
+  margin-top: 6px;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 32px;
+  padding: 22px 26px;
+  min-width: 560px;
+  border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.15s ease-in-out;
+  z-index: 999;
+}
+
+/* ================================
+   LEVEL 2 COLUMN
+================================ */
+.l2 {
+  min-width: 160px;
+}
+
+.l2 h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.l2 h4:hover {
+  color: #2874f0;
+}
+
+/* ================================
+   LEVEL 3 ITEM
+================================ */
+.l3 {
+  font-size: 13px;
+  color: #555;
+  margin: 6px 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.l3:hover {
+  color: #2874f0;
+}
+
+/* ================================
+   ANIMATION
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   RESPONSIVE (TABLET)
+================================ */
+@media (max-width: 1024px) {
+  .navbarWrapper {
+    padding: 10px 20px;
+  }
+
+  .dropdown {
+    min-width: 420px;
+    gap: 24px;
+  }
+}
+
+/* ================================
+   RESPONSIVE (MOBILE)
+================================ */
+@media (max-width: 768px) {
+  .navbarWrapper {
+    padding: 10px 14px;
+    gap: 12px;
+    overflow-x: auto;
+  }
+
+  .navbar {
+    gap: 18px;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    margin-top: 10px;
+    padding: 12px;
+    min-width: auto;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .l1 span {
+    font-size: 13px;
+  }
+
+  .allBtn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+
+
+
+
+
+
+
+.dropdown {
+  display: flex;
+  gap: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  min-width: 600px;
+}
+
+.dropdownLeft {
+  width: 220px;
+  border-right: 1px solid #eee;
+  padding-right: 12px;
+}
+
+.dropdownRight {
+  flex: 1;
+  padding-left: 12px;
+}
+
+.l2Item {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.l2Item:hover {
+  background: black;
+}
+
+.activeL2 {
+  background: #111;
+  color: white;
+}
+
+.l3Title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.l3 {
+  margin: 6px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+.l3:hover {
+  text-decoration: underline;
+}
+
+.noItems {
+  color: #777;
+}

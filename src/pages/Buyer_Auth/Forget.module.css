@@ -1,0 +1,105 @@
+.mainLoginContainer {
+    position: relative;
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f8f8f8, #f0f0f0);
+    font-family: "Poppins", sans-serif;
+}
+
+.bgImage {
+    position: absolute;
+    inset: 0;
+    background: url("../../assets/Loginbg1.jpg") center/cover no-repeat;
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.passwordWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordWrap input {
+    width: 100%;
+    padding-right: 42px;
+    /* 👁️ ke liye space */
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.7;
+    user-select: none;
+}
+
+.eyeIcon:hover {
+    opacity: 1;
+}
+
+
+.LoginContainer {
+    z-index: 1;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.LoginContainer h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.formGroup input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+.formGroup button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.formGroup button:hover {
+    background: #333;
+}
+
+.helperText {
+    font-size: 14px;
+    color: #555;
+    margin-top: 18px;
+}
+
+.linkBtn {
+    background: none;
+    border: none;
+    color: #6a3fe0;
+    cursor: pointer;
+    font-weight: 600;
+}

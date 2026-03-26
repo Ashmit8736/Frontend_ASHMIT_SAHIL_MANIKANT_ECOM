@@ -1,0 +1,189 @@
+:root {
+  --bg-light: #f8fafb;
+  --text-dark: #0f172a;
+  --text-muted: #6b7280;
+  --border-color: #e6e9ee;
+  --card-shadow: rgba(16, 24, 40, 0.06);
+}
+
+/* ================= CONTAINER ================= */
+.mainCont {
+  padding: 4rem 6rem;
+}
+
+.mainCont h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.mainCont p {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ================= GRID ================= */
+.supplierProfile {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ================= CARD ================= */
+.profileCard {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.9rem;
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+  box-shadow: 0 6px 16px var(--card-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.profileCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.12);
+}
+
+/* ================= AVATAR ================= */
+.avatar img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0.75rem auto;
+  object-fit: cover;
+}
+
+/* ================= BADGE ================= */
+.verified {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: #def7ec;
+  color: #065f46;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+/* ================= TEXT ================= */
+.bussinessName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 0.6rem;
+}
+
+.city {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* ================= PAGINATION ================= */
+.pagination {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ================= MODAL ================= */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.modalContent {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #f3f4f6;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modalTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.modalRole {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.modalText {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .mainCont {
+    padding: 3rem 3rem;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  .mainCont {
+    padding: 2rem 1.2rem;
+  }
+
+  .mainCont h1 {
+    font-size: 1.6rem;
+  }
+
+  .supplierProfile {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard {
+    padding: 1.4rem 1.2rem;
+  }
+}

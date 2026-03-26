@@ -1,0 +1,97 @@
+/* ==============================
+   SupplierDashboard.module.css
+   Main layout, sidebar & header
+   ============================== */
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background: #f9f9f9;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #111827; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: width 0.3s ease;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.sidebar li:hover {
+  background: rgba(255, 205, 0, 0.2); /* yellow hover */
+}
+
+.active {
+  background: #facc15; /* highlight yellow */
+  color: #111827;
+  font-weight: bold;
+}
+
+/* Main Area */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f5f9;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.searchBar {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Content Area */
+.contentArea {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #ffffff;
+}

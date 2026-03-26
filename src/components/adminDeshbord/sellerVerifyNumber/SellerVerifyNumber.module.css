@@ -1,0 +1,167 @@
+.SellerVerifyNumberContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem; /* adds spacing on wrap */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* COMMON BOX STYLE */
+.SellerVerifyNumberContainer .verifyNumber {
+  width: 30%;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for smooth UI */
+.SellerVerifyNumberContainer .verifyNumber:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== PENDING STATUS ===== */
+.SellerVerifyNumberContainer .verifyNumber .PandingiconsContainer,
+.SellerVerifyNumberContainer .verifyNumber .approvedContainer,
+.SellerVerifyNumberContainer .verifyNumber .rejectContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .PandingiconsContainer .iconInnerContainer {
+  padding: 0.8rem;
+  background-color: #fbcfb14f;
+  color: #FF4F00;
+  border-radius: 0.3rem;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .PandingiconsContainer .icon {
+  scale: 1.7;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .PandingiconsContainer .status {
+  padding: 0.2rem 0.5rem;
+  background-color: #fbcfb14f;
+  border-radius: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.SellerVerifyNumberContainer .verifyNumber .PandingiconsContainer .status p {
+  color: #FF4F00;
+}
+
+/* ===== APPROVED SECTION ===== */
+.SellerVerifyNumberContainer .verifyNumber .approvedContainer .iconInnerContainer {
+  padding: 0.8rem;
+  background-color: #50c8782e;
+  color: green;
+  border-radius: 0.3rem;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .approvedContainer .icon {
+  scale: 1.7;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .approvedContainer .status {
+  padding: 0.2rem 0.5rem;
+  background-color: #50c8782e;
+  border-radius: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .approvedContainer .status p {
+  color: green;
+}
+
+/* ===== REJECT SECTION ===== */
+.SellerVerifyNumberContainer .verifyNumber .rejectContainer .iconInnerContainer {
+  padding: 0.8rem;
+  background-color: #fb607f31;
+  color: red;
+  border-radius: 0.3rem;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .rejectContainer .icon {
+  scale: 1.7;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .rejectContainer .status {
+  padding: 0.2rem 0.5rem;
+  background-color: #fb607f31;
+  border-radius: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .rejectContainer .status p {
+  color: red;
+}
+
+.SellerVerifyNumberContainer .verifyNumber .number {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* =========================
+   📱 RESPONSIVENESS
+   ========================= */
+
+/* Large Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .SellerVerifyNumberContainer .verifyNumber {
+    width: 45%;
+    padding: 1.5rem;
+  }
+}
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .SellerVerifyNumberContainer {
+    justify-content: center;
+  }
+
+  .SellerVerifyNumberContainer .verifyNumber {
+    width: 80%;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .SellerVerifyNumberContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .SellerVerifyNumberContainer .verifyNumber {
+    width: 90%;
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .SellerVerifyNumberContainer .verifyNumber .PandingiconsContainer,
+  .SellerVerifyNumberContainer .verifyNumber .approvedContainer,
+  .SellerVerifyNumberContainer .verifyNumber .rejectContainer {
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .SellerVerifyNumberContainer .verifyNumber .number {
+    font-size: 0.9rem;
+  }
+}

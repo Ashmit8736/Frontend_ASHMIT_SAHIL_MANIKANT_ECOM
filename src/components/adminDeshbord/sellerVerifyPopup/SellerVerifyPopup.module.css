@@ -1,0 +1,90 @@
+.SellerVeifyPopupContainer{
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   width: 50%;
+   background-color: white;
+   border-radius: 0.5rem;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+   display: flex;
+  flex-direction: column; /* optional */
+  padding: 1.5rem;
+  z-index: 1000;
+}
+
+.overlay{
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.SellerVeifyPopupContainer .SellerVeifyPopupHeading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.SellerVeifyPopupHeading .Sellerheading{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.Sellerheading h2{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.Sellerheading p{
+    display: flex;
+    gap: 0.4rem;
+}
+
+.Sellerheading span{
+    color: rgb(29, 28, 28);
+}
+
+.SellerVeifyPopupHeading .crossSection{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.SellerVeifyPopupHeading .crossSection .CrossIcon{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+.SellerVeifyPopupHeading .crossSection p{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.pending {
+  background: #fff7e6;
+  color: #b45309;
+}
+
+.approved {
+  background: #e7f9ef;
+  color: #047857;
+}
+
+.rejected {
+  background: #fde2e2;
+  color: #b91c1c;
+}

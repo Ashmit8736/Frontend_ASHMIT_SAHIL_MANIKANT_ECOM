@@ -1,0 +1,303 @@
+/* ---------- CONTAINER ---------- */
+.container {
+  padding: 2rem;
+  background: #f8f9fc;
+  min-height: 100vh;
+  color: #222;
+  font-family: "Inter", sans-serif;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.exportBtn {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exportBtn:hover {
+  background: #333;
+}
+
+/* ---------- STATS CARDS ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card svg {
+  font-size: 1.5rem;
+}
+
+.warning {
+  color: #eab308;
+}
+
+.danger {
+  color: #ef4444;
+}
+
+.success {
+  color: #22c55e;
+}
+
+/* ---------- WAREHOUSE SECTION ---------- */
+.warehouseSection {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.warehouseItem {
+  display: grid;
+  grid-template-columns: 200px 1fr 140px 100px;
+  align-items: center;
+  margin-bottom: 1rem;
+  min-width: 650px;
+}
+
+.progressBar {
+  background: #e6e6e6;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 1rem;
+}
+
+.progressBar div {
+  height: 100%;
+  background: #000;
+  transition: width 0.4s;
+}
+
+.percent {
+  font-size: 0.85rem;
+  color: gray;
+}
+
+/* ---------- TABLE SECTION ---------- */
+.tableSection {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* TABLE */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.table th,
+.table td {
+  padding: 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* STATUS BADGES */
+.status {
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.instock {
+  background: #16a34a;
+  color: white;
+}
+
+.reordersoon {
+  background: #e11d48;
+  color: white;
+}
+
+.lowstock {
+  background: #facc15;
+  color: #222;
+}
+
+.outofstock {
+  background: #dc2626;
+  color: white;
+}
+
+.redText {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ---------- PAGINATION ---------- */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.BtnPrev, .BtnNext {
+    background: #635e5e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.BtnPrev:hover:not(:disabled), .BtnNext:hover:not(:disabled) {
+    background: #111;
+    color: #fff;
+}
+
+.pageInfo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: #f1f1f1;
+    min-width: 120px;
+    text-align: center;
+    user-select: none;
+}
+
+.activePage {
+  background: #000;
+  color: white;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* 📱 Tablet (below 1024px) */
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .warehouseItem {
+    grid-template-columns: 150px 1fr 100px 80px;
+    min-width: 100%;
+  }
+
+  .exportBtn {
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* 📱 Mobile (below 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .warehouseItem {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    text-align: left;
+    min-width: 100%;
+  }
+
+  .progressBar {
+    margin: 0.5rem 0;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters select,
+  .filters input {
+    width: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* 📱 Very Small Devices (below 480px) */
+@media (max-width: 480px) {
+  .exportBtn {
+    width: 100%;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.7rem;
+  }
+
+  .stats {
+    gap: 0.8rem;
+  }
+
+  .warehouseSection,
+  .tableSection {
+    padding: 1rem;
+  }
+}

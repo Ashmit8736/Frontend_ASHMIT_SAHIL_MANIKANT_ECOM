@@ -1,0 +1,105 @@
+.pressPage {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 5rem 7rem;
+    color: #ffffff;
+}
+
+.heroContent {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    color: #cbd5e1;
+    line-height: 1.8rem;
+}
+
+/* SECTION */
+.section {
+    padding: 4rem 7rem;
+}
+
+.section h2 {
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    margin-bottom: 1.5rem;
+}
+
+.section p {
+    max-width: 900px;
+    font-size: 1.05rem;
+    line-height: 1.8rem;
+    color: #475569;
+}
+
+/* PRESS GRID */
+.pressGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.pressCard {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.8rem;
+    padding: 2rem;
+}
+
+.pressCard span {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.pressCard h3 {
+    margin: 0.6rem 0;
+    font-size: 1.1rem;
+}
+
+.pressCard p {
+    color: #475569;
+    line-height: 1.6rem;
+}
+
+/* CONTACT */
+.contact {
+    background: #f1f5f9;
+    padding: 4rem 7rem;
+}
+
+.contact h2 {
+    margin-bottom: 0.6rem;
+}
+
+.contact p {
+    margin-bottom: 0.6rem;
+    color: #475569;
+}
+
+.contact a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .hero,
+    .section,
+    .contact {
+        padding: 2.5rem 1.5rem;
+    }
+}

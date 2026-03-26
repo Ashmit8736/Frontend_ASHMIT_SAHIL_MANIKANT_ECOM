@@ -1,0 +1,254 @@
+/* ===== Main Container ===== */
+.container {
+    padding: 2rem;
+    background: #f9fafb;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===== Header ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.saveBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.saveBtn:hover {
+    background: #1d4ed8;
+}
+
+/* ===== Tabs ===== */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    background: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 9999px;
+    width: fit-content;
+    flex-wrap: wrap;
+}
+
+.tabBtn {
+    background: transparent;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: #374151;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tabBtn:hover {
+    background: #e5e7eb;
+}
+
+.activePage {
+    background: #fff;
+    color: #111827;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Tab Content Box ===== */
+.tabContent {
+    margin-top: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.8rem;
+}
+
+/* ===== Settings Fields ===== */
+.settingsBox {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.settingsBox label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: #374151;
+    gap: 4px;
+}
+
+.settingsBox input,
+.settingsBox select {
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    outline: none;
+    transition: 0.2s ease;
+    background: #f9fafb;
+}
+
+.settingsBox input:focus,
+.settingsBox select:focus {
+    border-color: #2563eb;
+    background: #fff;
+}
+
+/* ===== Switch Labels ===== */
+.switchLabel {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* ===== API Key & System Info ===== */
+.apiKeyBox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f3f4f6;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-family: monospace;
+    color: #111827;
+    word-break: break-all;
+}
+
+/* ===== Save Alert / Message ===== */
+.alertBox {
+    background: #dcfce7;
+    color: #166534;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/* ============================================================
+   🔹 Responsive Design 
+   ============================================================ */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .saveBtn {
+        padding: 0.6rem 1rem;
+    }
+
+    .tabContent {
+        padding: 1.5rem;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.2rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .tabBtn {
+        justify-content: center;
+        border-radius: 10px;
+        padding: 0.8rem 1rem;
+    }
+
+    .tabContent {
+        padding: 1.2rem;
+        border-radius: 10px;
+    }
+
+    .settingsBox label {
+        font-size: 0.85rem;
+    }
+
+    .settingsBox input,
+    .settingsBox select {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .apiKeyBox {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        font-size: 0.85rem;
+        padding: 0.7rem;
+    }
+
+    .saveBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Extra Small Screens (Phones <480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .tabBtn {
+        font-size: 0.9rem;
+        padding: 0.7rem 0.9rem;
+    }
+
+    .tabContent {
+        padding: 1rem;
+    }
+
+    .settingsBox input,
+    .settingsBox select {
+        font-size: 0.85rem;
+    }
+
+    .alertBox {
+        font-size: 0.85rem;
+        padding: 0.7rem 0.9rem;
+    }
+}

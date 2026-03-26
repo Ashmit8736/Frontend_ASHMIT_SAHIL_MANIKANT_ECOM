@@ -1,0 +1,59 @@
+.WarehouseContainer{
+    margin-top: 1.4rem;
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #F0F8FF;
+    border-radius: 0.6rem;
+}
+
+.WarehouseContainer .heading{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.WarehouseContainer .heading h3{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(92, 91, 91);
+}
+
+.WarehouseContainer .gridInfo{
+    margin-top: 0.9rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1.1rem 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.WarehouseContainer .gridInfo h4{
+    margin-bottom: 0.3rem;
+     font-size: 0.9rem;
+  color: #555;
+}
+
+.WarehouseContainer .gridInfo p{
+     font-size: 1rem;
+  color: #111;
+}
+
+.WarehouseContainer .address{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.WarehouseContainer .address h4{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 0.3rem;
+     font-size: 0.9rem;
+  color: #555;
+}
+
+.WarehouseContainer .address p{
+     font-size: 1rem;
+  color: #111;
+}
+

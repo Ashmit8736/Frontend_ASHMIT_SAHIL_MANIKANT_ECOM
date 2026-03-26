@@ -1,0 +1,163 @@
+.wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: #ffffff;
+    max-width: 520px;
+    width: 100%;
+    border-radius: 18px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+    font-size: 50px;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #065f46;
+    margin-bottom: 12px;
+}
+
+.message {
+    font-size: 15px;
+    color: #374151;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.infoBox {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    margin: 20px 0 28px;
+}
+
+.loginBtn {
+    background: #065f46;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.loginBtn:hover {
+    background: #047857;
+}
+
+@media (min-width: 1200px) {
+    .card {
+        max-width: 560px;
+        padding: 44px 36px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .icon {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .card {
+        max-width: 520px;
+    }
+}
+
+@media (max-width: 991px) {
+    .wrapper {
+        padding: 16px;
+    }
+
+    .card {
+        padding: 34px 28px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    .infoBox {
+        font-size: 13px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        padding: 14px;
+        align-items: flex-start;
+    }
+
+    .card {
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
+
+    .icon {
+        font-size: 44px;
+        margin-bottom: 14px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    .infoBox {
+        margin: 18px 0 24px;
+    }
+
+    .loginBtn {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 24px 18px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+
+    .infoBox {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .loginBtn {
+        border-radius: 10px;
+    }
+}

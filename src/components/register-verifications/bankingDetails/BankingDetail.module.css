@@ -1,0 +1,493 @@
+.BankingDetailsContainer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+/* ------------------ Heading ------------------ */
+.BankingDetailsContainer .heading {
+  padding-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.errorText {
+  color: #e53935;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.successText {
+  color: #2e7d32;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+
+.BankingDetailsContainer .heading h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.BankingDetailsContainer .heading p {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  font-weight: 200;
+}
+
+/* ------------------ Verification Section ------------------ */
+.BankingDetailsContainer .Verification {
+  padding: 2rem;
+  margin-top: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: rgba(219, 217, 217, 0.333);
+  border-radius: 0.7rem;
+}
+
+.BankingDetailsContainer .Verification .IconsAndHeading {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.BankingDetailsContainer .Verification .IconsAndHeading .Icon {
+  scale: 1.5;
+}
+
+.BankingDetailsContainer .Verification .IconsAndHeading h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.BankingDetailsContainer .Verification .form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.BankingDetailsContainer .Verification .form span {
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+.BankingDetailsContainer .Verification .form .Input {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.BankingDetailsContainer .Verification .form .Input input {
+  width: 90%;
+  background-color: rgba(222, 221, 221, 0.308);
+  border: 1px solid transparent;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.BankingDetailsContainer .Verification .form .Input input:focus {
+  outline: none;
+  border: 1px solid #a9a9a9;
+  box-shadow: 0 0 5px rgba(53, 53, 53, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.BankingDetailsContainer .Verification .form .Input button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 10%;
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.BankingDetailsContainer .Verification .form .Input button:hover {
+  background-color: #333333;
+  color: #f1f1f1;
+  transform: scale(1.02);
+}
+
+/* OTP VERIFY SECTION */
+.BankingDetailsContainer .Verification .VerifyOtpform {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.BankingDetailsContainer .Verification .VerifyOtpform .Input {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.BankingDetailsContainer .Verification .VerifyOtpform .Input input {
+  width: 80%;
+  background-color: rgba(222, 221, 221, 0.308);
+  border: 1px solid transparent;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.BankingDetailsContainer .Verification .VerifyOtpform .Input input:focus {
+  outline: none;
+  border: 1px solid #a9a9a9;
+  box-shadow: 0 0 5px rgba(53, 53, 53, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.BankingDetailsContainer .Verification .VerifyOtpform .Input button {
+  width: 20%;
+  background: linear-gradient(135deg, #0d6d2d, #0a4f1f);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.BankingDetailsContainer .Verification .VerifyOtpform .Input button:hover {
+  background: linear-gradient(135deg, #107d34, #0b5f25);
+  transform: scale(1.03);
+}
+
+/* Messages */
+.BankingDetailsContainer .errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.BankingDetailsContainer .successMessage {
+  color: green;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ------------------ ORGANIZATION DETAILS ------------------ */
+.BankingDetailsContainer .UsernameSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.BankingDetailsContainer .UsernameSection p {
+  font-size: 1.2rem;
+  opacity: 1;
+  font-weight: 200;
+  margin-bottom: 0.7rem;
+}
+
+.BankingDetailsContainer .UsernameForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.UsernameForm .UsernamePassword {
+  display: flex;
+  gap: 5rem;
+}
+
+.UsernameForm .UsernamePassword .Password {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.UsernameForm input,
+.UsernameForm select {
+  background-color: rgba(222, 221, 221, 0.308);
+  border: 1px solid transparent;
+  padding: 0.6rem;
+  border-radius: 0.3rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.UsernameForm input:focus,
+.UsernameForm select:focus {
+  outline: none;
+  border: 1px solid #a9a9a9;
+  box-shadow: 0 0 5px rgba(53, 53, 53, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.UsernameForm span {
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+/* ------------------ Secure Section ------------------ */
+.BankingDetailsContainer .lastSection {
+  padding: 2rem;
+  margin-top: 1.7rem;
+  display: flex;
+  gap: 1.5rem;
+  background-color: #9eb9d458;
+  border-radius: 0.7rem;
+}
+
+.BankingDetailsContainer .lastSection .secureIcon {
+  scale: 1.9;
+  color: rgb(0, 76, 255);
+}
+
+.BankingDetailsContainer .lastSection .innerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.BankingDetailsContainer .lastSection .innerSection h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #002366;
+}
+
+.BankingDetailsContainer .lastSection .innerSection span {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.5;
+  color: #76ABDF;
+}
+
+/* ------------------ Warning Section ------------------ */
+.BankingDetailsContainer .warningSection {
+  padding: 2rem;
+  margin-top: 1.7rem;
+  display: flex;
+  gap: 1.5rem;
+  background-color: #e0a03e12;
+  border-radius: 0.7rem;
+}
+
+.BankingDetailsContainer .warningSection .secureIcon {
+  scale: 1.9;
+  color: rgb(235, 194, 106);
+}
+
+.BankingDetailsContainer .warningSection .innerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.BankingDetailsContainer .warningSection .innerSection h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #d1a02d;
+}
+
+.BankingDetailsContainer .warningSection .innerSection span {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.5;
+  color: #9a6325;
+}
+
+/* ========================= */
+/* 🔽 DROPDOWN (SELECT) FIX */
+/* ========================= */
+
+.UsernameForm select,
+.BankingDetailsContainer select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: rgba(222, 221, 221, 0.308);
+  border: 1px solid transparent;
+  padding: 0.6rem 2.4rem 0.6rem 0.6rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+
+  font-size: 0.95rem;
+  color: #111;
+  line-height: 1.2;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 14px;
+
+  transition: all 0.25s ease;
+}
+
+.UsernameForm select:focus,
+.BankingDetailsContainer select:focus {
+  outline: none;
+  border: 1px solid #a9a9a9;
+  box-shadow: 0 0 5px rgba(53, 53, 53, 0.5);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Disabled option */
+.UsernameForm select option[disabled] {
+  color: #999;
+}
+
+/* Hover feel */
+.UsernameForm select:hover,
+.BankingDetailsContainer select:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* ========================= */
+/* 📱 MOBILE DROPDOWN FIX */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .UsernameForm select,
+  .BankingDetailsContainer select {
+    padding: 0.7rem 2.2rem 0.7rem 0.6rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .UsernameForm select,
+  .BankingDetailsContainer select {
+    font-size: 0.9rem;
+    padding: 0.65rem 2.1rem 0.65rem 0.6rem;
+  }
+}
+
+
+/* ============================================================= */
+/* 📱 RESPONSIVE DESIGN */
+/* ============================================================= */
+
+/* --------- Tablets (≤1024px) --------- */
+@media (max-width: 1024px) {
+  .BankingDetailsContainer .heading h2 {
+    font-size: 1.4rem;
+  }
+
+  .BankingDetailsContainer .Verification .form .Input,
+  .BankingDetailsContainer .Verification .VerifyOtpform .Input {
+    gap: 2rem;
+  }
+
+  .UsernameForm .UsernamePassword {
+    gap: 3rem;
+  }
+
+  .UsernameForm .UsernamePassword .Password {
+    width: 60%;
+  }
+}
+
+
+/* --------- Mobile Landscape (≤768px) --------- */
+@media (max-width: 768px) {
+  .BankingDetailsContainer {
+    padding: 1rem;
+  }
+
+  .BankingDetailsContainer .heading h2 {
+    font-size: 1.3rem;
+  }
+
+  .BankingDetailsContainer .Verification {
+    padding: 1.2rem;
+  }
+
+  .BankingDetailsContainer .Verification .form .Input,
+  .BankingDetailsContainer .Verification .VerifyOtpform .Input {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .BankingDetailsContainer .Verification .form .Input input,
+  .BankingDetailsContainer .Verification .VerifyOtpform .Input input {
+    width: 100%;
+  }
+
+  .BankingDetailsContainer .Verification .form .Input button,
+  .BankingDetailsContainer .Verification .VerifyOtpform .Input button {
+    width: 100%;
+  }
+
+  .UsernameForm .UsernamePassword {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .UsernameForm .UsernamePassword .Password {
+    width: 100%;
+  }
+
+  .BankingDetailsContainer .lastSection,
+  .BankingDetailsContainer .warningSection {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.2rem;
+  }
+}
+
+/* --------- Small Phones (≤480px) --------- */
+@media (max-width: 480px) {
+  .BankingDetailsContainer {
+    padding: 0.8rem;
+  }
+
+  .BankingDetailsContainer .heading h2 {
+    font-size: 1.1rem;
+  }
+
+  .BankingDetailsContainer .heading p {
+    font-size: 0.8rem;
+  }
+
+  .UsernameForm input,
+  .UsernameForm select {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .BankingDetailsContainer .lastSection .innerSection h2,
+  .BankingDetailsContainer .warningSection .innerSection h2 {
+    font-size: 1.2rem;
+  }
+
+  .BankingDetailsContainer .lastSection .innerSection span,
+  .BankingDetailsContainer .warningSection .innerSection span {
+    font-size: 0.9rem;
+  }
+}
+
+/* --------- Very Small Devices (≤360px) --------- */
+@media (max-width: 360px) {
+  .BankingDetailsContainer {
+    padding: 0.6rem;
+  }
+
+  .BankingDetailsContainer .heading h2 {
+    font-size: 1rem;
+  }
+
+  .BankingDetailsContainer .Verification {
+    padding: 1rem;
+  }
+
+  .UsernameForm input,
+  .UsernameForm select {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,59 @@
+.BankingContainer{
+    margin-top: 1.4rem;
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #F0F8FF;
+    border-radius: 0.6rem;
+}
+
+.BankingContainer .heading{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.BankingContainer .heading h3{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(92, 91, 91);
+}
+
+.BankingDetails .gridInfo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1.3rem 1.6rem;
+     margin-bottom: 2rem;
+}
+
+.BankingContainer .gridInfo h4{
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.BankingContainer .gridInfo p{
+    margin-top: 0.3rem;
+    font-size: 1rem;
+  color: #111;
+  font-weight: 500;
+}
+
+.BankingContainer .alert{
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.9rem;
+    background-color: #fff8e7b1;
+    border: 1px solid #f5e5c1;
+    border-radius: 0.8rem;
+}
+
+.BankingContainer .alert .icon{
+    color: #FFC40C;
+    scale: 2rem;
+}
+
+.BankingContainer .alert h4{
+    color: rgb(195, 133, 57);
+    font-weight: 400;
+}

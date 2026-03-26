@@ -1,0 +1,258 @@
+/* --- Main Sidebar Container --- */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 1.5rem 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 70px; /* below navbar */
+  left: 0;
+  z-index: 900;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+
+/* --- Logo Section --- */
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.logoIcon {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.logoTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+/* --- Menu List --- */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  margin: 0.3rem 1rem;
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.activeLink {
+  background-color: #e0f2fe;
+  color: #3b82f6 !important;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.linkText {
+  flex-grow: 1;
+}
+
+.activeLink .icon {
+  color: #3b82f6;
+}
+
+/* =======================================================
+   ⚡ RESPONSIVE SIDEBAR (Mobile + Tablet)
+======================================================= */
+
+/* --- Tablets (≤1024px) --- */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    top: 70px;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .logoTitle {
+    font-size: 1rem;
+  }
+
+  .link {
+    padding: 0.7rem 1rem;
+    margin: 0.2rem 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .icon {
+    font-size: 1.15rem;
+    margin-right: 0.8rem;
+  }
+}
+
+/* --- Mobile Devices (≤768px) --- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    padding: 1rem 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+  }
+
+  /* ⚡ Sidebar Active (Open State) */
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Add a smooth overlay effect for mobile */
+  .sidebarOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 800;
+    display: none;
+  }
+
+  .sidebarOverlay.active {
+    display: block;
+  }
+
+  /* Compact logo on mobile */
+  .logo {
+    padding: 0 1rem;
+    justify-content: flex-start;
+  }
+
+  .logoIcon {
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .logoTitle {
+    font-size: 0.95rem;
+  }
+
+  .link {
+    padding: 0.6rem 1rem;
+    margin: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    font-size: 1.1rem;
+    margin-right: 0.6rem;
+  }
+}
+
+/* --- Small Phones (≤480px) --- */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .logo {
+    align-items: center;
+    padding: 0 0.8rem 1rem 0.8rem;
+  }
+
+  .logoTitle {
+    font-size: 0.9rem;
+  }
+
+  .link {
+    padding: 0.5rem 0.8rem;
+    margin: 0.2rem 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+}
+
+
+/* --- Sidebar Toggle (for mobile) --- */
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  color: #1f2937;
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  z-index: 1200;
+  cursor: pointer;
+}
+
+.sidebarOverlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1100;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebarOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .sidebarOverlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

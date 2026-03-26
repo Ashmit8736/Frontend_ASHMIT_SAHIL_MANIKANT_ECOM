@@ -1,0 +1,145 @@
+.sellerSuccessFullyregister {
+    width: 70%;
+    padding: 3rem;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* ---------- Header Section ---------- */
+.sellerSuccessFullyregister header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sellerSuccessFullyregister header .icon {
+    font-size: 4.5rem;
+    color: #22c55e;
+    /* success green */
+}
+
+.sellerSuccessFullyregister header h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Pending badge */
+.sellerSuccessFullyregister header p {
+    background-color: #fff7ed;
+    color: #f59e0b;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ---------- Paragraph Section ---------- */
+.sellerSuccessFullyregister .paraContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    text-align: center;
+}
+
+.sellerSuccessFullyregister .paraContainer p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    line-height: 1.7;
+    max-width: 720px;
+}
+
+.sellerSuccessFullyregister .paraContainer .highlight {
+    margin-top: 0.5rem;
+    color: #2563eb;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* ---------- Button Section ---------- */
+.sellerSuccessFullyregister .btn {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sellerSuccessFullyregister .btn button {
+    background-color: #111827;
+    color: white;
+    padding: 0.75rem 1.6rem;
+    border-radius: 0.7rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sellerSuccessFullyregister .btn button:hover {
+    background-color: #1f2937;
+    transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+/* Medium Devices (Tablets) */
+@media (max-width: 992px) {
+    .sellerSuccessFullyregister {
+        width: 85%;
+        padding: 2.5rem;
+    }
+
+    .sellerSuccessFullyregister header h2 {
+        font-size: 2.1rem;
+    }
+
+    .sellerSuccessFullyregister .paraContainer p {
+        font-size: 1.05rem;
+    }
+
+    .sellerSuccessFullyregister header .icon {
+        font-size: 3.8rem;
+    }
+}
+
+/* Small Devices (Mobile) */
+@media (max-width: 600px) {
+    .sellerSuccessFullyregister {
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .sellerSuccessFullyregister header h2 {
+        font-size: 1.7rem;
+    }
+
+    .sellerSuccessFullyregister header p {
+        font-size: 0.85rem;
+    }
+
+    .sellerSuccessFullyregister .paraContainer p {
+        font-size: 0.95rem;
+    }
+
+    .sellerSuccessFullyregister .paraContainer .highlight {
+        font-size: 0.9rem;
+    }
+
+    .sellerSuccessFullyregister header .icon {
+        font-size: 3rem;
+    }
+
+    .sellerSuccessFullyregister .btn button {
+        padding: 0.6rem 1.3rem;
+        font-size: 0.95rem;
+    }
+}
