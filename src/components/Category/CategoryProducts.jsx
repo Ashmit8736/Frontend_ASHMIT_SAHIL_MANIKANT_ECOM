@@ -11,6 +11,8 @@ const CategoryProducts = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const JEWELLERY_CATEGORY_IDS = ['99'];
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -78,7 +80,8 @@ const getRating = (p) => {
         const res = await api.get(
           `/public/buyer/products/by-category/${id}?sort=${sort}`
         );
-
+    console.log("API RESPONSE:", res.data);
+    console.log("CATEGORY ID:", id);
         let list = (res.data.products || []).map((p) => ({
           ...p,
           // 🔥 CHANGE 1 — p.product_source directly use karo, koi fallback nahi
@@ -145,6 +148,14 @@ const getRating = (p) => {
     return Array.from(set).sort();
   }, [products]);
 
+  useEffect(() => {
+  console.log("METAL CHECK:", products.slice(0, 3).map(p => ({
+    name: p.product_name,
+    metal: p.metal_type,
+    source: p.product_source
+  })));
+}, [products]);
+
   const filteredBrandList = useMemo(() => {
     if (!brandSearch.trim()) return brandList;
     return brandList.filter((b) =>
@@ -210,17 +221,21 @@ const getRating = (p) => {
               <option value="price_desc">Price: High → Low</option>
             </select>
 
-            <div className={styles.fieldLabel}>Metal</div>
-            <select
-              className={styles.select}
-              value={selectedMetal}
-              onChange={(e) => setSelectedMetal(e.target.value)}
-            >
-              <option value="all">All</option>
-              <option value="gold">Gold</option>
-              <option value="silver">Silver</option>
-              <option value="diamond">Diamond</option>
-            </select>
+{JEWELLERY_CATEGORY_IDS.includes(id) && (
+              <div>
+                <div className={styles.fieldLabel}>Metal</div>
+                <select
+                  className={styles.select}
+                  value={selectedMetal}
+                  onChange={(e) => setSelectedMetal(e.target.value)}
+                >
+                  <option value="all">All</option>
+                  <option value="gold">Gold</option>
+                  <option value="silver">Silver</option>
+                  <option value="diamond">Diamond</option>
+                </select>
+              </div>
+            )}
           </div>
 
           {/* BRAND */}
@@ -408,10 +423,17 @@ const getRating = (p) => {
             <div className={styles.grid}>
               {products.map((p) => {
                 // 🔥 STOCK LOGIC — both seller and supplier
-const stock = p.remaining_stock ?? p.stock ?? undefined;
-const isOutOfStock = stock !== null && stock !== undefined && Number(stock) === 0;
-const isComingSoon = stock === null || stock === undefined;
-          const isUnavailable = isOutOfStock || isComingSoon;
+// const stock = p.remaining_stock ?? p.stock ?? undefined;
+// const isOutOfStock = stock !== null && stock !== undefined && Number(stock) === 0;
+//const isComingSoon = stock === null || stock === undefined;
+//           const isUnavailable = isOutOfStock || isComingSoon;
+
+const stock = p.remaining_stock;
+
+const isOutOfStock = Number(stock) === 0;
+const isComingSoon = stock == null;
+
+const isUnavailable = isOutOfStock || isComingSoon;
 
                 return (
                   <div
