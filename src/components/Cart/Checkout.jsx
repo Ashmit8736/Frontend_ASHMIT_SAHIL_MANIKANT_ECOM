@@ -1,10 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux"; 
+import { clearCart } from "../../store/slices/cartSlice"; 
 import api from "../../store/APi/axiosInstance";
 import styles from "./Checkout.module.css";
 
 const CheckoutPage = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [step, setStep] = useState(2);
     const [buyer, setBuyer] = useState(null);
@@ -249,35 +252,55 @@ const CheckoutPage = () => {
 
 
     /* ================= PLACE ORDER ================= */
-    const handlePlaceOrder = async () => {
-        if (!cartItems.length) return alert("Cart is empty");
+    // const handlePlaceOrder = async () => {
+    //     if (!cartItems.length) return alert("Cart is empty");
 
-        // 🔥 supplier-only me address skip
-        if (!supplierOnly && !selectedAddress) {
-            return alert("Select address first");
-        }
+    //     // 🔥 supplier-only me address skip
+    //     if (!supplierOnly && !selectedAddress) {
+    //         return alert("Select address first");
+    //     }
 
-        try {
-            setLoading(true);
+    //     try {
+    //         setLoading(true);
 
-            const payload = {
-                order_type: supplierOnly ? "pickup" : "delivery",
-                payment_mode: supplierOnly ? "PICKUP" : "COD",
-                address_id: supplierOnly ? null : selectedAddress,
-            };
+    //         const payload = {
+    //             order_type: supplierOnly ? "pickup" : "delivery",
+    //             payment_mode: supplierOnly ? "PICKUP" : "COD",
+    //             address_id: supplierOnly ? null : selectedAddress,
+    //         };
 
-            const res = await api.post("/checkout/place-order", payload);
+    //         const res = await api.post("/checkout/place-order", payload);
 
-            navigate("/app/order-success", {
-                state: res.data.data,
-            });
-        } catch {
-            alert("Order failed");
-        } finally {
-            setLoading(false);
-        }
-    };
+    //         navigate("/app/order-success", {
+    //             state: res.data.data,
+    //         });
+    //     } catch {
+    //         alert("Order failed");
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
+    // NAYA (yahi paste karo)
+const handlePlaceOrder = async () => {
+    if (!cartItems.length) return alert("Cart is empty");
+    if (!supplierOnly && !selectedAddress) return alert("Select address first");
+    try {
+        setLoading(true);
+        const payload = {
+            order_type: supplierOnly ? "pickup" : "delivery",
+            payment_mode: supplierOnly ? "PICKUP" : "COD",
+            address_id: supplierOnly ? null : selectedAddress,
+        };
+        const res = await api.post("/checkout/place-order", payload);
+        dispatch(clearCart()); // ✅ Badge turant 0
+        navigate("/app/order-success", { state: res.data.data });
+    } catch {
+        alert("Order failed");
+    } finally {
+        setLoading(false);
+    }
+};
     return (
         <div className={styles.checkoutPage}>
             <div className={styles.checkoutContainer}>

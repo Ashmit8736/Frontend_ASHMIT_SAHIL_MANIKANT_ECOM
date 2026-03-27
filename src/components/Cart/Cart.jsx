@@ -33,57 +33,6 @@ const Cart = () => {
   /* ===============================
      FETCH CART
   =============================== */
-  // const fetchCart = async () => {
-  //   try {
-  //     const res = await axios.get("http://localhost:3000/api/cart", {
-  //       withCredentials: true,
-  //     });
-
-  //     const payload = res.data?.data;
-
-  //     const items = payload?.items || [];
-  //     setCart(items);
-  //     dispatch(setReduxCart(items));
-
-  //     setBilling({
-  //       seller_subtotal: payload?.seller_subtotal || 0,
-  //       supplier_subtotal: payload?.supplier_subtotal || 0,
-  //       supplier_gst: payload?.supplier_gst || 0,
-  //       seller_gst_included: payload?.seller_gst_included || 0,
-  //       grand_total: payload?.grand_total || 0,
-  //     });
-
-  //   } catch {
-  //     setCart([]);
-  //     setBilling(null);
-  //     dispatch(setReduxCart([]));
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-
-//   const fetchCart = async () => {
-//   try {
-//     const res = await axios.get("http://localhost:3000/api/cart", {
-//       withCredentials: true,
-//     });
-
-//     const items = res.data?.data || [];
-
-//     setCart(items);
-//     dispatch(setReduxCart(items));
-
-//     setBilling(null); // temporary
-
-//   } catch {
-//     setCart([]);
-//     setBilling(null);
-//     dispatch(setReduxCart([]));
-//   } finally {
-//     setLoading(false);
-//   }
-// };
 
 const fetchCart = async () => {
   try {

@@ -103,7 +103,7 @@ export default function SupplierQA() {
 
                     {/* Answer Input */}
                     <textarea
-                        rows={2}
+                        rows={1}
                         placeholder="Write your answer..."
                         value={answers[q.question_id] || ""}
                         onChange={(e) => setAnswers((prev) => ({
