@@ -239,7 +239,8 @@
 /* ================= PAGINATION ================= */
 .pagination {
   display: flex;
-  justify-content: flex-start;
+ align-items: center;
+ justify-content: center;
   gap: 1rem;
   margin-top: 1.4rem;
 }
@@ -249,6 +250,7 @@
   background: #635e5e;
   padding: 0.4rem 0.8rem;
   border-radius: 8px;
+  
   cursor: pointer;
 }
 
