@@ -246,6 +246,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  justify-content: center;
   margin-top: 1rem;
 }
 
@@ -256,10 +257,12 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
 .pagination button:disabled {
   background: #676b75;
   cursor: not-allowed;
 }
+
 .pagination button:hover:not(:disabled) {
   background: #111;
   color: #fff;
