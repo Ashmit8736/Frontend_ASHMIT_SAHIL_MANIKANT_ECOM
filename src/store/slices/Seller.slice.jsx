@@ -468,7 +468,7 @@ const sellerSlice = createSlice({
           return;
         }
 
-        state.error = action.payload?.message || action.payload;
+        state.error = action.payload?.message || action.payload;   
       });
   },
 });
