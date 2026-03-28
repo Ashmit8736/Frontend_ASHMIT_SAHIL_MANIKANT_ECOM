@@ -274,7 +274,7 @@ export default function AdminSellerVerification() {
 
   // PAGINATION STATE
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 2;
+  const itemsPerPage = 5;
 
   const [actionLoading, setActionLoading] = useState(false);
 
