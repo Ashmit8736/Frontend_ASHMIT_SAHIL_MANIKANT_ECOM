@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import api from "../store/APi/axiosInstance";
@@ -45,7 +43,12 @@ const AllProducts = () => {
   };
 
   /* ================= FETCH PRODUCTS ================= */
-  const fetchProducts = async (currentPage, currentSearch, currentId, currentType) => {
+  const fetchProducts = async (
+    currentPage,
+    currentSearch,
+    currentId,
+    currentType,
+  ) => {
     if (isFetchingRef.current) return;
 
     try {
@@ -70,7 +73,9 @@ const AllProducts = () => {
         if (currentType === "seller") {
           normalized = normalized.filter((p) => p.product_source === "seller");
         } else if (currentType === "supplier") {
-          normalized = normalized.filter((p) => p.product_source === "supplier");
+          normalized = normalized.filter(
+            (p) => p.product_source === "supplier",
+          );
         }
 
         if (currentPage === 1) {
@@ -85,7 +90,6 @@ const AllProducts = () => {
 
       /* 📦 ALL PRODUCTS MODE */
       if (!currentId) {
-
         // 🔥 TYPE FILTER — sirf seller
         if (currentType === "seller") {
           const sellerRes = await api.get("/publics/products", {
@@ -132,8 +136,12 @@ const AllProducts = () => {
 
         // 🔥 NO FILTER — dono seller + supplier
         const [sellerRes, supplierRes] = await Promise.all([
-          api.get("/publics/products", { params: { page: currentPage, limit: LIMIT } }),
-          api.get("/public-supplier/products", { params: { page: currentPage, limit: LIMIT } }),
+          api.get("/publics/products", {
+            params: { page: currentPage, limit: LIMIT },
+          }),
+          api.get("/public-supplier/products", {
+            params: { page: currentPage, limit: LIMIT },
+          }),
         ]);
 
         const seller = (sellerRes.data.products || []).map((p) => ({
@@ -174,9 +182,13 @@ const AllProducts = () => {
 
       // 🔥 TYPE FILTER category me bhi
       if (currentType === "seller") {
-        categoryProducts = categoryProducts.filter((p) => p.product_source === "seller");
+        categoryProducts = categoryProducts.filter(
+          (p) => p.product_source === "seller",
+        );
       } else if (currentType === "supplier") {
-        categoryProducts = categoryProducts.filter((p) => p.product_source === "supplier");
+        categoryProducts = categoryProducts.filter(
+          (p) => p.product_source === "supplier",
+        );
       }
 
       if (currentPage === 1) {
@@ -186,7 +198,6 @@ const AllProducts = () => {
       }
 
       setHasMore(categoryProducts.length >= LIMIT);
-
     } catch (err) {
       console.error("AllProducts fetch error:", err);
     } finally {
@@ -219,7 +230,7 @@ const AllProducts = () => {
           setPage((prev) => prev + 1);
         }
       },
-      { threshold: 0.5, rootMargin: "100px" }
+      { threshold: 0.5, rootMargin: "100px" },
     );
 
     if (loaderRef.current) observer.observe(loaderRef.current);
@@ -229,39 +240,52 @@ const AllProducts = () => {
   }, [hasMore]);
 
   const openProduct = (product) => {
-    navigate(`/app/product/${product.product_id}?type=${product.product_source}`);
+    navigate(
+      `/app/product/${product.product_id}?type=${product.product_source}`,
+    );
   };
 
   /* ================= UI ================= */
   return (
     <div className={styles.mainWrapper}>
-
       {/* 🔥 FILTER TABS — URL change karenge */}
       <div className={styles.filterTabs}>
         <button
           className={`${styles.filterBtn} ${!typeFilter ? styles.activeFilter : ""}`}
-          onClick={() => navigate(`/app/allproducts${searchQuery ? `?search=${searchQuery}` : ""}`)}
+          onClick={() =>
+            navigate(
+              `/app/allproducts${searchQuery ? `?search=${searchQuery}` : ""}`,
+            )
+          }
         >
           All
         </button>
         <button
           className={`${styles.filterBtn} ${typeFilter === "seller" ? styles.activeFilter : ""}`}
-          onClick={() => navigate(`/app/allproducts?type=seller${searchQuery ? `&search=${searchQuery}` : ""}`)}
+          onClick={() =>
+            navigate(
+              `/app/allproducts?type=seller${searchQuery ? `&search=${searchQuery}` : ""}`,
+            )
+          }
         >
           Seller
         </button>
         <button
           className={`${styles.filterBtn} ${typeFilter === "supplier" ? styles.activeFilter : ""}`}
-          onClick={() => navigate(`/app/allproducts?type=supplier${searchQuery ? `&search=${searchQuery}` : ""}`)}
+          onClick={() =>
+            navigate(
+              `/app/allproducts?type=supplier${searchQuery ? `&search=${searchQuery}` : ""}`,
+            )
+          }
         >
           Supplier
         </button>
       </div>
 
       <div className={styles.grid}>
-
         {/* 🔥 LOADING SKELETON */}
-        {loading && products.length === 0 &&
+        {loading &&
+          products.length === 0 &&
           Array.from({ length: 8 }).map((_, i) => (
             <div key={i} className={styles.skeletonCard}>
               <div className={styles.skeletonImage} />
@@ -273,11 +297,17 @@ const AllProducts = () => {
 
         {/* ❌ NO PRODUCTS */}
         {!loading && products.length === 0 && (
-          <p style={{ padding: 20 }}>
-            {searchQuery
-              ? `"${searchQuery}" ke liye koi product nahi mila`
-              : "No products found"}
-          </p>
+          <div className={styles.noProductsBox}>
+            <div className={styles.noProductsIcon}>🛍️</div>
+            <h3 className={styles.noProductsTitle}>
+              {searchQuery ? `"${searchQuery}" not found` : "No Products Found"}
+            </h3>
+            <p className={styles.noProductsText}>
+              {searchQuery
+                ? "Try searching with different keywords"
+                : "Try changing filters or check back later"}
+            </p>
+          </div>
         )}
 
         {/* ✅ PRODUCTS */}
@@ -287,28 +317,40 @@ const AllProducts = () => {
 
           // 🔥 STOCK LOGIC — sirf seller pe check
 
-const stock = p.remaining_stock ?? p.stock ?? undefined;
-const isOutOfStock = stock !== null && stock !== undefined && Number(stock) === 0;
-const isComingSoon = stock === null || stock === undefined;
+          const stock = p.remaining_stock ?? p.stock ?? undefined;
+          const isOutOfStock =
+            stock !== null && stock !== undefined && Number(stock) === 0;
+          const isComingSoon = stock === null || stock === undefined;
           const isUnavailable = isOutOfStock || isComingSoon;
 
           return (
             <div
               key={`${source}-${p.product_id}`}
               className={`${styles.card} ${isUnavailable ? styles.cardDisabled : ""}`}
-              onClick={() => { if (!isUnavailable) openProduct(p); }}
-              style={{ cursor: isUnavailable ? "not-allowed" : "pointer", position: "relative" }}
+              onClick={() => {
+                if (!isUnavailable) openProduct(p);
+              }}
+              style={{
+                cursor: isUnavailable ? "not-allowed" : "pointer",
+                position: "relative",
+              }}
             >
               {/* 🔴 OUT OF STOCK BADGE */}
               {isOutOfStock && (
-                <div className={styles.stockBadge} style={{ background: "#e53935" }}>
+                <div
+                  className={styles.stockBadge}
+                  style={{ background: "#e53935" }}
+                >
                   Out of Stock
                 </div>
               )}
 
               {/* 🟠 COMING SOON BADGE */}
               {isComingSoon && (
-                <div className={styles.stockBadge} style={{ background: "#f57c00" }}>
+                <div
+                  className={styles.stockBadge}
+                  style={{ background: "#f57c00" }}
+                >
                   Coming Soon
                 </div>
               )}
@@ -324,19 +366,27 @@ const isComingSoon = stock === null || stock === undefined;
               <div className={styles.brand}>
                 {p.brand || "Brand"}
                 {/* 🔥 product_source se tag dikhao */}
-                <span className={source === "supplier" ? styles.supplierTag : styles.sellerTag}>
+                <span
+                  className={
+                    source === "supplier"
+                      ? styles.supplierTag
+                      : styles.sellerTag
+                  }
+                >
                   {source === "supplier" ? "Supplier" : "Seller"}
                 </span>
               </div>
 
-              <div className={styles.price}>
-                ₹ {p.product_price || p.price}
+              <div className={styles.price}>₹ {p.product_price || p.price}</div>
+
+              <div className={styles.rating}>
+                Rating : ⭐{" "}
+                {p.rating_avg ||
+                  p.product_rating ||
+                  p.rating ||
+                  p.avg_rating ||
+                  0}
               </div>
-
-
-<div className={styles.rating}>
-  Rating : ⭐ {p.rating_avg || p.product_rating || p.rating || p.avg_rating || 0}
-</div>
             </div>
           );
         })}
@@ -351,9 +401,7 @@ const isComingSoon = stock === null || stock === undefined;
 
       {/* ✅ END */}
       {!hasMore && products.length > 0 && (
-        <p style={{ textAlign: "center", padding: 20 }}>
-          No more products 🚫
-        </p>
+        <p style={{ textAlign: "center", padding: 20 }}>No more products 🚫</p>
       )}
     </div>
   );

@@ -10,7 +10,9 @@ const MAX_PRICE = 100000;
 const CategoryProducts = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
   const JEWELLERY_CATEGORY_IDS = ["99"];
+  const [selectedDiscount, setSelectedDiscount] = useState(0);
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,6 +48,9 @@ const CategoryProducts = () => {
     }
   };
 
+  // const getRating = (p) => {
+  //   return Number(p.product_rating || p.rating || p.avg_rating || 0);
+  // };
 
   // AB — rating_avg sabse pehle add karo
   const getRating = (p) => {
@@ -67,6 +72,7 @@ const CategoryProducts = () => {
     setBrandSearch("");
     setMinRating(0);
     setSelectedMetal("all");
+    setSelectedDiscount(0); // ✅ ADD
   };
 
   /* ================= FETCH CATEGORY PRODUCTS ================= */
@@ -78,9 +84,13 @@ const CategoryProducts = () => {
         const res = await api.get(
           `/public/buyer/products/by-category/${id}?sort=${sort}`,
         );
-
+        console.log("API RESPONSE:", res.data);
+        console.log("CATEGORY ID:", id);
         let list = (res.data.products || []).map((p) => ({
           ...p,
+          // 🔥 CHANGE 1 — p.product_source directly use karo, koi fallback nahi
+          // PEHLE: source: p.product_source (same tha lekin navigate me nahi jaata tha)
+          // AB: same, par navigate me bhi sahi bhejenge
           product_source: p.product_source,
           images: normalizeImages(p.images),
         }));
@@ -101,6 +111,13 @@ const CategoryProducts = () => {
         if (selectedMetal !== "all") {
           list = list.filter(
             (p) => (p.metal_type || "").toLowerCase().trim() === selectedMetal,
+          );
+        }
+
+        // DISCOUNT FILTER ✅
+        if (selectedDiscount > 0) {
+          list = list.filter(
+            (p) => Number(p.discount_percent) >= selectedDiscount,
           );
         }
 
@@ -133,7 +150,16 @@ const CategoryProducts = () => {
     };
 
     fetchProducts();
-  }, [id, source, sort, priceRange, selectedBrands, minRating, selectedMetal]);
+  }, [
+    id,
+    source,
+    sort,
+    priceRange,
+    selectedBrands,
+    minRating,
+    selectedMetal,
+    selectedDiscount,
+  ]);
 
   const brandList = useMemo(() => {
     const set = new Set();
@@ -142,6 +168,17 @@ const CategoryProducts = () => {
       set.add(b);
     });
     return Array.from(set).sort();
+  }, [products]);
+
+  useEffect(() => {
+    console.log(
+      "METAL CHECK:",
+      products.slice(0, 3).map((p) => ({
+        name: p.product_name,
+        metal: p.metal_type,
+        source: p.product_source,
+      })),
+    );
   }, [products]);
 
   const filteredBrandList = useMemo(() => {
@@ -273,6 +310,7 @@ const CategoryProducts = () => {
           </div>
 
           {/* DISCOUNT */}
+          {/* DISCOUNT */}
           <div className={styles.filterSection}>
             <button
               className={styles.sectionHeader}
@@ -280,7 +318,11 @@ const CategoryProducts = () => {
             >
               <div className={styles.sectionLeft}>
                 <div className={styles.sectionTitle}>DISCOUNT</div>
-                <div className={styles.sectionSub}>{discountSummary}</div>
+                <div className={styles.sectionSub}>
+                  {selectedDiscount === 0
+                    ? "Discount Filter"
+                    : `${selectedDiscount}% & above`}
+                </div>
               </div>
               <div className={styles.sectionRight}>
                 <span className={styles.chev}>
@@ -291,10 +333,18 @@ const CategoryProducts = () => {
 
             {openSections.discount && (
               <div className={styles.sectionBody}>
-                <p className={styles.muted}>
-                  Discount filter ka backend available nahi hai abhi. UI ready
-                  hai.
-                </p>
+                {[10, 20, 30, 40, 50].map((d) => (
+                  <label key={d} className={styles.checkboxItem}>
+                    <input
+                      type="checkbox"
+                      checked={selectedDiscount === d}
+                      onChange={() =>
+                        setSelectedDiscount((prev) => (prev === d ? 0 : d))
+                      }
+                    />
+                    <span>{d}% or more</span>
+                  </label>
+                ))}
               </div>
             )}
           </div>
@@ -318,59 +368,56 @@ const CategoryProducts = () => {
 
             {openSections.price && (
               <div className={styles.sectionBody}>
-                <div className={styles.rangeBar}>
+                {/* PRICE DISPLAY */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    marginBottom: 8,
+                  }}
+                >
+                  <span>₹{tempPrice[0].toLocaleString()}</span>
+                  <span>₹{tempPrice[1].toLocaleString()}</span>
+                </div>
+
+                {/* MIN SLIDER */}
+                <div style={{ marginBottom: 8 }}>
+                  <label style={{ fontSize: 12, color: "#666" }}>
+                    Min Price
+                  </label>
                   <input
                     className={styles.range}
                     type="range"
                     min="0"
                     max={MAX_PRICE}
+                    step="500"
                     value={tempPrice[0]}
-                    onChange={(e) =>
-                      setTempPrice([+e.target.value, tempPrice[1]])
-                    }
-                  />
-                  <input
-                    className={styles.range}
-                    type="range"
-                    min="0"
-                    max={MAX_PRICE}
-                    value={tempPrice[1]}
-                    onChange={(e) =>
-                      setTempPrice([tempPrice[0], +e.target.value])
-                    }
+                    onChange={(e) => {
+                      const val = +e.target.value;
+                      if (val < tempPrice[1]) setTempPrice([val, tempPrice[1]]);
+                    }}
                   />
                 </div>
 
-                <div className={styles.priceDropdowns}>
-                  <select
-                    className={styles.select}
-                    value={tempPrice[0]}
-                    onChange={(e) =>
-                      setTempPrice([+e.target.value, tempPrice[1]])
-                    }
-                  >
-                    {priceSteps.map((v) => (
-                      <option key={v} value={v}>
-                        {v === 0 ? "Min" : `₹${v}`}
-                      </option>
-                    ))}
-                  </select>
-
-                  <span className={styles.toText}>to</span>
-
-                  <select
-                    className={styles.select}
+                {/* MAX SLIDER */}
+                <div style={{ marginBottom: 12 }}>
+                  <label style={{ fontSize: 12, color: "#666" }}>
+                    Max Price
+                  </label>
+                  <input
+                    className={styles.range}
+                    type="range"
+                    min="0"
+                    max={MAX_PRICE}
+                    step="500"
                     value={tempPrice[1]}
-                    onChange={(e) =>
-                      setTempPrice([tempPrice[0], +e.target.value])
-                    }
-                  >
-                    {priceSteps.map((v) => (
-                      <option key={v} value={v}>
-                        {v === MAX_PRICE ? `₹${v}+` : `₹${v}`}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={(e) => {
+                      const val = +e.target.value;
+                      if (val > tempPrice[0]) setTempPrice([tempPrice[0], val]);
+                    }}
+                  />
                 </div>
 
                 <button
@@ -433,11 +480,11 @@ const CategoryProducts = () => {
           ) : (
             <div className={styles.grid}>
               {products.map((p) => {
-                // 🔥 STOCK LOGIC — both seller and supplier
-                const stock = p.remaining_stock ?? p.stock ?? undefined;
-                const isOutOfStock =
-                  stock !== null && stock !== undefined && Number(stock) === 0;
-                const isComingSoon = stock === null || stock === undefined;
+                const stock = p.remaining_stock;
+
+                const isOutOfStock = Number(stock) === 0;
+                const isComingSoon = stock == null;
+
                 const isUnavailable = isOutOfStock || isComingSoon;
 
                 return (
@@ -450,9 +497,7 @@ const CategoryProducts = () => {
                     }}
                     onClick={() => {
                       if (isUnavailable) return;
-                      // 🔥 CHANGE 2 — ?type=p.product_source URL mein add kiya
-                      // PEHLE: navigate(`/app/product/${p.product_id}`, { state: { pdt: p } })
-                      // AB: ?type=seller ya ?type=supplier bhi URL mein jaata hai
+
                       navigate(
                         `/app/product/${p.product_id}?type=${p.product_source}`,
                       );
@@ -513,7 +558,42 @@ const CategoryProducts = () => {
 
                     <div className={styles.cardBody}>
                       <h4 className={styles.productName}>{p.product_name}</h4>
-                      <p className={styles.price}>₹ {p.product_price}</p>
+
+                      {/* PRICE */}
+                      {Number(p.discount_percent) > 0 ? (
+                        <div>
+                          <span
+                            style={{
+                              textDecoration: "line-through",
+                              color: "#999",
+                              fontSize: 13,
+                              fontWeight: 600,
+                            }}
+                          >
+                            ₹ {Number(p.product_price).toLocaleString()}
+                          </span>
+                          <span
+                            className={styles.price}
+                            style={{ color: "#388e3c", marginLeft: 6 }}
+                          >
+                            ₹ {Number(p.discounted_price).toLocaleString()}
+                          </span>
+                          <span
+                            style={{
+                              color: "#e53935",
+                              fontSize: 12,
+                              fontWeight: 700,
+                              marginLeft: 6,
+                            }}
+                          >
+                            {p.discount_percent}% off
+                          </span>
+                        </div>
+                      ) : (
+                        <p className={styles.price}>
+                          ₹ {Number(p.product_price).toLocaleString()}
+                        </p>
+                      )}
 
                       <div className={styles.metaRow}>
                         <span
@@ -527,7 +607,6 @@ const CategoryProducts = () => {
                             ? "Supplier"
                             : "Seller"}
                         </span>
-
                         <span className={styles.ratingPill}>
                           {getRating(p).toFixed(1)} ★
                         </span>
