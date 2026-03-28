@@ -409,22 +409,20 @@
 }
 
 /* ================= ACTION BUTTONS ================= */
-.actionCell {
-  display: flex;
-  gap: 0.5rem;
-}
+
 
 .viewBtn,
 .editBtn,
 .deleteBtn {
-  padding: 4px 12px;
+  padding: 8px 12px;
+  margin: 0px 5px;
   font-size: 0.75rem;
   border-radius: 8px;
 }
 
 .viewBtn {
   background: #3b82f6;
-   padding: 4px 12px;
+   /* padding: 4px 12px; */
    border-radius: 8px;
   cursor: pointer;
 }
@@ -433,14 +431,14 @@
 }
 .editBtn {
   background: #10b981;
-   padding: 4px 12px;
+   /* padding: 4px 12px; */
    border-radius: 8px;
   cursor: pointer;
 }
 .editBtn:hover {  background: #059669;
 }
 .deleteBtn {  background: #ef4444;
-   padding: 4px 12px;
+   /* padding: 4px 12px; */
    border-radius: 8px;
   cursor: pointer;
 }

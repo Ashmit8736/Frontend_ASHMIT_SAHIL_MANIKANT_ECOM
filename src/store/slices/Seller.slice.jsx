@@ -456,6 +456,7 @@ const sellerSlice = createSlice({
         state.loading = false;
         state.success = true;
         state.register = true;
+        state.registration = defaultRegistration; 
         localStorage.removeItem("seller_registration");
       })
 

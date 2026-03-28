@@ -299,7 +299,7 @@ const Pagination = ({ totalSteps }) => {
       localStorage.removeItem("seller_signup_step3");
       localStorage.removeItem("seller_signup_step4");
 
-      navigate("/auth/account-pending", { replace: true });
+      navigate("/seller/auth/account-pending", { replace: true });
 
     } catch (error) {
       // 🔥 backend validation

@@ -342,7 +342,7 @@
   border: none;
   padding: 0 20px;
   border-radius: 6px;
-  cursor: not-allowed;
+  cursor: pointer;
   font-weight: 500;
 }
 

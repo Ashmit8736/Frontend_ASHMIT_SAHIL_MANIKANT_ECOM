@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { MdOutlineManageAccounts } from "react-icons/md";
 import VerifyStepIcons from '../../../components/register-verifications/regisetrVerifyStepsICons/VerifyStepIcons';
 import style from './sellerREgister.module.css'
@@ -10,12 +11,16 @@ import BusinessDeails from '../../../components/register-verifications/BusinessD
 import WareHouseDetails from '../../../components/register-verifications/warehouseDetails/WareHouseDetails';
 import BankingDetails from '../../../components/register-verifications/bankingDetails/BankingDetails';
 // import {currentStep} from '../../../store/slices/Seller.slice'
-import { useSelector } from 'react-redux';
+import { clearSellerRegistration } from '../../../store/slices/Seller.slice';
+import { useSelector,useDispatch } from 'react-redux';
 // import RegisterSuccessfully from "../../../components/register-verifications/registersuccessfully/registerSuccessfully";
 
 const SellerRegister = () => {
+  const dispatch = useDispatch();   
   const { registration: { currentStep } } = useSelector(state => state.seller);
-
+  useEffect(() => {                                         // ✅ 4
+    dispatch(clearSellerRegistration());
+  }, []);
   const totalSteps = 4;
 
   const steps = [
